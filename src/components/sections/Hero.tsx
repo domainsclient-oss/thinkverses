@@ -1,0 +1,100 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Compass, Database, Waypoints } from "lucide-react";
+import { TwinScene } from "../TwinScene";
+import { valueProps } from "@/lib/content";
+import heroImg from "../../../public/images/hero-plant.jpg";
+
+const propIcons = [Waypoints, Compass, Database];
+
+export function Hero() {
+  return (
+    <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
+      {/* Physical layer: the plant photo, cut on a diagonal */}
+      <div className="absolute inset-y-0 right-0 -z-10 hidden w-[60%] lg:block [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]">
+        <div className="duotone-wrap h-full w-full">
+          <Image
+            src={heroImg}
+            alt=""
+            fill
+            preload
+            sizes="60vw"
+            placeholder="blur"
+            className="duotone object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent" />
+      </div>
+
+      <div className="absolute inset-0 -z-20 bg-blueprint [mask-image:radial-gradient(ellipse_at_30%_40%,black,transparent_75%)]" />
+      <div className="absolute -left-40 top-1/3 -z-20 h-[36rem] w-[36rem] rounded-full bg-volt/20 blur-[140px]" />
+
+      <div className="mx-auto grid min-h-[100svh] max-w-[90rem] items-center gap-10 px-4 pb-16 pt-32 sm:px-6 lg:grid-cols-12 lg:px-10 lg:pb-16 lg:pt-32">
+        <div className="relative z-10 lg:col-span-7">
+          <p className="hero-rise mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm text-fog backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" />
+            Digital Twin, AI, IoT and Robotics from Dubai
+          </p>
+          <h1 className="hero-rise display h-hero" style={{ "--d": "80ms" } as React.CSSProperties}>
+            Empowering Businesses with Digital Twins &amp; Robotics Solutions
+          </h1>
+          <p className="hero-rise lede mt-7 text-white/75" style={{ "--d": "180ms" } as React.CSSProperties}>
+            Thinkverses builds decision-intelligence systems and robotics solutions for operationally complex
+            environments.
+          </p>
+          <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ "--d": "260ms" } as React.CSSProperties}>
+            <Link href="/#contact" className="btn btn-primary">
+              Get in Touch <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link href="/#robotics" className="btn btn-ghost">
+              Explore Our Solutions
+            </Link>
+          </div>
+
+          <ul
+            className="hero-rise mt-14 grid gap-6 border-t border-white/12 pt-8 sm:grid-cols-3 sm:gap-0"
+            style={{ "--d": "380ms" } as React.CSSProperties}
+          >
+            {valueProps.map((v, i) => {
+              const Icon = propIcons[i];
+              return (
+                <li key={v.title} className="sm:border-l sm:border-white/12 sm:px-5 sm:first:border-l-0 sm:first:pl-0">
+                  <Icon size={20} className="text-cyan" aria-hidden="true" />
+                  <p className="mt-3 font-display text-[1.05rem] font-semibold leading-snug [font-stretch:110%]">
+                    {v.title}
+                  </p>
+                  <p className="mt-1.5 text-[0.92rem] leading-relaxed text-white/60">{v.text}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Twin layer: overlaps the photo edge on desktop, sits on its own panel on mobile */}
+        <div className="relative lg:col-span-5">
+          <div className="relative mx-auto max-w-[40rem] overflow-hidden rounded-[28px] border border-white/10 lg:overflow-visible lg:rounded-none lg:border-0">
+            <div className="duotone-wrap absolute inset-0 lg:hidden">
+              <Image src={heroImg} alt="" fill sizes="100vw" className="duotone object-cover" />
+            </div>
+            <TwinScene className="relative w-full drop-shadow-[0_0_30px_rgba(31,200,232,0.25)] lg:origin-center lg:scale-[1.3]" />
+
+            <div className="hero-rise absolute -left-[6%] top-[2%] hidden max-w-[15rem] rounded-2xl border border-white/15 bg-ink/70 p-4 shadow-2xl backdrop-blur-md sm:block" style={{ "--d": "1300ms" } as React.CSSProperties}>
+              <p className="flex items-center gap-2 text-xs text-cyan">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" /> Predicted
+              </p>
+              <p className="mt-1.5 text-sm font-semibold">Tank T-2 pump bearing wear</p>
+              <p className="mt-1 text-xs leading-relaxed text-white/60">Schedule inspection before next production run</p>
+            </div>
+            <div className="hero-rise absolute -bottom-[4%] right-0 hidden max-w-[15rem] rounded-2xl border border-violet/40 bg-ink/70 p-4 shadow-2xl backdrop-blur-md sm:block" style={{ "--d": "1600ms" } as React.CSSProperties}>
+              <p className="flex items-center gap-2 text-xs text-[#a996ff]">
+                <span className="h-1.5 w-1.5 rounded-full bg-violet" aria-hidden="true" /> Executing
+              </p>
+              <p className="mt-1.5 text-sm font-semibold">Scenario B sent to robotic cell</p>
+              <p className="mt-1 text-xs leading-relaxed text-white/60">Simulated first, then dispatched to the line</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

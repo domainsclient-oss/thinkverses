@@ -1,0 +1,915 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Thinkverses Solutions home" [ref=e5] [cursor=pointer]:
+        - /url: /#top
+        - img "Thinkverses" [ref=e6]
+      - navigation "Main" [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Home" [ref=e10] [cursor=pointer]:
+              - /url: /#top
+          - listitem [ref=e11]:
+            - link "Digital Twin Solutions" [ref=e12] [cursor=pointer]:
+              - /url: /#digital-twin
+          - listitem [ref=e13]:
+            - link "Robotics Solutions" [ref=e14] [cursor=pointer]:
+              - /url: /#robotics
+          - listitem [ref=e15]:
+            - link "Our Industries" [ref=e16] [cursor=pointer]:
+              - /url: /#industries
+          - listitem [ref=e17]:
+            - link "About Us" [ref=e18] [cursor=pointer]:
+              - /url: /#about
+          - listitem [ref=e19]:
+            - link "Articles & Insights" [ref=e20] [cursor=pointer]:
+              - /url: /#insights
+          - listitem [ref=e21]:
+            - link "Contact" [ref=e22] [cursor=pointer]:
+              - /url: /#contact
+      - link "Book a Consultation" [ref=e24] [cursor=pointer]:
+        - /url: /?topic=consultation#contact
+  - main [ref=e25]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - paragraph [ref=e34]: Digital Twin, AI, IoT and Robotics from Dubai
+        - heading "Empowering Businesses with Digital Twins & Robotics Solutions" [level=1] [ref=e36]
+        - paragraph [ref=e37]: Thinkverses builds decision-intelligence systems and robotics solutions for operationally complex environments.
+        - generic [ref=e38]:
+          - link "Get in Touch" [ref=e39] [cursor=pointer]:
+            - /url: /#contact
+          - link "Explore Our Solutions" [ref=e42] [cursor=pointer]:
+            - /url: /#robotics
+        - list [ref=e43]:
+          - listitem [ref=e44]:
+            - paragraph [ref=e52]: Decisions, Not Dashboards
+            - paragraph [ref=e53]: Every model is built to answer the next operational question, not to add another screen.
+          - listitem [ref=e54]:
+            - paragraph [ref=e58]: Foresight as Standard
+            - paragraph [ref=e59]: Simulation and forecasting show what happens next before anything changes on site.
+          - listitem [ref=e60]:
+            - paragraph [ref=e65]: Built on Your Data
+            - paragraph [ref=e66]: Your sensors, systems and history become the model, so insight fits how you run.
+      - generic [ref=e68]:
+        - img "Wireframe digital twin of an industrial plant with live sensor points" [ref=e69]
+        - generic [ref=e151]:
+          - paragraph [ref=e152]: Predicted
+          - paragraph [ref=e154]: Tank T-2 pump bearing wear
+          - paragraph [ref=e155]: Schedule inspection before next production run
+        - generic [ref=e156]:
+          - paragraph [ref=e157]: Executing
+          - paragraph [ref=e159]: Scenario B sent to robotic cell
+          - paragraph [ref=e160]: Simulated first, then dispatched to the line
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - heading "Two Pillars, One Intelligence" [level=2] [ref=e165]
+        - paragraph [ref=e166]:
+          - text: "Together, the Digital Twin and Robotics form a single system:"
+          - strong [ref=e167]: think, then move.
+          - text: One pillar decides, the other delivers.
+      - generic [ref=e168]:
+        - article [ref=e170]:
+          - generic [ref=e171]:
+            - img "Person standing before a wall of flowing blue data visualisation" [ref=e172]
+            - paragraph [ref=e174]: The Brain Decides
+          - generic [ref=e186]:
+            - heading "Digital Twin" [level=3] [ref=e187]
+            - paragraph [ref=e188]: A living, learning model of the real world simulating scenarios, predicting outcomes, and making decisions before a single physical action is taken. The Digital Twin is where intelligence is formed.
+            - list [ref=e189]:
+              - listitem [ref=e190]: Perceives context
+              - listitem [ref=e192]: Reasons through possibilities
+              - listitem [ref=e194]: Directs what happens next
+            - link "See Digital Twin capabilities" [ref=e196] [cursor=pointer]:
+              - /url: /#digital-twin
+        - generic [aria-hidden] [ref=e200]:
+          - generic [ref=e201]: Decisions
+          - generic [ref=e205]: Execution data
+        - article [ref=e210]:
+          - generic [ref=e211]:
+            - img "Industrial robotic arms assembling a car body on a production line" [ref=e212]
+            - paragraph [ref=e214]: The Body that Acts
+          - generic [ref=e218]:
+            - heading "Robotics" [level=3] [ref=e219]
+            - paragraph [ref=e220]: The physical extension of that intelligence translating decisions into motion, manipulation, and real-world execution. Robotics is where thought becomes action.
+            - list [ref=e221]:
+              - listitem [ref=e222]: Motion and manipulation
+              - listitem [ref=e224]: Real-world execution
+              - listitem [ref=e226]: Closes the loop between digital cognition and physical outcome
+            - link "Discuss a robotics project" [ref=e228] [cursor=pointer]:
+              - /url: /?topic=robotics#contact
+      - generic [ref=e232]:
+        - link [ref=e234] [cursor=pointer]:
+          - /url: /#industries
+          - generic [ref=e239]:
+            - paragraph [ref=e240]: 6+
+            - paragraph [ref=e241]: Industries We Serve
+        - list [ref=e243]:
+          - listitem [ref=e244]:
+            - generic [ref=e245]: "01"
+            - generic [ref=e246]: Building intelligent digital replicas of real-world assets and operations.
+          - listitem [ref=e247]:
+            - generic [ref=e248]: "02"
+            - generic [ref=e249]: Combining AI, IoT, and analytics to deliver actionable business insights.
+          - listitem [ref=e250]:
+            - generic [ref=e251]: "03"
+            - generic [ref=e252]: Helping organizations optimize performance, efficiency, and reliability.
+          - listitem [ref=e253]:
+            - generic [ref=e254]: "04"
+            - generic [ref=e255]: Transforming live operational data into smarter decisions.
+          - listitem [ref=e256]:
+            - generic [ref=e257]: "05"
+            - generic [ref=e258]: Empowering industries with scalable, sustainable, and predictive solutions.
+    - generic [ref=e261]:
+      - generic [ref=e262]:
+        - heading "Industries We Serve" [level=2] [ref=e263]
+        - paragraph [ref=e264]: We focus on sectors where assets are valuable, operations are complex and a better decision made earlier is worth the most.
+      - list [ref=e265]:
+        - listitem [ref=e266]:
+          - link "Refinery towers and processing units under an overcast sky Oil & Gas Model wells, pipelines and processing units to anticipate equipment failure and keep throughput stable. Talk to us about Oil & Gas" [ref=e267] [cursor=pointer]:
+            - /url: /?topic=oil-gas#contact
+            - img "Refinery towers and processing units under an overcast sky" [ref=e268]
+            - heading "Oil & Gas" [level=3] [ref=e275]
+            - paragraph [ref=e276]: Model wells, pipelines and processing units to anticipate equipment failure and keep throughput stable.
+            - generic [ref=e277]: Talk to us about Oil & Gas
+        - listitem [ref=e278]:
+          - link "Engineer working on a laptop beside automated manufacturing equipment Manufacturing Simulate lines and cells to find bottlenecks, plan changeovers and schedule maintenance around production. Talk to us about Manufacturing" [ref=e279] [cursor=pointer]:
+            - /url: /?topic=manufacturing#contact
+            - img "Engineer working on a laptop beside automated manufacturing equipment" [ref=e280]
+            - heading "Manufacturing" [level=3] [ref=e287]
+            - paragraph [ref=e288]: Simulate lines and cells to find bottlenecks, plan changeovers and schedule maintenance around production.
+            - generic [ref=e289]: Talk to us about Manufacturing
+        - listitem [ref=e290]:
+          - link "Glass office towers seen from street level Smart Buildings & Facilities Connect HVAC, lighting and occupancy data to run buildings on actual use instead of fixed schedules. Talk to us about Smart Buildings & Facilities" [ref=e291] [cursor=pointer]:
+            - /url: /?topic=smart-buildings#contact
+            - img "Glass office towers seen from street level" [ref=e292]
+            - heading "Smart Buildings & Facilities" [level=3] [ref=e299]
+            - paragraph [ref=e300]: Connect HVAC, lighting and occupancy data to run buildings on actual use instead of fixed schedules.
+            - generic [ref=e301]: Talk to us about Smart Buildings & Facilities
+        - listitem [ref=e302]:
+          - link "High-voltage transmission towers at sunset Energy & Utilities Balance load, forecast demand and monitor grid assets with a live model of the network. Talk to us about Energy & Utilities" [ref=e303] [cursor=pointer]:
+            - /url: /?topic=energy#contact
+            - img "High-voltage transmission towers at sunset" [ref=e304]
+            - heading "Energy & Utilities" [level=3] [ref=e311]
+            - paragraph [ref=e312]: Balance load, forecast demand and monitor grid assets with a live model of the network.
+            - generic [ref=e313]: Talk to us about Energy & Utilities
+        - listitem [ref=e314]:
+          - link "Large warehouse with shelving and stocked yellow bins Logistics & Supply Chain Twin warehouses and flows to test layouts, staffing and routing before committing to them. Talk to us about Logistics & Supply Chain" [ref=e315] [cursor=pointer]:
+            - /url: /?topic=logistics#contact
+            - img "Large warehouse with shelving and stocked yellow bins" [ref=e316]
+            - heading "Logistics & Supply Chain" [level=3] [ref=e323]
+            - paragraph [ref=e324]: Twin warehouses and flows to test layouts, staffing and routing before committing to them.
+            - generic [ref=e325]: Talk to us about Logistics & Supply Chain
+        - listitem [ref=e326]:
+          - link "Industrial electrical control cabinet with breakers and wiring Infrastructure & Industrial Operations Track the condition of critical systems and prioritise interventions by risk and impact. Talk to us about Infrastructure & Industrial Operations" [ref=e327] [cursor=pointer]:
+            - /url: /?topic=infrastructure#contact
+            - img "Industrial electrical control cabinet with breakers and wiring" [ref=e328]
+            - heading "Infrastructure & Industrial Operations" [level=3] [ref=e335]
+            - paragraph [ref=e336]: Track the condition of critical systems and prioritise interventions by risk and impact.
+            - generic [ref=e337]: Talk to us about Infrastructure & Industrial Operations
+    - generic [ref=e338]:
+      - generic [ref=e339]:
+        - generic [ref=e340]:
+          - heading "Thinkverses — Infinite Insight, Infinite Impact." [level=2] [ref=e341]
+          - generic [ref=e342]:
+            - paragraph [ref=e343]: Most operations already collect more data than they use. Thinkverses turns that operational data into intelligent decisions, predictive insights and real-world outcomes, by building a Digital Twin on the systems you already run and connecting it to the robotics that act on its decisions.
+            - paragraph [ref=e344]: Our systems are transparent by design. Every recommendation can be traced back to the data and the simulation behind it, so your teams understand why, not just what.
+          - list "Our values" [ref=e345]:
+            - listitem [ref=e346]: Decisions over Dashboards
+            - listitem [ref=e349]: Your Data, Your Edge
+            - listitem [ref=e352]: Focused Depth
+            - listitem [ref=e355]: Outcome Ownership
+        - generic [ref=e358]:
+          - img "Rows of server racks with network cabling" [ref=e360]
+          - generic [ref=e362]:
+            - heading "Our approach" [level=3] [ref=e363]
+            - list [ref=e364]:
+              - listitem [ref=e365]:
+                - generic [ref=e371]:
+                  - paragraph [ref=e372]: Holistic Data Integration
+                  - paragraph [ref=e373]: IoT sensors, operational systems and historical records are brought into one model of your operation, so every decision draws on the full picture.
+              - listitem [ref=e374]:
+                - generic [ref=e379]:
+                  - paragraph [ref=e380]: AI-Powered Forecasting
+                  - paragraph [ref=e381]: Machine learning and Generative AI project how assets and processes will behave, turning raw signals into early warnings and options.
+              - listitem [ref=e382]:
+                - generic [ref=e387]:
+                  - paragraph [ref=e388]: Operational Efficiency Optimization
+                  - paragraph [ref=e389]: Scenarios are tested in simulation first, then the best option is put into action and measured against real outcomes.
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - term [ref=e393]: Headquarters
+          - definition [ref=e394]: Dubai, UAE
+        - generic [ref=e395]:
+          - term [ref=e396]: Established
+          - definition [ref=e397]: Dubai Mainland LLC, incorporated March 2025
+        - generic [ref=e398]:
+          - term [ref=e399]: What we deliver
+          - definition [ref=e400]: Digital Twin decision-intelligence systems and Robotics solutions
+        - generic [ref=e401]:
+          - term [ref=e402]: How we engage
+          - definition [ref=e403]: Multi-year deployment contracts and project-based engagements
+    - generic [ref=e405]:
+      - generic [ref=e406]:
+        - generic [ref=e407]:
+          - heading "Digital Twins + Robotics for Growth" [level=2] [ref=e408]
+          - generic [ref=e409]:
+            - paragraph [ref=e410]: A Digital Twin is a virtual replica of a physical asset, process or entire system, kept current by real-time data from sensors and operational systems.
+            - paragraph [ref=e411]: Because it mirrors what is happening now, the twin can monitor performance as it happens, predict issues before they cause downtime, and test changes safely before they reach the site. Paired with robotics, the best option does not wait in a report; it is carried out.
+          - link "Explore Digital Twin Solutions" [ref=e412] [cursor=pointer]:
+            - /url: /solutions/digital-twin/uae
+        - generic [ref=e415]:
+          - img "Engineer adjusting equipment in an industrial facility" [ref=e417]
+          - generic [aria-hidden] [ref=e420]:
+            - generic [ref=e421]:
+              - paragraph [ref=e422]: Plant twin
+              - generic [ref=e423]: Live
+            - paragraph [ref=e429]: Measured, then forecast
+            - list [ref=e430]:
+              - listitem [ref=e431]:
+                - generic [ref=e432]:
+                  - generic [ref=e433]: Compressor C-3
+                  - generic [ref=e434]: Normal
+              - listitem [ref=e437]:
+                - generic [ref=e438]:
+                  - generic [ref=e439]: Line 2 conveyor
+                  - generic [ref=e440]: Watch
+              - listitem [ref=e443]:
+                - generic [ref=e444]:
+                  - generic [ref=e445]: Cooling loop
+                  - generic [ref=e446]: Action
+      - generic [ref=e449]:
+        - heading "Key capabilities" [level=3] [ref=e450]
+        - list [ref=e451]:
+          - listitem [ref=e452]:
+            - paragraph [ref=e456]: Real-Time Monitoring
+            - paragraph [ref=e457]: Live state of every asset and process in one view.
+          - listitem [ref=e458]:
+            - paragraph [ref=e462]: Predictive Maintenance
+            - paragraph [ref=e463]: Spot wear and anomalies before they become downtime.
+          - listitem [ref=e464]:
+            - paragraph [ref=e468]: Operational Optimization
+            - paragraph [ref=e469]: Tune throughput, energy and scheduling against goals.
+          - listitem [ref=e470]:
+            - paragraph [ref=e474]: Data-Driven Insights
+            - paragraph [ref=e475]: Patterns surfaced from your own operational history.
+          - listitem [ref=e476]:
+            - paragraph [ref=e481]: Performance Simulation
+            - paragraph [ref=e482]: Run what-if scenarios with no risk to production.
+          - listitem [ref=e483]:
+            - paragraph [ref=e488]: Risk Reduction
+            - paragraph [ref=e489]: Test changes virtually before they touch the site.
+          - listitem [ref=e490]:
+            - paragraph [ref=e497]: Improved Asset Lifecycle
+            - paragraph [ref=e498]: Plan repair, refurbishment and replacement on evidence.
+          - listitem [ref=e499]:
+            - paragraph [ref=e509]: Enhanced Decision Making
+            - paragraph [ref=e510]: Options ranked by predicted outcome, ready to act on.
+      - generic [ref=e511]:
+        - heading "How we deliver" [level=3] [ref=e512]
+        - list [ref=e513]:
+          - listitem [ref=e514]:
+            - generic [ref=e515]: "01"
+            - paragraph [ref=e518]: Operational Assessment
+            - paragraph [ref=e519]: We map your assets, data sources and the decisions that matter most.
+          - listitem [ref=e520]:
+            - generic [ref=e521]: "02"
+            - paragraph [ref=e524]: Digital Twin / Robotics Design
+            - paragraph [ref=e525]: We design the model and, where needed, the robotics that will act on it.
+          - listitem [ref=e526]:
+            - generic [ref=e527]: "03"
+            - paragraph [ref=e530]: Build & Integrate
+            - paragraph [ref=e531]: We connect sensors and systems and build the twin on your data.
+          - listitem [ref=e532]:
+            - generic [ref=e533]: "04"
+            - paragraph [ref=e535]: Deploy & Evolve
+            - paragraph [ref=e536]: We go live, validate against real outcomes and keep the model learning.
+    - generic [ref=e540]:
+      - generic [ref=e541]:
+        - heading "Transforming Industries with Digital Twin Solutions" [level=2] [ref=e542]
+        - paragraph [ref=e543]: "Five choices shape every system we build, and they all point to the same place: the decision your team needs to make next."
+      - generic [ref=e544]:
+        - img [aria-hidden] [ref=e546]:
+          - generic [ref=e555]: Your next
+          - generic [ref=e556]: decision
+          - generic [ref=e557]: Context
+          - generic [ref=e560]: Gen-AI
+          - generic [ref=e563]: IoT
+          - generic [ref=e566]: Custom
+          - generic [ref=e569]: Decision
+        - list [ref=e572]:
+          - listitem [ref=e573]:
+            - generic [ref=e586]:
+              - heading [level=3] [ref=e587]:
+                - button "Contextual Intelligence" [ref=e588]
+              - paragraph [ref=e589]: Models understand how your assets relate to each other, so a signal is read in the context of the whole operation.
+          - listitem [ref=e590]:
+            - generic [ref=e596]:
+              - heading [level=3] [ref=e597]:
+                - button "Gen-AI Integration" [ref=e598]
+              - paragraph [ref=e599]: Generative AI lets teams question the twin in plain language and get explained, actionable answers.
+          - listitem [ref=e600]:
+            - generic [ref=e609]:
+              - heading [level=3] [ref=e610]:
+                - button "IoT & Sensor Integration" [ref=e611]
+              - paragraph [ref=e612]: Works with IoT devices, industrial sensors, ERP, cloud platforms and existing OT systems.
+          - listitem [ref=e613]:
+            - generic [ref=e619]:
+              - heading [level=3] [ref=e620]:
+                - button "Custom Solutions" [ref=e621]
+              - paragraph [ref=e622]: Each system is designed around your operation and objectives rather than a fixed product template.
+          - listitem [ref=e623]:
+            - generic [ref=e630]:
+              - heading [level=3] [ref=e631]:
+                - button "Decision-First, Not Visibility-First" [pressed] [ref=e632]
+              - paragraph [ref=e633]: We start from the decision you need to make and build backwards. Visibility is a by-product, not the goal.
+    - generic [ref=e635]:
+      - generic [ref=e636]:
+        - heading "Real-World Intelligence. Measurable Impact." [level=2] [ref=e637]
+        - paragraph [ref=e638]: Three places where a Digital Twin changes how decisions are made, what we build for each, and the measures we agree with you up front.
+      - generic [ref=e639]:
+        - article [ref=e640]:
+          - img "Technician grinding steel with sparks flying on an industrial site" [ref=e642]
+          - generic [ref=e644]:
+            - heading "Operational Excellence in Oil & Gas" [level=3] [ref=e645]
+            - generic [ref=e646]:
+              - generic [ref=e647]:
+                - term [ref=e648]: The challenge
+                - definition [ref=e649]: Remote, high-value equipment where an unplanned stop is expensive and inspections are hard to schedule.
+              - generic [ref=e650]:
+                - term [ref=e651]: What we build
+                - definition [ref=e652]: A Digital Twin of critical rotating equipment and process units, combining sensor data with maintenance history to forecast failures and rank interventions.
+              - generic [ref=e653]:
+                - term [ref=e654]: What we measure
+                - definition [ref=e655]:
+                  - generic [ref=e656]: Unplanned downtime
+                  - generic [ref=e657]: Maintenance cost per asset
+                  - generic [ref=e658]: Safety exposure
+            - link "Explore more about Operational Excellence in Oil & Gas" [ref=e659] [cursor=pointer]:
+              - /url: /?topic=oil-gas#contact
+              - generic [ref=e660]: Explore more
+              - generic [ref=e663]: about Operational Excellence in Oil & Gas
+        - article [ref=e664]:
+          - img "Aerial view of a solar farm with rows of panels" [ref=e666]
+          - generic [ref=e668]:
+            - heading "Smart Facilities & Energy Optimization" [level=3] [ref=e669]
+            - generic [ref=e670]:
+              - generic [ref=e671]:
+                - term [ref=e672]: The challenge
+                - definition [ref=e673]: Buildings and energy assets run on fixed schedules while occupancy, weather and tariffs change by the hour.
+              - generic [ref=e674]:
+                - term [ref=e675]: What we build
+                - definition [ref=e676]: A facility twin linking HVAC, lighting, metering and occupancy, simulating set-point changes before they are applied.
+              - generic [ref=e677]:
+                - term [ref=e678]: What we measure
+                - definition [ref=e679]:
+                  - generic [ref=e680]: Energy use per area
+                  - generic [ref=e681]: Comfort compliance
+                  - generic [ref=e682]: Peak demand
+            - link "Explore more about Smart Facilities & Energy Optimization" [ref=e683] [cursor=pointer]:
+              - /url: /?topic=smart-buildings#contact
+              - generic [ref=e684]: Explore more
+              - generic [ref=e687]: about Smart Facilities & Energy Optimization
+        - article [ref=e688]:
+          - img "Close-up of precision machinery with springs, hoses and fittings" [ref=e690]
+          - generic [ref=e692]:
+            - heading "Manufacturing Process Optimization" [level=3] [ref=e693]
+            - generic [ref=e694]:
+              - generic [ref=e695]:
+                - term [ref=e696]: The challenge
+                - definition [ref=e697]: Production lines with hidden bottlenecks, variable quality and changeovers that are planned on experience alone.
+              - generic [ref=e698]:
+                - term [ref=e699]: What we build
+                - definition [ref=e700]: A line-level twin that simulates schedules and changeovers, with robotics executing the chosen plan and feeding results back.
+              - generic [ref=e701]:
+                - term [ref=e702]: What we measure
+                - definition [ref=e703]:
+                  - generic [ref=e704]: Throughput
+                  - generic [ref=e705]: First-pass yield
+                  - generic [ref=e706]: Changeover time
+            - link "Explore more about Manufacturing Process Optimization" [ref=e707] [cursor=pointer]:
+              - /url: /?topic=manufacturing#contact
+              - generic [ref=e708]: Explore more
+              - generic [ref=e711]: about Manufacturing Process Optimization
+    - region [ref=e712]:
+      - generic [ref=e722]:
+        - generic [ref=e723]:
+          - heading "Start Your Digital Twin Journey Now!" [level=2] [ref=e724]
+          - paragraph [ref=e725]: Transform operational complexity into intelligent decisions with Digital Twins, AI, IoT, and Robotics.
+        - generic [ref=e726]:
+          - link "Book a Consultation" [ref=e727] [cursor=pointer]:
+            - /url: /?topic=consultation#contact
+          - link "Contact Our Team" [ref=e730] [cursor=pointer]:
+            - /url: /#contact
+    - generic [ref=e732]:
+      - generic [ref=e733]:
+        - heading "Insights to Help Your Team Move Faster with AI" [level=2] [ref=e734]
+        - paragraph [ref=e735]: Articles & Insights from the Thinkverses team
+      - generic [ref=e736]:
+        - article [ref=e737]:
+          - link [aria-hidden] [ref=e738] [cursor=pointer]:
+            - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations
+            - generic [ref=e739]: Featured
+          - generic [ref=e743]:
+            - time [ref=e744]: March 30, 2026
+            - generic [ref=e746]: Digital Twin
+            - generic [ref=e748]: 9 min read
+          - heading [level=3] [ref=e749]:
+            - 'link "Digital Twin Technology Growing in Dubai & UAE: The Future of Smart Business Operations" [ref=e750] [cursor=pointer]':
+              - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations
+          - paragraph [ref=e751]: Dubai and the UAE are fast becoming hubs for smart infrastructure. Here is what Digital Twin technology is, why adoption is accelerating across the region, and how businesses can put it to work.
+          - 'link "Read More : Digital Twin Technology Growing in Dubai & UAE: The Future of Smart Business Operations" [ref=e752] [cursor=pointer]':
+            - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations
+            - text: Read More
+            - generic [ref=e755]: ": Digital Twin Technology Growing in Dubai & UAE: The Future of Smart Business Operations"
+        - complementary [ref=e756]:
+          - generic [ref=e757]:
+            - heading "Inside this article" [level=3] [ref=e758]
+            - list [ref=e759]:
+              - listitem [ref=e760]:
+                - link "1 Introduction" [ref=e761] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#introduction
+                  - generic [ref=e762]: "1"
+                  - generic [ref=e763]: Introduction
+              - listitem [ref=e764]:
+                - link "2 What is Digital Twin technology?" [ref=e765] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#what-is-digital-twin-technology
+                  - generic [ref=e766]: "2"
+                  - generic [ref=e767]: What is Digital Twin technology?
+              - listitem [ref=e768]:
+                - link "3 Key technologies behind Digital Twins" [ref=e769] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#key-technologies
+                  - generic [ref=e770]: "3"
+                  - generic [ref=e771]: Key technologies behind Digital Twins
+              - listitem [ref=e772]:
+                - link "4 Digital Twin vs. traditional digital model" [ref=e773] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#digital-twin-vs-digital-model
+                  - generic [ref=e774]: "4"
+                  - generic [ref=e775]: Digital Twin vs. traditional digital model
+              - listitem [ref=e776]:
+                - link "5 Why Digital Twin technology is growing in Dubai & UAE" [ref=e777] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#why-growing-in-uae
+                  - generic [ref=e778]: "5"
+                  - generic [ref=e779]: Why Digital Twin technology is growing in Dubai & UAE
+              - listitem [ref=e780]:
+                - link "6 How Digital Twin technology works" [ref=e781] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#how-it-works
+                  - generic [ref=e782]: "6"
+                  - generic [ref=e783]: How Digital Twin technology works
+              - listitem [ref=e784]:
+                - link "7 Key benefits for businesses in Dubai & UAE" [ref=e785] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations#key-benefits
+                  - generic [ref=e786]: "7"
+                  - generic [ref=e787]: Key benefits for businesses in Dubai & UAE
+            - link "Read the full article" [ref=e788] [cursor=pointer]:
+              - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations
+    - generic [ref=e793]:
+      - generic [ref=e795]:
+        - heading "Questions, answered" [level=2] [ref=e796]
+        - paragraph [ref=e797]: Digital Twins, robotics, IoT, AI, implementation and what it means for your business. If your question is not here, ask us directly.
+        - link "Ask our team" [ref=e798] [cursor=pointer]:
+          - /url: /#contact
+      - list [ref=e800]:
+        - listitem [ref=e801]:
+          - heading [level=3] [ref=e802]:
+            - button "Digital Twin Technology What is a Digital Twin, and how does Thinkverses use it?" [expanded] [ref=e803]:
+              - generic [ref=e804]:
+                - generic [ref=e805]: Digital Twin Technology
+                - generic [ref=e806]: What is a Digital Twin, and how does Thinkverses use it?
+          - region "Digital Twin Technology What is a Digital Twin, and how does Thinkverses use it?" [ref=e811]:
+            - paragraph [ref=e813]: A Digital Twin is a virtual replica of a physical asset, process or facility that stays in sync through real-time data. Thinkverses builds AI-powered operational Digital Twins that simulate scenarios and recommend decisions before any physical action is taken.
+        - listitem [ref=e814]:
+          - heading [level=3] [ref=e815]:
+            - button "Digital Twin Technology Which industries can benefit from Digital Twin solutions?" [ref=e816]:
+              - generic [ref=e817]:
+                - generic [ref=e818]: Digital Twin Technology
+                - generic [ref=e819]: Which industries can benefit from Digital Twin solutions?
+          - region "Digital Twin Technology Which industries can benefit from Digital Twin solutions?":
+            - paragraph [ref=e822]: Any operation with valuable assets and complex processes. We focus on Manufacturing, Oil & Gas, Energy & Utilities, Smart Buildings, Infrastructure and Industrial Operations.
+        - listitem [ref=e823]:
+          - heading [level=3] [ref=e824]:
+            - button "Robotics How do Robotics and Digital Twins work together?" [ref=e825]:
+              - generic [ref=e826]:
+                - generic [ref=e827]: Robotics
+                - generic [ref=e828]: How do Robotics and Digital Twins work together?
+          - region "Robotics How do Robotics and Digital Twins work together?":
+            - paragraph [ref=e831]: The Digital Twin decides and the robotics act. Decisions are tested in simulation, executed by robotic systems, and the execution data flows back to keep the model accurate.
+        - listitem [ref=e832]:
+          - heading [level=3] [ref=e833]:
+            - button "IoT Integration Can your platform integrate with our existing systems and sensors?" [ref=e834]:
+              - generic [ref=e835]:
+                - generic [ref=e836]: IoT Integration
+                - generic [ref=e837]: Can your platform integrate with our existing systems and sensors?
+          - region "IoT Integration Can your platform integrate with our existing systems and sensors?":
+            - paragraph [ref=e840]: Yes. We connect IoT devices, industrial sensors, ERP systems, cloud platforms and other operational technology you already run, so there is no need to start from scratch.
+        - listitem [ref=e841]:
+          - heading [level=3] [ref=e842]:
+            - button "AI Capabilities What role does AI play in your solutions?" [ref=e843]:
+              - generic [ref=e844]:
+                - generic [ref=e845]: AI Capabilities
+                - generic [ref=e846]: What role does AI play in your solutions?
+          - region "AI Capabilities What role does AI play in your solutions?":
+            - paragraph [ref=e849]: Machine learning forecasts asset behaviour and detects anomalies, while Generative AI lets your team ask the twin questions in plain language and get explained recommendations.
+        - listitem [ref=e850]:
+          - heading [level=3] [ref=e851]:
+            - button "Implementation How does an implementation work?" [ref=e852]:
+              - generic [ref=e853]:
+                - generic [ref=e854]: Implementation
+                - generic [ref=e855]: How does an implementation work?
+          - region "Implementation How does an implementation work?":
+            - paragraph [ref=e858]: "Four stages: operational assessment, Digital Twin or robotics design, build and integration with your data, then deployment and continuous improvement. Engagements can be project-based or multi-year."
+        - listitem [ref=e859]:
+          - heading [level=3] [ref=e860]:
+            - button "Implementation How do you keep our data secure?" [ref=e861]:
+              - generic [ref=e862]:
+                - generic [ref=e863]: Implementation
+                - generic [ref=e864]: How do you keep our data secure?
+          - region "Implementation How do you keep our data secure?":
+            - paragraph [ref=e867]: Data is encrypted at rest and in transit, access is role-based, and environments are isolated per client in line with industry-standard practice.
+        - listitem [ref=e868]:
+          - heading [level=3] [ref=e869]:
+            - button "Business Benefits How do we know it works?" [ref=e870]:
+              - generic [ref=e871]:
+                - generic [ref=e872]: Business Benefits
+                - generic [ref=e873]: How do we know it works?
+          - region "Business Benefits How do we know it works?":
+            - paragraph [ref=e876]: "Decisions are tested in simulation first, then validated against real-world outcomes. Success is tracked at three levels: decision accuracy, execution precision and business impact."
+        - listitem [ref=e877]:
+          - heading [level=3] [ref=e878]:
+            - button "Business Benefits What business benefits can we expect?" [ref=e879]:
+              - generic [ref=e880]:
+                - generic [ref=e881]: Business Benefits
+                - generic [ref=e882]: What business benefits can we expect?
+          - region "Business Benefits What business benefits can we expect?":
+            - paragraph [ref=e885]: Typical goals include predictive maintenance, better asset utilisation, remote monitoring, earlier anomaly detection, lower operating costs and progress on sustainability targets.
+    - generic [ref=e888]:
+      - img "Team mapping out a plan on a whiteboard" [ref=e892]
+      - generic [ref=e895]:
+        - heading "Transform Operations with Digital Twins, AI, and Robotics." [level=2] [ref=e896]
+        - paragraph [ref=e897]: Practical training for people who want to grow — and businesses that need to move faster.
+        - list [ref=e898]:
+          - listitem [ref=e899]: Digital Twin fundamentals
+          - listitem [ref=e901]: AI for operations
+          - listitem [ref=e903]: IoT and sensor integration
+          - listitem [ref=e905]: Robotics and automation
+        - link "Get a Custom Training Plan" [ref=e907] [cursor=pointer]:
+          - /url: /?topic=training#contact
+    - generic [ref=e912]:
+      - generic [ref=e913]:
+        - heading "Solutions across the UAE and GCC" [level=2] [ref=e914]
+        - paragraph [ref=e915]: Headquartered in Dubai, we deliver Digital Twin, robotic process automation and IoT solutions in the UAE, Bahrain, Kuwait, Oman, Qatar and Saudi Arabia.
+      - generic [ref=e916]:
+        - generic [ref=e917]:
+          - heading "Digital Twin Technology Solutions" [level=3] [ref=e923]
+          - list [ref=e924]:
+            - listitem [ref=e925]:
+              - link "Digital Twin solutions in UAE" [ref=e926] [cursor=pointer]:
+                - /url: /solutions/digital-twin/uae
+                - generic [ref=e927]:
+                  - generic [ref=e928]: Digital Twin solutions in
+                  - text: UAE
+              - list [ref=e930]:
+                - listitem [ref=e931]:
+                  - link "Digital Twin solutions in Abu Dhabi" [ref=e932] [cursor=pointer]:
+                    - /url: /solutions/digital-twin/abu-dhabi
+                    - generic [ref=e933]: Digital Twin solutions in
+                    - text: Abu Dhabi
+                - listitem [ref=e934]:
+                  - link "Digital Twin solutions in Dubai" [ref=e935] [cursor=pointer]:
+                    - /url: /solutions/digital-twin/dubai
+                    - generic [ref=e936]: Digital Twin solutions in
+                    - text: Dubai
+                - listitem [ref=e937]:
+                  - link "Digital Twin solutions in Ras Al Khaimah" [ref=e938] [cursor=pointer]:
+                    - /url: /solutions/digital-twin/ras-al-khaimah
+                    - generic [ref=e939]: Digital Twin solutions in
+                    - text: Ras Al Khaimah
+                - listitem [ref=e940]:
+                  - link "Digital Twin solutions in Sharjah" [ref=e941] [cursor=pointer]:
+                    - /url: /solutions/digital-twin/sharjah
+                    - generic [ref=e942]: Digital Twin solutions in
+                    - text: Sharjah
+            - listitem [ref=e943]:
+              - link "Digital Twin solutions in Bahrain" [ref=e944] [cursor=pointer]:
+                - /url: /solutions/digital-twin/bahrain
+                - generic [ref=e945]:
+                  - generic [ref=e946]: Digital Twin solutions in
+                  - text: Bahrain
+            - listitem [ref=e948]:
+              - link "Digital Twin solutions in Kuwait" [ref=e949] [cursor=pointer]:
+                - /url: /solutions/digital-twin/kuwait
+                - generic [ref=e950]:
+                  - generic [ref=e951]: Digital Twin solutions in
+                  - text: Kuwait
+            - listitem [ref=e953]:
+              - link "Digital Twin solutions in Oman" [ref=e954] [cursor=pointer]:
+                - /url: /solutions/digital-twin/oman
+                - generic [ref=e955]:
+                  - generic [ref=e956]: Digital Twin solutions in
+                  - text: Oman
+            - listitem [ref=e958]:
+              - link "Digital Twin solutions in Qatar" [ref=e959] [cursor=pointer]:
+                - /url: /solutions/digital-twin/qatar
+                - generic [ref=e960]:
+                  - generic [ref=e961]: Digital Twin solutions in
+                  - text: Qatar
+            - listitem [ref=e963]:
+              - link "Digital Twin solutions in Saudi Arabia" [ref=e964] [cursor=pointer]:
+                - /url: /solutions/digital-twin/saudi-arabia
+                - generic [ref=e965]:
+                  - generic [ref=e966]: Digital Twin solutions in
+                  - text: Saudi Arabia
+        - generic [ref=e968]:
+          - heading "Robotic Process Automation Solutions" [level=3] [ref=e972]
+          - list [ref=e973]:
+            - listitem [ref=e974]:
+              - link "Robotic Process Automation solutions in UAE" [ref=e975] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/uae
+                - generic [ref=e976]:
+                  - generic [ref=e977]: Robotic Process Automation solutions in
+                  - text: UAE
+              - list [ref=e979]:
+                - listitem [ref=e980]:
+                  - link "Robotic Process Automation solutions in Abu Dhabi" [ref=e981] [cursor=pointer]:
+                    - /url: /solutions/robotic-process-automation/abu-dhabi
+                    - generic [ref=e982]: Robotic Process Automation solutions in
+                    - text: Abu Dhabi
+                - listitem [ref=e983]:
+                  - link "Robotic Process Automation solutions in Dubai" [ref=e984] [cursor=pointer]:
+                    - /url: /solutions/robotic-process-automation/dubai
+                    - generic [ref=e985]: Robotic Process Automation solutions in
+                    - text: Dubai
+                - listitem [ref=e986]:
+                  - link "Robotic Process Automation solutions in Ras Al Khaimah" [ref=e987] [cursor=pointer]:
+                    - /url: /solutions/robotic-process-automation/ras-al-khaimah
+                    - generic [ref=e988]: Robotic Process Automation solutions in
+                    - text: Ras Al Khaimah
+                - listitem [ref=e989]:
+                  - link "Robotic Process Automation solutions in Sharjah" [ref=e990] [cursor=pointer]:
+                    - /url: /solutions/robotic-process-automation/sharjah
+                    - generic [ref=e991]: Robotic Process Automation solutions in
+                    - text: Sharjah
+            - listitem [ref=e992]:
+              - link "Robotic Process Automation solutions in Bahrain" [ref=e993] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/bahrain
+                - generic [ref=e994]:
+                  - generic [ref=e995]: Robotic Process Automation solutions in
+                  - text: Bahrain
+            - listitem [ref=e997]:
+              - link "Robotic Process Automation solutions in Kuwait" [ref=e998] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/kuwait
+                - generic [ref=e999]:
+                  - generic [ref=e1000]: Robotic Process Automation solutions in
+                  - text: Kuwait
+            - listitem [ref=e1002]:
+              - link "Robotic Process Automation solutions in Oman" [ref=e1003] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/oman
+                - generic [ref=e1004]:
+                  - generic [ref=e1005]: Robotic Process Automation solutions in
+                  - text: Oman
+            - listitem [ref=e1007]:
+              - link "Robotic Process Automation solutions in Qatar" [ref=e1008] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/qatar
+                - generic [ref=e1009]:
+                  - generic [ref=e1010]: Robotic Process Automation solutions in
+                  - text: Qatar
+            - listitem [ref=e1012]:
+              - link "Robotic Process Automation solutions in Saudi Arabia" [ref=e1013] [cursor=pointer]:
+                - /url: /solutions/robotic-process-automation/saudi-arabia
+                - generic [ref=e1014]:
+                  - generic [ref=e1015]: Robotic Process Automation solutions in
+                  - text: Saudi Arabia
+        - generic [ref=e1017]:
+          - heading "IoT Solutions" [level=3] [ref=e1024]
+          - list [ref=e1025]:
+            - listitem [ref=e1026]:
+              - link "IoT solutions in UAE" [ref=e1027] [cursor=pointer]:
+                - /url: /solutions/iot/uae
+                - generic [ref=e1028]:
+                  - generic [ref=e1029]: IoT solutions in
+                  - text: UAE
+              - list [ref=e1031]:
+                - listitem [ref=e1032]:
+                  - link "IoT solutions in Abu Dhabi" [ref=e1033] [cursor=pointer]:
+                    - /url: /solutions/iot/abu-dhabi
+                    - generic [ref=e1034]: IoT solutions in
+                    - text: Abu Dhabi
+                - listitem [ref=e1035]:
+                  - link "IoT solutions in Dubai" [ref=e1036] [cursor=pointer]:
+                    - /url: /solutions/iot/dubai
+                    - generic [ref=e1037]: IoT solutions in
+                    - text: Dubai
+                - listitem [ref=e1038]:
+                  - link "IoT solutions in Ras Al Khaimah" [ref=e1039] [cursor=pointer]:
+                    - /url: /solutions/iot/ras-al-khaimah
+                    - generic [ref=e1040]: IoT solutions in
+                    - text: Ras Al Khaimah
+                - listitem [ref=e1041]:
+                  - link "IoT solutions in Sharjah" [ref=e1042] [cursor=pointer]:
+                    - /url: /solutions/iot/sharjah
+                    - generic [ref=e1043]: IoT solutions in
+                    - text: Sharjah
+            - listitem [ref=e1044]:
+              - link "IoT solutions in Bahrain" [ref=e1045] [cursor=pointer]:
+                - /url: /solutions/iot/bahrain
+                - generic [ref=e1046]:
+                  - generic [ref=e1047]: IoT solutions in
+                  - text: Bahrain
+            - listitem [ref=e1049]:
+              - link "IoT solutions in Kuwait" [ref=e1050] [cursor=pointer]:
+                - /url: /solutions/iot/kuwait
+                - generic [ref=e1051]:
+                  - generic [ref=e1052]: IoT solutions in
+                  - text: Kuwait
+            - listitem [ref=e1054]:
+              - link "IoT solutions in Oman" [ref=e1055] [cursor=pointer]:
+                - /url: /solutions/iot/oman
+                - generic [ref=e1056]:
+                  - generic [ref=e1057]: IoT solutions in
+                  - text: Oman
+            - listitem [ref=e1059]:
+              - link "IoT solutions in Qatar" [ref=e1060] [cursor=pointer]:
+                - /url: /solutions/iot/qatar
+                - generic [ref=e1061]:
+                  - generic [ref=e1062]: IoT solutions in
+                  - text: Qatar
+    - generic [ref=e1066]:
+      - generic [ref=e1067]:
+        - heading "Let's Connect" [level=2] [ref=e1068]
+        - paragraph [ref=e1069]: Tell us about the operation you want to improve. We will come back with a clear next step, usually within one business day.
+        - list [ref=e1070]:
+          - listitem [ref=e1071]:
+            - link "Call us +971 525263763" [ref=e1072] [cursor=pointer]:
+              - /url: tel:+971525263763
+              - generic [ref=e1076]:
+                - generic [ref=e1077]: Call us
+                - generic [ref=e1078]: +971 525263763
+          - listitem [ref=e1079]:
+            - link "Email info@thinkverses.com" [ref=e1080] [cursor=pointer]:
+              - /url: mailto:info@thinkverses.com
+              - generic [ref=e1085]:
+                - generic [ref=e1086]: Email
+                - generic [ref=e1087]: info@thinkverses.com
+          - listitem [ref=e1088]:
+            - link "WhatsApp Message us on WhatsApp" [ref=e1089] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=971525263763
+              - generic [ref=e1093]:
+                - generic [ref=e1094]: WhatsApp
+                - generic [ref=e1095]: Message us on WhatsApp
+          - listitem [ref=e1096]:
+            - generic [ref=e1102]:
+              - generic [ref=e1103]: Headquarters
+              - generic [ref=e1104]: Dubai, UAE
+        - generic [ref=e1105]:
+          - paragraph [ref=e1106]: Follow Thinkverses
+          - list [ref=e1108]:
+            - listitem [ref=e1109]:
+              - link "Thinkverses on X (opens in a new tab)" [ref=e1110] [cursor=pointer]:
+                - /url: https://x.com/
+            - listitem [ref=e1113]:
+              - link "Thinkverses on LinkedIn (opens in a new tab)" [ref=e1114] [cursor=pointer]:
+                - /url: https://www.linkedin.com/
+            - listitem [ref=e1117]:
+              - link "Thinkverses on Facebook (opens in a new tab)" [ref=e1118] [cursor=pointer]:
+                - /url: https://www.facebook.com/
+            - listitem [ref=e1121]:
+              - link "Thinkverses on Instagram (opens in a new tab)" [ref=e1122] [cursor=pointer]:
+                - /url: https://www.instagram.com/
+            - listitem [ref=e1125]:
+              - link "Thinkverses on YouTube (opens in a new tab)" [ref=e1126] [cursor=pointer]:
+                - /url: https://www.youtube.com/
+      - generic [ref=e1129]:
+        - generic [ref=e1130]:
+          - heading "Send us a message" [level=3] [ref=e1131]
+          - generic [ref=e1132]:
+            - generic [ref=e1133]:
+              - generic [ref=e1134]: Full name (required)
+              - textbox "Full name (required)" [ref=e1135]:
+                - /placeholder: Your name
+            - generic [ref=e1136]:
+              - generic [ref=e1137]: Work email (required)
+              - textbox "Work email (required)" [ref=e1138]:
+                - /placeholder: name@company.com
+            - generic [ref=e1139]:
+              - generic [ref=e1140]: Company
+              - textbox "Company" [ref=e1141]:
+                - /placeholder: Company name
+            - generic [ref=e1142]:
+              - generic [ref=e1143]: What can we help with?
+              - combobox "What can we help with?" [ref=e1145]:
+                - option "General enquiry" [selected]
+                - option "Book a consultation"
+                - option "Digital Twin solutions"
+                - option "Robotics solutions"
+                - option "IoT and sensor integration"
+                - option "Custom training plan"
+                - option "Oil & Gas"
+                - option "Manufacturing"
+                - option "Smart Buildings & Facilities"
+                - option "Energy & Utilities"
+                - option "Logistics & Supply Chain"
+                - option "Infrastructure & Industrial Operations"
+            - generic [ref=e1146]:
+              - generic [ref=e1147]: Message (required)
+              - textbox "Message (required)" [ref=e1148]:
+                - /placeholder: The assets, process or decision you want to improve
+            - generic [aria-hidden] [ref=e1149]:
+              - text: Website
+              - textbox [ref=e1150]
+            - generic [ref=e1151]:
+              - paragraph [ref=e1152]:
+                - text: Prefer email? Write to
+                - link "info@thinkverses.com" [ref=e1153] [cursor=pointer]:
+                  - /url: mailto:info@thinkverses.com
+              - button "Send message" [ref=e1154]
+        - generic [ref=e1157]:
+          - generic [ref=e1158]:
+            - heading "Get insights in your inbox" [level=3] [ref=e1159]
+            - paragraph [ref=e1160]: New articles on Digital Twins, AI and robotics. Unsubscribe any time.
+          - generic [ref=e1161]:
+            - generic [ref=e1162]: Email address
+            - generic [ref=e1163]:
+              - textbox "Email address" [ref=e1164]:
+                - /placeholder: name@company.com
+              - button "Subscribe" [ref=e1165]
+  - contentinfo [ref=e1166]:
+    - generic [ref=e1168]:
+      - generic [ref=e1169]:
+        - generic [ref=e1170]:
+          - link "Thinkverses Solutions home" [ref=e1171] [cursor=pointer]:
+            - /url: /#top
+            - img "Thinkverses" [ref=e1172]
+          - paragraph [ref=e1173]: Digital Twin decision-intelligence systems and robotics solutions for operationally complex environments. Headquartered in Dubai, UAE.
+          - list [ref=e1175]:
+            - listitem [ref=e1176]:
+              - link "Thinkverses on X (opens in a new tab)" [ref=e1177] [cursor=pointer]:
+                - /url: https://x.com/
+            - listitem [ref=e1180]:
+              - link "Thinkverses on LinkedIn (opens in a new tab)" [ref=e1181] [cursor=pointer]:
+                - /url: https://www.linkedin.com/
+            - listitem [ref=e1184]:
+              - link "Thinkverses on Facebook (opens in a new tab)" [ref=e1185] [cursor=pointer]:
+                - /url: https://www.facebook.com/
+            - listitem [ref=e1188]:
+              - link "Thinkverses on Instagram (opens in a new tab)" [ref=e1189] [cursor=pointer]:
+                - /url: https://www.instagram.com/
+            - listitem [ref=e1192]:
+              - link "Thinkverses on YouTube (opens in a new tab)" [ref=e1193] [cursor=pointer]:
+                - /url: https://www.youtube.com/
+        - navigation "Footer" [ref=e1196]:
+          - generic [ref=e1197]:
+            - heading "Company" [level=2] [ref=e1198]
+            - list [ref=e1199]:
+              - listitem [ref=e1200]:
+                - link "Home" [ref=e1201] [cursor=pointer]:
+                  - /url: /#top
+              - listitem [ref=e1202]:
+                - link "Digital Twin Solutions" [ref=e1203] [cursor=pointer]:
+                  - /url: /#digital-twin
+              - listitem [ref=e1204]:
+                - link "Robotics Solutions" [ref=e1205] [cursor=pointer]:
+                  - /url: /#robotics
+              - listitem [ref=e1206]:
+                - link "Our Industries" [ref=e1207] [cursor=pointer]:
+                  - /url: /#industries
+              - listitem [ref=e1208]:
+                - link "About Us" [ref=e1209] [cursor=pointer]:
+                  - /url: /#about
+              - listitem [ref=e1210]:
+                - link "Articles & Insights" [ref=e1211] [cursor=pointer]:
+                  - /url: /#insights
+              - listitem [ref=e1212]:
+                - link "Contact" [ref=e1213] [cursor=pointer]:
+                  - /url: /#contact
+          - generic [ref=e1214]:
+            - heading "Solutions" [level=2] [ref=e1215]
+            - list [ref=e1216]:
+              - listitem [ref=e1217]:
+                - link "Digital Twin Technology Solutions" [ref=e1218] [cursor=pointer]:
+                  - /url: /solutions/digital-twin/uae
+              - listitem [ref=e1219]:
+                - link "Robotic Process Automation Solutions" [ref=e1220] [cursor=pointer]:
+                  - /url: /solutions/robotic-process-automation/uae
+              - listitem [ref=e1221]:
+                - link "IoT Solutions" [ref=e1222] [cursor=pointer]:
+                  - /url: /solutions/iot/uae
+              - listitem [ref=e1223]:
+                - link "Training & Consultation" [ref=e1224] [cursor=pointer]:
+                  - /url: /?topic=training#contact
+              - listitem [ref=e1225]:
+                - link "Latest article" [ref=e1226] [cursor=pointer]:
+                  - /url: /articles/digital-twin-technology-growing-in-dubai-uae-the-future-of-smart-business-operations
+          - generic [ref=e1227]:
+            - heading "Contact" [level=2] [ref=e1228]
+            - list [ref=e1229]:
+              - listitem [ref=e1230]:
+                - link "+971 525263763" [ref=e1231] [cursor=pointer]:
+                  - /url: tel:+971525263763
+              - listitem [ref=e1232]:
+                - link "info@thinkverses.com" [ref=e1233] [cursor=pointer]:
+                  - /url: mailto:info@thinkverses.com
+              - listitem [ref=e1234]: Dubai, UAE
+      - generic [ref=e1235]:
+        - paragraph [ref=e1236]: © Thinkverses Solutions LLC. All rights reserved.
+        - paragraph [ref=e1237]: Digital Twin, AI, IoT and Robotics

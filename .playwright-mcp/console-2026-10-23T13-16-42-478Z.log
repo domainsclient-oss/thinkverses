@@ -1,0 +1,464 @@
+[    1253ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[    1431ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[    2515ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollHandler scrollRef={{scrollRef:null, ...}} renderTree={{...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/#robotics" tree={[...]} params={{}} renderTree={{...}} segmentPath={[...]} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <Home>
+                        <script>
+                        <section>
+                        <Pillars>
+                          <section id="robotics" className="relative o...">
+                            <div>
+                            <div className="relative m...">
+                              <Reveal className="grid gap-6...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="grid gap-6 lg:grid-cols-12 lg:items-end"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="mt-14 grid...">
+                                <Reveal>
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className={undefined}
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <div>
+                                <Reveal delay={120}>
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className={undefined}
+                                    style={{
++                                     --reveal-delay: "120ms"
+-                                     --reveal-delay: "120ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                              <div className="mt-6 grid ...">
+                                <Reveal className="lg:col-span-4">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-4"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal delay={120} className="lg:col-span-8">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-8"
+                                    style={{
++                                     --reveal-delay: "120ms"
+-                                     --reveal-delay: "120ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                        <Industries>
+                          <section id="industries" className="relative o...">
+                            <div>
+                            <div className="relative m...">
+                              <Reveal className="grid gap-6...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="grid gap-6 lg:grid-cols-12 lg:items-end"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <ul className="mt-14 grid...">
+                                <Reveal as="li" delay={0} className="md:col-spa...">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="md:col-span-2 lg:col-span-7 lg:row-span-2"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="li" delay={90} className="lg:col-span-5">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-5"
+                                    style={{
++                                     --reveal-delay: "90ms"
+-                                     --reveal-delay: "90ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                                <Reveal as="li" delay={180} className="lg:col-span-5">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-5"
+                                    style={{
++                                     --reveal-delay: "180ms"
+-                                     --reveal-delay: "180ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                                <Reveal as="li" delay={0} className="lg:col-span-4">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-4"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="li" delay={90} className="lg:col-span-4">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-4"
+                                    style={{
++                                     --reveal-delay: "90ms"
+-                                     --reveal-delay: "90ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                                <Reveal as="li" delay={180} className="md:col-spa...">
+                                  <li
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="md:col-span-2 lg:col-span-4"
+                                    style={{
++                                     --reveal-delay: "180ms"
+-                                     --reveal-delay: "180ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                        <About>
+                          <section id="about" className="relative o...">
+                            <div className="mx-auto gr...">
+                              <Reveal className="lg:col-span-5">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="lg:col-span-5"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="relative l...">
+                                <Reveal className="relative m...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="relative ml-auto aspect-[4/3] w-full overflow-hidden rounded-[28px] lg:..."
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal delay={150} className="relative -...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="relative -mt-28 rounded-[24px] border border-line bg-white p-6 shadow-[..."
+                                    style={{
++                                     --reveal-delay: "150ms"
+-                                     --reveal-delay: "150ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                            <Reveal className="mx-auto mt...">
+                              <div
+                                ref={{current:null}}
+                                data-reveal=""
+                                className="mx-auto mt-20 max-w-[90rem] px-4 sm:px-6 lg:mt-28 lg:px-10"
++                               style={undefined}
+-                               style={{opacity:"1",transform:"none"}}
+                              >
+                        <DigitalTwin>
+                          <section id="digital-twin" className="relative o...">
+                            <div className="mx-auto ma...">
+                              <div className="grid items...">
+                                <Reveal className="lg:col-spa...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-6 xl:col-span-5"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal delay={120} className="relative l...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="relative lg:col-span-6 xl:col-span-7"
+                                    style={{
++                                     --reveal-delay: "120ms"
+-                                     --reveal-delay: "120ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                              <Reveal className="mt-24 sm:m...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="mt-24 sm:mt-28"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <Reveal className="mt-20">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="mt-20"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                        <WhyThinkverses>
+                          <section id="why" className="relative o...">
+                            <div>
+                            <div>
+                            <div className="relative m...">
+                              <Reveal className="max-w-3xl">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="max-w-3xl"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="mt-14 grid...">
+                                <Reveal className="order-2 hi...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="order-2 hidden sm:block lg:order-1"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="ul" delay={120} className="order-1 di...">
+                                  <ul
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="order-1 divide-y divide-white/10 border-y border-white/10 lg:order-2"
+                                    style={{
++                                     --reveal-delay: "120ms"
+-                                     --reveal-delay: "120ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                        <Impact>
+                          <section id="impact" className="relative b...">
+                            <div className="mx-auto ma...">
+                              <Reveal className="grid gap-6...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="grid gap-6 lg:grid-cols-12 lg:items-end"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="mt-16 spac...">
+                                <Reveal as="article" className="grid items...">
+                                  <article
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="grid items-center lg:grid-cols-12"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="article" className="grid items...">
+                                  <article
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="grid items-center lg:grid-cols-12"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="article" className="grid items...">
+                                  <article
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="grid items-center lg:grid-cols-12"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                        <CtaBand>
+                          <section aria-labelledby="cta-title" className="relative i...">
+                            <div>
+                            <svg>
+                            <div>
+                            <Reveal className="mx-auto gr...">
+                              <div
+                                ref={{current:null}}
+                                data-reveal=""
+                                className="mx-auto grid max-w-[90rem] gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:items-end..."
++                               style={undefined}
+-                               style={{opacity:"1",transform:"none"}}
+                              >
+                        <Insights>
+                          <section id="insights" className="relative b...">
+                            <div className="mx-auto ma...">
+                              <Reveal className="flex flex-...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="flex flex-col gap-4 border-b-2 border-ink pb-6 lg:flex-row lg:items-end l..."
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="mt-10 grid...">
+                                <Reveal as="article" className="group lg:c...">
+                                  <article
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="group lg:col-span-8"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal as="aside" delay={120} className="lg:col-span-4">
+                                  <aside
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="lg:col-span-4"
+                                    style={{
++                                     --reveal-delay: "120ms"
+-                                     --reveal-delay: "120ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                        <Faq>
+                          <section id="faq" className="relative b...">
+                            <div className="mx-auto gr...">
+                              <Reveal className="lg:col-span-4">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="lg:col-span-4"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <Reveal delay={100} className="lg:col-span-8">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="lg:col-span-8"
+                                  style={{
++                                   --reveal-delay: "100ms"
+-                                   --reveal-delay: "100ms"
+-                                   opacity: "1"
+-                                   transform: "none"
+                                  }}
+                                >
+                        <Training>
+                          <section id="training" className="bg-white p...">
+                            <div className="mx-auto ma...">
+                              <Reveal className="relative i...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="relative isolate grid overflow-hidden rounded-[32px] bg-ink text-white lg..."
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                        <Locations>
+                          <section id="locations" className="relative o...">
+                            <div>
+                            <div className="relative m...">
+                              <Reveal className="grid gap-6...">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="grid gap-6 lg:grid-cols-12 lg:items-end"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <div className="mt-14 grid...">
+                                <Reveal delay={0} className="bg-ink-2 p...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="bg-ink-2 p-7 sm:p-8"
++                                   style={undefined}
+-                                   style={{opacity:"1",transform:"none"}}
+                                  >
+                                <Reveal delay={90} className="bg-ink-2 p...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="bg-ink-2 p-7 sm:p-8"
+                                    style={{
++                                     --reveal-delay: "90ms"
+-                                     --reveal-delay: "90ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                                <Reveal delay={180} className="bg-ink-2 p...">
+                                  <div
+                                    ref={{current:null}}
+                                    data-reveal=""
+                                    className="bg-ink-2 p-7 sm:p-8"
+                                    style={{
++                                     --reveal-delay: "180ms"
+-                                     --reveal-delay: "180ms"
+-                                     opacity: "1"
+-                                     transform: "none"
+                                    }}
+                                  >
+                        <Contact>
+                          <section id="contact" className="relative o...">
+                            <div>
+                            <div className="relative m...">
+                              <Reveal className="lg:col-span-5">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="lg:col-span-5"
++                                 style={undefined}
+-                                 style={{opacity:"1",transform:"none"}}
+                                >
+                              <Reveal delay={120} className="lg:col-span-7">
+                                <div
+                                  ref={{current:null}}
+                                  data-reveal=""
+                                  className="lg:col-span-7"
+                                  style={{
++                                   --reveal-delay: "120ms"
+-                                   --reveal-delay: "120ms"
+-                                   opacity: "1"
+-                                   transform: "none"
+                                  }}
+                                >
+                    ...
+                  ...
+      ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:995
+[    4270ms] [WARNING] Image with src "/_next/static/media/hero-plant.3xy1r6pn6k0rt.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[    4270ms] [WARNING] Image with src "/_next/static/media/hero-plant.3xy1r6pn6k0rt.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
