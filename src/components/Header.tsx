@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { consultationHref, nav, site } from "@/lib/content";
+import { consultationHref, nav } from "@/lib/content";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -103,15 +103,6 @@ export function Header() {
           <Link href={consultationHref} onClick={() => setOpen(false)} className="btn btn-primary mt-8 w-full">
             Book a Consultation
           </Link>
-          <p className="mt-6 text-sm text-fog">
-            <a href={site.phoneHref} className="text-white">
-              {site.phone}
-            </a>
-            <span className="mx-2 text-white/30">/</span>
-            <a href={`mailto:${site.email}`} className="text-white">
-              {site.email}
-            </a>
-          </p>
         </nav>
       </div>
     </header>
