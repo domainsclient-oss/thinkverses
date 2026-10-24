@@ -91,7 +91,7 @@ export function CtaBand() {
                 </ol>
                 <Link
                   href={solutionPath("digital-twin", "uae")}
-                  className="mt-auto inline-flex items-center gap-2 pt-10 font-semibold text-cyan"
+                  className="mt-auto inline-flex items-center gap-2 pt-10 font-semibold text-white"
                 >
                   <span className="link-draw">Learn more</span> <ArrowRight size={17} aria-hidden="true" />
                 </Link>

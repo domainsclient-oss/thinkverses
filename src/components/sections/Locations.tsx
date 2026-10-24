@@ -189,7 +189,7 @@ export function Locations() {
                       aria-controls={`loc-panel-${s.key}`}
                       onClick={() => setActive(s.key)}
                       className={`flex flex-col items-center gap-1.5 rounded-xl px-2 py-3 text-center text-[0.8rem] font-semibold leading-tight transition-all duration-300 sm:text-sm ${
-                        on ? "bg-gradient-to-br from-cyan to-volt text-ink shadow-lg" : "text-white/65 hover:bg-white/5 hover:text-white"
+                        on ? "bg-white text-ink shadow-lg" : "text-white/65 hover:bg-white/5 hover:text-white"
                       }`}
                     >
                       <Icon size={18} aria-hidden="true" />
@@ -219,7 +219,7 @@ export function Locations() {
                             onMouseEnter={() => setHovered(c.slug)}
                             onFocus={() => setHovered(c.slug)}
                             onBlur={() => setHovered(null)}
-                            className="group flex items-center justify-between gap-4 py-3.5 transition-colors hover:text-cyan"
+                            className="group flex items-center justify-between gap-4 py-3.5 transition-colors hover:text-white"
                           >
                             <span className="flex items-center gap-3">
                               <span className="h-2 w-2 rounded-full bg-cyan/40 transition-colors group-hover:bg-cyan" aria-hidden="true" />
@@ -232,7 +232,7 @@ export function Locations() {
                             </span>
                             <ArrowUpRight
                               size={17}
-                              className="shrink-0 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan"
+                              className="shrink-0 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
                               aria-hidden="true"
                             />
                           </Link>
@@ -247,7 +247,7 @@ export function Locations() {
                                       onMouseEnter={() => setHovered(e.slug)}
                                       onFocus={() => setHovered(e.slug)}
                                       onBlur={() => setHovered(null)}
-                                      className="inline-block rounded-full border border-white/15 px-3 py-1 text-sm text-white/70 transition-colors hover:border-cyan hover:bg-cyan/10 hover:text-cyan"
+                                      className="inline-block rounded-full border border-white/15 px-3 py-1 text-sm text-white/70 transition-colors hover:border-white hover:bg-white/10 hover:text-white"
                                     >
                                       <span className="sr-only">{s.title} in </span>
                                       {e.name}

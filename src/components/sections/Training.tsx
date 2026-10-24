@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "../Reveal";
-import trainingImg from "../../../public/images/training.jpg";
+import { BackgroundVideo } from "../BackgroundVideo";
 
 const tracks = ["Digital Twin fundamentals", "AI for operations", "IoT and sensor integration", "Robotics and automation"];
 
@@ -11,21 +10,27 @@ export function Training() {
     <section id="training" className="bg-white pb-24 sm:pb-32">
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="relative isolate grid overflow-hidden rounded-[32px] bg-ink text-white lg:grid-cols-2">
-          <div className="absolute inset-0 -z-10 bg-blueprint opacity-70" aria-hidden="true" />
-          <div className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-violet/30 blur-[100px]" aria-hidden="true" />
-          <div className="relative min-h-[18rem] lg:order-2 lg:min-h-full">
-            <Image src={trainingImg} alt="Team mapping out a plan on a whiteboard" fill placeholder="blur" sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-ink/35" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent lg:bg-gradient-to-r" />
+          {/* Video layer, dimmed most where the copy sits */}
+          <div className="absolute inset-0 -z-10" aria-hidden="true">
+            {/* Mobile: video fills the top window; desktop: whole card */}
+            <div className="absolute inset-x-0 top-0 h-[22rem] sm:h-[26rem] lg:inset-0 lg:h-auto">
+              <BackgroundVideo name="training" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/40 to-ink lg:bg-gradient-to-r lg:from-ink/90 lg:via-ink/60 lg:to-ink/10" />
+            </div>
+            <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-violet/25 blur-[100px]" />
           </div>
+
+          {/* Open window onto the footage */}
+          <div className="min-h-[13rem] sm:min-h-[16rem] lg:order-2 lg:min-h-full" aria-hidden="true" />
+
           <div className="p-7 sm:p-12 lg:p-16">
             <h2 className="display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)]">Transform Operations with Digital Twins, AI, and Robotics.</h2>
-            <p className="lede mt-6 text-white/70">
+            <p className="lede mt-6 text-white/75">
               Practical training for people who want to grow — and businesses that need to move faster.
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {tracks.map((t) => (
-                <li key={t} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-[0.95rem]">
+                <li key={t} className="flex items-center gap-3 rounded-xl border border-white/10 bg-ink/40 px-4 py-3 text-[0.95rem] backdrop-blur-sm">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-cyan" aria-hidden="true" />
                   {t}
                 </li>

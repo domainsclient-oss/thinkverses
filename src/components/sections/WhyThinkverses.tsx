@@ -92,7 +92,7 @@ export function WhyThinkverses() {
                   className={`relative flex gap-5 py-6 pl-5 [&:has(:focus-visible)]:outline-2 [&:has(:focus-visible)]:outline-cyan [&:has(:focus-visible)]:outline transition-colors duration-300 ${on ? "bg-white/[0.04]" : ""}`}
                 >
                   <span className={`absolute inset-y-0 left-0 w-0.5 transition-colors duration-300 ${on ? "bg-cyan" : "bg-transparent"}`} aria-hidden="true" />
-                  <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border transition-colors duration-300 ${on ? "border-cyan bg-cyan text-ink" : "border-white/20 text-cyan"}`}>
+                  <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border transition-colors duration-300 ${on ? "border-white bg-white text-ink" : "border-white/20 text-cyan"}`}>
                     <Icon size={19} aria-hidden="true" />
                   </span>
                   <div>

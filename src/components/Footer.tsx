@@ -82,11 +82,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
-            <p>© Thinkverses Solutions LLC. All rights reserved.</p>
-            <span className="hidden text-white/20 sm:inline" aria-hidden="true">|</span>
-            <p>Digital Twin, AI, IoT and Robotics</p>
-          </div>
+          <p>© Thinkverses Solutions LLC. All rights reserved.</p>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {legalLinks.map((l) => (

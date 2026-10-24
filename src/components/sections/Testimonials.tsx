@@ -10,7 +10,7 @@ const testimonials = [
       "I came in skeptical. I left with a clear plan for where AI fits in our daily processes. My team is already working differently because of what I brought back from this training.",
     name: "John Smith",
     role: "Operations Manager",
-    tone: "from-cyan to-volt",
+    tone: "from-ink to-volt",
   },
   {
     quote:
@@ -50,7 +50,7 @@ function splitQuote(q: string) {
 function Card({ t, index }: { t: (typeof testimonials)[number]; index: number }) {
   const [lead, rest] = splitQuote(t.quote);
   return (
-    <figure className="group relative flex h-full flex-col rounded-[28px] border border-line bg-white p-8 shadow-[0_24px_50px_-36px_rgba(10,22,48,0.3)] transition-colors duration-500 hover:border-cyan/50 sm:p-10">
+    <figure className="group relative flex h-full flex-col rounded-[28px] border border-line bg-white p-8 shadow-[0_24px_50px_-36px_rgba(10,22,48,0.3)] transition-colors duration-500 hover:border-ink/50 sm:p-10">
       <div className="flex items-center justify-between">
         <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ink" aria-hidden="true">
           <svg viewBox="0 0 64 48" className="h-5 w-7">
@@ -203,7 +203,7 @@ function Carousel() {
           <button
             type="button"
             onClick={() => goTo(active + 1)}
-            className="grid h-12 w-12 place-items-center rounded-full bg-ink text-white transition-colors hover:bg-cyan hover:text-ink"
+            className="grid h-12 w-12 place-items-center rounded-full bg-ink text-white ring-1 ring-ink transition-colors hover:bg-white hover:text-ink"
             aria-label="Next testimonial"
           >
             <ChevronRight size={19} aria-hidden="true" />

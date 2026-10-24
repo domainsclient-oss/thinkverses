@@ -17,7 +17,7 @@ const paths: Record<Name, string> = {
 export function SocialLinks({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const base =
     tone === "dark"
-      ? "border-white/15 text-fog hover:border-cyan hover:text-cyan"
+      ? "border-white/15 text-fog hover:border-white hover:text-white"
       : "border-line text-slate hover:border-ink hover:text-ink bg-white";
   return (
     <ul className="flex flex-wrap gap-2.5">

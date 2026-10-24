@@ -39,7 +39,7 @@ export function Industries() {
             <Reveal as="li" key={ind.slug} delay={(i % 3) * 90} className={layout[i]}>
               <Link
                 href={`/?topic=${ind.slug}#contact`}
-                className="group relative isolate flex h-full flex-col justify-end overflow-hidden rounded-[20px] border border-line p-6 text-white shadow-[0_24px_48px_-32px_rgba(10,22,48,0.45)] transition-[border-color,box-shadow] duration-500 hover:border-cyan/60 hover:shadow-[0_32px_60px_-30px_rgba(10,22,48,0.55)] sm:p-7"
+                className="group relative isolate flex h-full flex-col justify-end overflow-hidden rounded-[20px] border border-line p-6 text-white shadow-[0_24px_48px_-32px_rgba(10,22,48,0.45)] transition-[border-color,box-shadow] duration-500 hover:border-ink/60 hover:shadow-[0_32px_60px_-30px_rgba(10,22,48,0.55)] sm:p-7"
               >
                 <Image
                   src={ind.image}
@@ -50,7 +50,7 @@ export function Industries() {
                 />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/60 to-ink/5" />
                 <div className="absolute inset-0 -z-10 bg-volt/0 transition-colors duration-500 group-hover:bg-volt/10" />
-                <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-ink/40 text-white backdrop-blur transition-all duration-500 group-hover:border-cyan group-hover:bg-cyan group-hover:text-ink">
+                <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-ink/40 text-white backdrop-blur transition-all duration-500 group-hover:border-white group-hover:bg-white group-hover:text-ink">
                   <ArrowUpRight size={18} aria-hidden="true" />
                 </span>
                 <h3 className={`display ${i === 0 ? "h-section" : "h-sub"}`}>{ind.name}</h3>

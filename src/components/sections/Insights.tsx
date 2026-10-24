@@ -133,7 +133,7 @@ export function Insights() {
                         {p.section.title}
                       </Link>
                     </h3>
-                    <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-white/60 transition-colors group-hover:text-cyan">
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-white/60 transition-colors group-hover:text-white">
                       Read chapter <ArrowUpRight size={15} aria-hidden="true" />
                     </span>
                   </div>

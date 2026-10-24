@@ -84,7 +84,7 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="mt-8 rounded-2xl border border-cyan/40 bg-cyan/10 p-6" role="status">
+      <div className="mt-8 rounded-2xl border border-ink/30 bg-ink/5 p-6" role="status">
         <CheckCircle2 className="text-cyan-deep" aria-hidden="true" />
         <p className="mt-3 text-lg font-semibold">Message sent</p>
         <p className="mt-1 text-slate">Thanks. Our team will reply to your email shortly.</p>

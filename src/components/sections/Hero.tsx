@@ -1,33 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Compass, Database, Waypoints } from "lucide-react";
 import { TwinScene } from "../TwinScene";
+import { HeroBackdrop } from "../HeroBackdrop";
+import { BackgroundVideo } from "../BackgroundVideo";
 import { valueProps } from "@/lib/content";
-import heroImg from "../../../public/images/hero-plant.jpg";
 
 const propIcons = [Waypoints, Compass, Database];
 
 export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
-      {/* Physical layer: the plant photo, cut on a diagonal */}
-      <div className="absolute inset-y-0 right-0 -z-10 hidden w-[60%] lg:block [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]">
-        <div className="duotone-wrap h-full w-full">
-          <Image
-            src={heroImg}
-            alt=""
-            fill
-            preload
-            sizes="60vw"
-            placeholder="blur"
-            className="duotone object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent" />
+      {/* Video layer: looping digital-twin footage, dimmed for legibility */}
+      <div className="absolute inset-0 -z-30 overflow-hidden" aria-hidden="true">
+        <BackgroundVideo name="hero" />
+        <div className="absolute inset-0 bg-ink/60 lg:bg-ink/40" />
       </div>
 
-      <div className="absolute inset-0 -z-20 bg-blueprint [mask-image:radial-gradient(ellipse_at_30%_40%,black,transparent_75%)]" />
-      <div className="absolute -left-40 top-1/3 -z-20 h-[36rem] w-[36rem] rounded-full bg-volt/20 blur-[140px]" />
+      <HeroBackdrop minimal />
 
       <div className="mx-auto grid min-h-[100svh] max-w-[90rem] items-center gap-10 px-4 pb-16 pt-32 sm:px-6 lg:grid-cols-12 lg:px-10 lg:pb-16 lg:pt-32">
         <div className="relative z-10 lg:col-span-7">
@@ -73,9 +62,6 @@ export function Hero() {
         {/* Twin layer: overlaps the photo edge on desktop, sits on its own panel on mobile */}
         <div className="relative lg:col-span-5">
           <div className="relative mx-auto max-w-[40rem] overflow-hidden rounded-[28px] border border-white/10 lg:overflow-visible lg:rounded-none lg:border-0">
-            <div className="duotone-wrap absolute inset-0 lg:hidden">
-              <Image src={heroImg} alt="" fill sizes="100vw" className="duotone object-cover" />
-            </div>
             <TwinScene className="relative w-full drop-shadow-[0_0_30px_rgba(31,200,232,0.25)] lg:origin-center lg:scale-[1.3]" />
 
             <div className="hero-rise absolute -left-[6%] top-[2%] hidden max-w-[15rem] rounded-2xl border border-white/15 bg-ink/70 p-4 shadow-2xl backdrop-blur-md sm:block" style={{ "--d": "1300ms" } as React.CSSProperties}>

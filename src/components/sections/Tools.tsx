@@ -81,7 +81,7 @@ function ToolOrbit() {
     >
       <div className="absolute inset-0 rounded-full border border-dashed border-line" />
       <div className="absolute inset-[18%] rounded-full border border-line" />
-      <div className="absolute inset-[36%] rounded-full bg-gradient-to-br from-cyan/25 via-volt/15 to-violet/25 blur-2xl" />
+      <div className="absolute inset-[36%] rounded-full bg-gradient-to-br from-ink/20 via-volt/15 to-violet/25 blur-2xl" />
       <div className="absolute inset-[38%] grid place-items-center rounded-full bg-ink text-center text-white shadow-[0_20px_50px_-20px_rgba(10,22,48,0.7)]">
         <span className="px-2 font-display text-[0.8rem] font-bold leading-tight [font-stretch:115%] sm:text-sm">
           Thinkverses
@@ -126,7 +126,7 @@ export function Tools() {
         aria-hidden="true"
       />
       <div
-        className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-cyan/10 blur-[120px]"
+        className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-ink/5 blur-[120px]"
         aria-hidden="true"
       />
       <div
@@ -163,10 +163,10 @@ export function Tools() {
                 delay={i * 90}
                 className={`group list-none ${t.span}`}
               >
-                <div className="h-full rounded-[24px] bg-gradient-to-br from-line to-line p-px transition-all duration-500 group-hover:-translate-y-1 group-hover:from-cyan group-hover:to-violet group-hover:shadow-[0_30px_60px_-30px_rgba(10,22,48,0.4)]">
+                <div className="h-full rounded-[24px] bg-gradient-to-br from-line to-line p-px transition-all duration-500 group-hover:-translate-y-1 group-hover:from-ink group-hover:to-violet group-hover:shadow-[0_30px_60px_-30px_rgba(10,22,48,0.4)]">
                   <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-white p-6 sm:p-7">
                     <div
-                      className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan/0 blur-2xl transition-colors duration-500 group-hover:bg-cyan/20"
+                      className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-ink/0 blur-2xl transition-colors duration-500 group-hover:bg-ink/10"
                       aria-hidden="true"
                     />
                     <div className="relative flex items-start justify-between gap-4">

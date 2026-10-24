@@ -145,21 +145,21 @@ body {
   transform: translateY(1px);
 }
 .btn-primary {
-  background: var(--color-cyan);
+  background: #ffffff;
   color: var(--color-ink);
-  box-shadow: 0 8px 24px -10px rgba(31, 200, 232, 0.7);
+  box-shadow: 0 8px 24px -12px rgba(255, 255, 255, 0.45);
 }
 .btn-primary:hover {
-  background: #5ad9f0;
-  box-shadow: 0 12px 30px -10px rgba(31, 200, 232, 0.85);
+  background: #e8eef7;
+  box-shadow: 0 12px 30px -12px rgba(255, 255, 255, 0.55);
 }
 .btn-ghost {
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: #fff;
 }
 .btn-ghost:hover {
-  border-color: var(--color-cyan);
-  background: rgba(31, 200, 232, 0.08);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
 }
 .btn-dark {
   background: var(--color-ink);
@@ -237,6 +237,67 @@ body {
     stroke-dashoffset: -40;
   }
 }
+/* Hero backdrop: slow, layered ambient motion */
+@keyframes hero-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18%, 10%, 0) scale(1.12);
+  }
+}
+@keyframes hero-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-14%, 16%, 0) scale(0.92);
+  }
+}
+@keyframes hero-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-20%, -12%, 0);
+  }
+}
+@keyframes hero-grid-pan {
+  to {
+    transform: translate3d(48px, 48px, 0);
+  }
+}
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(var(--fx), var(--fy), 0);
+  }
+}
+@keyframes hero-twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes hero-pulse {
+  to {
+    stroke-dashoffset: -96;
+  }
+}
+@keyframes hero-dust {
+  to {
+    transform: translate3d(0, -220px, 0);
+  }
+}
 @keyframes spin-slow {
   to {
     transform: rotate(360deg);
@@ -258,6 +319,37 @@ body {
   }
   .twin-flow {
     animation: flow 2.2s linear infinite;
+  }
+  .hero-drift-a {
+    animation: hero-drift-a 48s ease-in-out infinite;
+  }
+  .hero-drift-b {
+    animation: hero-drift-b 62s ease-in-out infinite;
+  }
+  .hero-drift-c {
+    animation: hero-drift-c 72s ease-in-out infinite;
+  }
+  .hero-grid-pan {
+    animation: hero-grid-pan 26s linear infinite;
+  }
+  .hero-float-slow {
+    --fx: -1.5%;
+    --fy: 1.2%;
+    animation: hero-float 38s ease-in-out infinite;
+  }
+  .hero-float-fast {
+    --fx: 2.4%;
+    --fy: -1.8%;
+    animation: hero-float 22s ease-in-out infinite;
+  }
+  .hero-twinkle {
+    animation: hero-twinkle 6s ease-in-out infinite;
+  }
+  .hero-pulse {
+    animation: hero-pulse 8s linear infinite;
+  }
+  .hero-dust {
+    animation: hero-dust 40s linear infinite;
   }
   .spin-slow {
     animation: spin-slow 60s linear infinite;
