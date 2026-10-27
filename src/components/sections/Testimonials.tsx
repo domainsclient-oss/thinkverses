@@ -237,7 +237,7 @@ export function Testimonials() {
             </p>
             <h2 id="testimonials-title" className="display h-section">
               What Our{" "}
-              <span className="bg-gradient-to-r from-cyan-deep via-volt to-[#0056a7] bg-clip-text text-transparent">Learners</span> Say
+              <span className="text-[#0056A7]">Learners</span> Say
             </h2>
             <p className="lede mt-6 text-slate">
               Real outcomes from professionals who turned AI training into new ways of working, leading and deciding.

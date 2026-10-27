@@ -43,7 +43,7 @@ export function Insights() {
             </p>
             <h2 className="display h-section max-w-4xl">
               Insights to Help Your Team Move{" "}
-              <span className="bg-gradient-to-r from-cyan via-[#7fa0ff] to-[#0056a7] bg-clip-text text-transparent">
+              <span className="text-[#0056A7]">
                 Faster with AI
               </span>
             </h2>
