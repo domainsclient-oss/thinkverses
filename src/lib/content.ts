@@ -12,7 +12,7 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "/#top" },
+  { label: "Home", href: "/" },
   { label: "Digital Twin Solutions", href: "/#digital-twin" },
   { label: "Robotics Solutions", href: "/#robotics" },
   { label: "Our Industries", href: "/#industries" },
