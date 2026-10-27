@@ -16,16 +16,16 @@ function IntegrationVisual() {
     <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
       {sources.map((s) => (
         <g key={s.label}>
-          <path d={`M86 ${s.y} C150 ${s.y} 170 80 222 80`} fill="none" stroke="#1fc8e8" strokeOpacity="0.6" strokeWidth="1.5" strokeDasharray="4 5" className="twin-flow" />
+          <path d={`M86 ${s.y} C150 ${s.y} 170 80 222 80`} fill="none" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1.5" strokeDasharray="4 5" className="twin-flow" />
           <rect x="22" y={s.y - 13} width="64" height="26" rx="13" fill="#0f1f40" stroke="#ffffff" strokeOpacity="0.15" />
           <text x="54" y={s.y + 4} textAnchor="middle" fontSize="11" fill="#ffffff" fillOpacity="0.75">
             {s.label}
           </text>
         </g>
       ))}
-      <circle cx="252" cy="80" r="34" fill="#1fc8e8" fillOpacity="0.08" />
-      <circle cx="252" cy="80" r="22" fill="#1fc8e8" fillOpacity="0.18" stroke="#1fc8e8" strokeOpacity="0.7" />
-      <circle cx="252" cy="80" r="6" fill="#1fc8e8" />
+      <circle cx="252" cy="80" r="34" fill="#ffffff" fillOpacity="0.08" />
+      <circle cx="252" cy="80" r="22" fill="#ffffff" fillOpacity="0.18" stroke="#ffffff" strokeOpacity="0.7" />
+      <circle cx="252" cy="80" r="6" fill="#ffffff" />
     </svg>
   );
 }
@@ -35,14 +35,14 @@ function ForecastVisual() {
     <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
       <defs>
         <linearGradient id="about-fc" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor="#1fc8e8" stopOpacity="0.35" />
-          <stop offset="1" stopColor="#1fc8e8" stopOpacity="0" />
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.35" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
         </linearGradient>
       </defs>
       <line x1="190" y1="18" x2="190" y2="142" stroke="#ffffff" strokeOpacity="0.15" strokeDasharray="3 4" />
       <text x="196" y="28" fontSize="10" fill="#ffffff" fillOpacity="0.45">forecast</text>
       <path d="M20 112 C50 104 70 70 100 78 S150 112 190 86 V142 H20z" fill="url(#about-fc)" />
-      <path d="M20 112 C50 104 70 70 100 78 S150 112 190 86" fill="none" stroke="#1fc8e8" strokeWidth="2.2" />
+      <path d="M20 112 C50 104 70 70 100 78 S150 112 190 86" fill="none" stroke="#ffffff" strokeWidth="2.2" />
       <path d="M190 86 C220 66 245 92 270 58 S295 40 304 36" fill="none" stroke="#7c5cff" strokeWidth="2.2" strokeDasharray="5 5" className="twin-flow" />
       <circle cx="270" cy="58" r="11" fill="#7c5cff" fillOpacity="0.2" />
       <circle cx="270" cy="58" r="4.5" fill="#a996ff" />
@@ -56,7 +56,7 @@ function OptimizeVisual() {
     <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
       <defs>
         <linearGradient id="about-bar" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor="#1fc8e8" />
+          <stop offset="0" stopColor="#ffffff" />
           <stop offset="1" stopColor="#3a66ff" stopOpacity="0.4" />
         </linearGradient>
       </defs>

@@ -45,7 +45,7 @@ export function Faq() {
                     >
                       <span className="flex-1">
                         <span className="block text-sm text-cyan-deep">{f.group}</span>
-                        <span className="mt-1 block font-display text-[1.15rem] font-semibold leading-snug [font-stretch:108%] transition-colors group-hover:text-volt sm:text-[1.25rem]">
+                        <span className="mt-1 block font-display text-[1.15rem] font-semibold leading-snug [font-stretch:108%] transition-colors group-hover:text-cyan-deep sm:text-[1.25rem]">
                           {f.q}
                         </span>
                       </span>

@@ -25,9 +25,9 @@ export function CtaBand() {
       <div className="absolute inset-0 -z-10 bg-blueprint" aria-hidden="true" />
       <svg className="absolute -right-40 top-24 -z-10 h-[56rem] w-[56rem] opacity-70" viewBox="0 0 800 800" aria-hidden="true">
         {[380, 310, 240, 170, 100].map((r, i) => (
-          <circle key={r} cx="400" cy="400" r={r} fill="none" stroke={i % 2 ? "#7c5cff" : "#1fc8e8"} strokeOpacity={0.12 + i * 0.05} strokeDasharray={i % 2 ? "2 10" : undefined} />
+          <circle key={r} cx="400" cy="400" r={r} fill="none" stroke={i % 2 ? "#7c5cff" : "#ffffff"} strokeOpacity={0.12 + i * 0.05} strokeDasharray={i % 2 ? "2 10" : undefined} />
         ))}
-        <circle cx="400" cy="400" r="40" fill="#1fc8e8" fillOpacity="0.25" />
+        <circle cx="400" cy="400" r="40" fill="#ffffff" fillOpacity="0.25" />
       </svg>
       <div className="absolute -left-20 bottom-0 -z-10 h-80 w-[40rem] rounded-full bg-volt/25 blur-[120px]" aria-hidden="true" />
 
@@ -70,7 +70,7 @@ export function CtaBand() {
           </Reveal>
 
           <Reveal delay={120} className="lg:col-span-5">
-            <div className="h-full rounded-[28px] bg-gradient-to-br from-cyan via-volt to-violet p-px shadow-[0_40px_80px_-40px_rgba(31,200,232,0.5)]">
+            <div className="h-full rounded-[28px] bg-gradient-to-br from-cyan via-volt to-violet p-px shadow-[0_40px_80px_-40px_rgba(255, 255, 255,0.5)]">
               <div className="flex h-full flex-col rounded-[27px] bg-ink-2 p-6 sm:p-10">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#a996ff]">Early adopter program</p>

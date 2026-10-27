@@ -18,11 +18,11 @@ function Box({ x, y, w, d, h, accent = false }: { x: number; y: number; w: numbe
   const top = [iso(x, y, h), iso(x + w, y, h), iso(x + w, y + d, h), iso(x, y + d, h)];
   const right = [iso(x + w, y, 0), iso(x + w, y + d, 0), iso(x + w, y + d, h), iso(x + w, y, h)];
   const left = [iso(x, y + d, 0), iso(x + w, y + d, 0), iso(x + w, y + d, h), iso(x, y + d, h)];
-  const stroke = accent ? "#7c5cff" : "#1fc8e8";
+  const stroke = accent ? "#7c5cff" : "#ffffff";
   return (
     <g stroke={stroke} strokeWidth="1.2" strokeLinejoin="round">
-      <polygon points={pts(top)} fill={accent ? "rgba(124,92,255,0.18)" : "rgba(31,200,232,0.14)"} />
-      <polygon points={pts(right)} fill="rgba(31,200,232,0.06)" />
+      <polygon points={pts(top)} fill={accent ? "rgba(124,92,255,0.18)" : "rgba(255, 255, 255,0.14)"} />
+      <polygon points={pts(right)} fill="rgba(255, 255, 255,0.06)" />
       <polygon points={pts(left)} fill="rgba(58,102,255,0.1)" />
     </g>
   );
@@ -34,19 +34,19 @@ function Tank({ cx, cy, r, h, bands = 3 }: { cx: number; cy: number; r: number; 
   const [bx, by] = iso(cx, cy, 0);
   const [, ty] = iso(cx, cy, h);
   return (
-    <g stroke="#1fc8e8" strokeWidth="1.2" fill="none">
+    <g stroke="#ffffff" strokeWidth="1.2" fill="none">
       <path d={`M${bx - rx},${by} L${bx - rx},${ty} M${bx + rx},${by} L${bx + rx},${ty}`} />
       <ellipse cx={bx} cy={by} rx={rx} ry={ry} strokeOpacity="0.45" />
       {Array.from({ length: bands }, (_, i) => {
         const yy = by - ((i + 1) * (by - ty)) / (bands + 1);
         return <path key={i} d={`M${bx - rx},${yy} A${rx},${ry} 0 0 0 ${bx + rx},${yy}`} strokeOpacity="0.35" />;
       })}
-      <ellipse cx={bx} cy={ty} rx={rx} ry={ry} fill="rgba(31,200,232,0.16)" />
+      <ellipse cx={bx} cy={ty} rx={rx} ry={ry} fill="rgba(255, 255, 255,0.16)" />
     </g>
   );
 }
 
-function Node({ at, d = 0, color = "#1fc8e8" }: { at: P; d?: number; color?: string }) {
+function Node({ at, d = 0, color = "#ffffff" }: { at: P; d?: number; color?: string }) {
   return (
     <g>
       <circle cx={at[0]} cy={at[1]} r="7" fill="none" stroke={color} strokeWidth="1.5" className="pulse" style={{ "--d": `${d}ms` } as React.CSSProperties} />
@@ -74,14 +74,14 @@ export function TwinScene({ className = "" }: { className?: string }) {
     <svg viewBox="0 0 720 560" className={className} role="img" aria-label="Wireframe digital twin of an industrial plant with live sensor points">
       <defs>
         <radialGradient id="twin-glow" cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stopColor="#1fc8e8" stopOpacity="0.28" />
-          <stop offset="100%" stopColor="#1fc8e8" stopOpacity="0" />
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
         </radialGradient>
       </defs>
       <ellipse cx="360" cy="280" rx="340" ry="220" fill="url(#twin-glow)" />
 
-      <g stroke="#1fc8e8" strokeOpacity="0.16" strokeWidth="1">{grid}</g>
-      <polygon points={pts([iso(0, 0), iso(10, 0), iso(10, 10), iso(0, 10)])} fill="none" stroke="#1fc8e8" strokeOpacity="0.5" />
+      <g stroke="#ffffff" strokeOpacity="0.16" strokeWidth="1">{grid}</g>
+      <polygon points={pts([iso(0, 0), iso(10, 0), iso(10, 10), iso(0, 10)])} fill="none" stroke="#ffffff" strokeOpacity="0.5" />
 
       <g className="twin-draw">
         <Box x={0.8} y={0.8} w={2.8} d={2.4} h={2.6} />
@@ -91,8 +91,8 @@ export function TwinScene({ className = "" }: { className?: string }) {
         <Box x={1.2} y={6.4} w={7.4} d={1} h={0.6} />
         <Box x={4.4} y={6.5} w={0.8} d={0.8} h={1.3} accent />
         <Box x={6.6} y={6.5} w={0.8} d={0.8} h={1.3} accent />
-        <polyline points={pipe} fill="none" stroke="#1fc8e8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <polyline points={pipe2} fill="none" stroke="#1fc8e8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points={pipe} fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points={pipe2} fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <polyline points={arm} fill="none" stroke="#7c5cff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 

@@ -21,7 +21,7 @@ export function Industries() {
       <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3.5 py-1.5 text-sm font-medium text-cyan-deep">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-deep/30 bg-cyan-deep/5 px-3.5 py-1.5 text-sm font-medium text-cyan-deep">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-deep" aria-hidden="true" />
               Industries
             </p>

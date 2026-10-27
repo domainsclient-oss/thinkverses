@@ -120,7 +120,7 @@ export function HeroBackdrop({ minimal = false }: { minimal?: boolean }) {
               <Network net={far} tone="#7fa0ff" pulses={false} />
             </div>
             <div className="hero-float-fast absolute -inset-[6%]">
-              <Network net={near} tone="#1fc8e8" pulses />
+              <Network net={near} tone="#ffffff" pulses />
             </div>
           </div>
         </>
@@ -128,7 +128,7 @@ export function HeroBackdrop({ minimal = false }: { minimal?: boolean }) {
 
       {/* 5 · Fine dust rising very slowly */}
       <div className="absolute inset-0 overflow-hidden opacity-70">
-        <div className="hero-dust absolute inset-x-0 -bottom-[220px] top-0 bg-[radial-gradient(rgba(169,182,204,0.35)_1px,transparent_1.5px),radial-gradient(rgba(31,200,232,0.3)_1px,transparent_1.5px)] [background-position:0_0,110px_70px] [background-size:220px_220px,220px_220px]" />
+        <div className="hero-dust absolute inset-x-0 -bottom-[220px] top-0 bg-[radial-gradient(rgba(169,182,204,0.35)_1px,transparent_1.5px),radial-gradient(rgba(255, 255, 255,0.3)_1px,transparent_1.5px)] [background-position:0_0,110px_70px] [background-size:220px_220px,220px_220px]" />
       </div>
 
       {/* Readability scrim behind the copy */}

@@ -43,11 +43,11 @@ function RegionMap({ available, hovered }: { available: string[]; hovered: strin
           <circle cx="2" cy="2" r="1.3" fill="#ffffff" fillOpacity="0.09" />
         </pattern>
         <radialGradient id="loc-hub" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stopColor="#1fc8e8" stopOpacity="0.35" />
-          <stop offset="1" stopColor="#1fc8e8" stopOpacity="0" />
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.35" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="loc-arc" x1="0" x2="1">
-          <stop offset="0" stopColor="#1fc8e8" />
+          <stop offset="0" stopColor="#ffffff" />
           <stop offset="1" stopColor="#7c5cff" />
         </linearGradient>
       </defs>
@@ -80,7 +80,7 @@ function RegionMap({ available, hovered }: { available: string[]; hovered: strin
           cx={p.x}
           cy={p.y}
           r={hovered === slug ? 6 : 3.5}
-          fill={hovered === slug ? "#1fc8e8" : "#a9b6cc"}
+          fill={hovered === slug ? "#ffffff" : "#a9b6cc"}
           style={{ transition: "r .3s, fill .3s" }}
         />
       ))}
@@ -93,15 +93,15 @@ function RegionMap({ available, hovered }: { available: string[]; hovered: strin
         return (
           <g key={c.slug} style={{ opacity: on ? 1 : 0.3, transition: "opacity .4s" }}>
             {on && (
-              <circle cx={p.x} cy={p.y} r="10" fill="#1fc8e8" fillOpacity="0.4" className="pulse" style={{ ["--d" as string]: `${(p.x % 7) * 300}ms` }} />
+              <circle cx={p.x} cy={p.y} r="10" fill="#ffffff" fillOpacity="0.4" className="pulse" style={{ ["--d" as string]: `${(p.x % 7) * 300}ms` }} />
             )}
             {!isHub && (
               <circle
                 cx={p.x}
                 cy={p.y}
                 r={hot ? 10 : 7}
-                fill={hot ? "#1fc8e8" : "#0f1f40"}
-                stroke="#1fc8e8"
+                fill={hot ? "#ffffff" : "#0f1f40"}
+                stroke="#ffffff"
                 strokeWidth="2"
                 style={{ transition: "r .3s, fill .3s" }}
               />
@@ -124,8 +124,8 @@ function RegionMap({ available, hovered }: { available: string[]; hovered: strin
       })}
 
       <g>
-        <circle cx={hub.x} cy={hub.y} r="13" fill="#0a1630" stroke="#1fc8e8" strokeWidth="2.5" />
-        <circle cx={hub.x} cy={hub.y} r="5" fill="#1fc8e8" />
+        <circle cx={hub.x} cy={hub.y} r="13" fill="#0a1630" stroke="#ffffff" strokeWidth="2.5" />
+        <circle cx={hub.x} cy={hub.y} r="5" fill="#ffffff" />
       </g>
     </svg>
   );

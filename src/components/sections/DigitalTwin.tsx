@@ -72,7 +72,7 @@ function TwinView() {
     <div className="absolute inset-0 bg-ink">
       <div className="absolute inset-0 bg-blueprint opacity-60" aria-hidden="true" />
       <div className="absolute inset-0 grid place-items-center pt-6">
-        <TwinScene className="h-[112%] w-auto max-w-none drop-shadow-[0_0_24px_rgba(31,200,232,0.3)]" />
+        <TwinScene className="h-[112%] w-auto max-w-none drop-shadow-[0_0_24px_rgba(255, 255, 255,0.3)]" />
       </div>
       <div aria-hidden="true">
         <span className="absolute right-6 top-6 inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-ink/70 px-3 py-1.5 text-xs font-semibold text-cyan backdrop-blur sm:right-8 sm:top-8">
@@ -153,7 +153,7 @@ function Half({ solution, index }: { solution: (typeof solutionHighlights)[numbe
                   className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg transition-colors duration-300 ${
                     dark
                       ? "bg-violet/20 text-[#c9bcff] group-hover/h:bg-violet group-hover/h:text-white"
-                      : "bg-cyan/10 text-cyan-deep group-hover/h:bg-cyan group-hover/h:text-ink"
+                      : "bg-cyan-deep/10 text-cyan-deep group-hover/h:bg-cyan-deep group-hover/h:text-white"
                   }`}
                 >
                   <Icon size={15} aria-hidden="true" />
@@ -181,7 +181,7 @@ function Half({ solution, index }: { solution: (typeof solutionHighlights)[numbe
 function Connector() {
   return (
     <div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 hidden -translate-x-1/2 lg:block" aria-hidden="true">
-      <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan/60 to-transparent" />
+      <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-deep/50 to-transparent" />
       <div className="absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2">
         <div className="relative grid h-24 w-24 place-items-center">
           <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-cyan/50" />

@@ -32,24 +32,24 @@ function Hub({ active }: { active: number }) {
           y1={C}
           x2={n.x}
           y2={n.y}
-          stroke={i === active ? "#1fc8e8" : "rgba(169,182,204,0.28)"}
+          stroke={i === active ? "#ffffff" : "rgba(169,182,204,0.28)"}
           strokeWidth={i === active ? 2 : 1}
           strokeDasharray={i === active ? "6 6" : undefined}
           className={i === active ? "twin-flow" : undefined}
           style={{ transition: "stroke 0.3s" }}
         />
       ))}
-      <circle cx={C} cy={C} r="78" fill="#0a1630" stroke="#1fc8e8" strokeOpacity="0.6" />
-      <circle cx={C} cy={C} r="92" fill="none" stroke="#1fc8e8" strokeOpacity="0.15" />
+      <circle cx={C} cy={C} r="78" fill="#0a1630" stroke="#ffffff" strokeOpacity="0.6" />
+      <circle cx={C} cy={C} r="92" fill="none" stroke="#ffffff" strokeOpacity="0.15" />
       <text x={C} y={C - 6} textAnchor="middle" fill="#fff" fontSize="19" fontWeight="700" style={{ fontFamily: "var(--font-display)", fontStretch: "112%" }}>
         Your next
       </text>
-      <text x={C} y={C + 18} textAnchor="middle" fill="#1fc8e8" fontSize="19" fontWeight="700" style={{ fontFamily: "var(--font-display)", fontStretch: "112%" }}>
+      <text x={C} y={C + 18} textAnchor="middle" fill="#ffffff" fontSize="19" fontWeight="700" style={{ fontFamily: "var(--font-display)", fontStretch: "112%" }}>
         decision
       </text>
       {nodes.map((n, i) => (
         <g key={n.key} style={{ transition: "opacity 0.3s" }} opacity={i === active ? 1 : 0.75}>
-          <circle cx={n.x} cy={n.y} r="38" fill={i === active ? "#1fc8e8" : "#252f3f"} stroke={i === active ? "#1fc8e8" : "rgba(169,182,204,0.35)"} style={{ transition: "fill 0.3s" }} />
+          <circle cx={n.x} cy={n.y} r="38" fill={i === active ? "#ffffff" : "#252f3f"} stroke={i === active ? "#ffffff" : "rgba(169,182,204,0.35)"} style={{ transition: "fill 0.3s" }} />
           <text x={n.x} y={n.y + 4.5} textAnchor="middle" fontSize="12.5" fontWeight="600" fill={i === active ? "#0a1630" : "#e3e9f3"}>
             {n.short}
           </text>

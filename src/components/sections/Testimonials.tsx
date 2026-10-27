@@ -31,7 +31,7 @@ const testimonials = [
       "I needed to understand AI well enough to lead through it — not just delegate it. This course gave me exactly that. I made three strategic decisions differently the week after.",
     name: "Lynda Doe",
     role: "Tech student",
-    tone: "from-cyan-deep to-cyan",
+    tone: "from-cyan-deep to-volt",
   },
 ];
 
@@ -56,7 +56,7 @@ function Card({ t, index }: { t: (typeof testimonials)[number]; index: number })
           <svg viewBox="0 0 64 48" className="h-5 w-7">
             <defs>
               <linearGradient id={`tq-${index}`} x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stopColor="#1fc8e8" />
+                <stop offset="0" stopColor="#ffffff" />
                 <stop offset="1" stopColor="#7c5cff" />
               </linearGradient>
             </defs>
@@ -231,7 +231,7 @@ export function Testimonials() {
         {/* Sticky intro */}
         <div className="lg:col-span-4">
           <Reveal className="lg:sticky lg:top-28">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3.5 py-1.5 text-sm font-medium text-cyan-deep">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-deep/30 bg-cyan-deep/5 px-3.5 py-1.5 text-sm font-medium text-cyan-deep">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-deep" aria-hidden="true" />
               Testimonials
             </p>

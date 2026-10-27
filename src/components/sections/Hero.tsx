@@ -62,7 +62,7 @@ export function Hero() {
         {/* Twin layer: overlaps the photo edge on desktop, sits on its own panel on mobile */}
         <div className="relative lg:col-span-5">
           <div className="relative mx-auto max-w-[40rem] overflow-hidden rounded-[28px] border border-white/10 lg:overflow-visible lg:rounded-none lg:border-0">
-            <TwinScene className="relative w-full drop-shadow-[0_0_30px_rgba(31,200,232,0.25)] lg:origin-center lg:scale-[1.3]" />
+            <TwinScene className="relative w-full drop-shadow-[0_0_30px_rgba(255, 255, 255,0.25)] lg:origin-center lg:scale-[1.3]" />
 
             <div className="hero-rise absolute -left-[6%] top-[2%] hidden max-w-[15rem] rounded-2xl border border-white/15 bg-ink/70 p-4 shadow-2xl backdrop-blur-md sm:block" style={{ "--d": "1300ms" } as React.CSSProperties}>
               <p className="flex items-center gap-2 text-xs text-cyan">

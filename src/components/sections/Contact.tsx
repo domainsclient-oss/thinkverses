@@ -49,7 +49,7 @@ export function Contact() {
                   <span className="relative mt-1 block break-words font-display text-[1.05rem] font-semibold leading-snug [font-stretch:105%]">
                     {c.value}
                   </span>
-                  <span className="relative mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-deep group-[.is-hq]:text-cyan">
+                  <span className="relative mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-deep group-hover:text-charcoal group-[.is-hq]:text-cyan">
                     {c.action}
                     {!hq && (
                       <ArrowUpRight
