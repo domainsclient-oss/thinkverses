@@ -14,7 +14,7 @@ export function Training() {
           <div className="absolute inset-0 -z-10" aria-hidden="true">
             {/* Mobile: video fills the top window; desktop: whole card */}
             <div className="absolute inset-x-0 top-0 h-[22rem] sm:h-[26rem] lg:inset-0 lg:h-auto">
-              <BackgroundVideo name="training" />
+              <BackgroundVideo name="Training-plan" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/40 to-ink lg:bg-gradient-to-r lg:from-ink/90 lg:via-ink/60 lg:to-ink/10" />
             </div>
             <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-violet/25 blur-[100px]" />

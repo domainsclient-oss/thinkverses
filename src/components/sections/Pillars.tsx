@@ -82,8 +82,8 @@ function Connector() {
   return (
     <div className="flex items-center justify-center gap-6 py-2 lg:flex-col lg:gap-10 lg:py-0" aria-hidden="true">
       {[
-        { label: "Decisions", from: "#0a1630", to: "#7c5cff", flip: false },
-        { label: "Execution data", from: "#7c5cff", to: "#0a1630", flip: true },
+        { label: "Decisions", from: "#0a1630", to: "#0056a7", flip: false },
+        { label: "Execution data", from: "#0056a7", to: "#0a1630", flip: true },
       ].map((a, i) => (
         <div key={a.label} className="flex flex-col items-center gap-2 text-center">
           <svg viewBox="0 0 120 24" className={`my-9 h-6 w-24 rotate-90 lg:my-0 lg:rotate-0 ${a.flip ? "-scale-x-100 lg:-scale-x-100" : ""}`}>

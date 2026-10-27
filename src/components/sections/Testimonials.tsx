@@ -17,14 +17,14 @@ const testimonials = [
       "We’ve been talking about AI adoption for over a year. This program gave us the language, the confidence, and the practical tools to finally act on it. It changed how I think about my role.",
     name: "Prya Morris",
     role: "Head of People Operations",
-    tone: "from-volt to-violet",
+    tone: "from-volt to-[#0056a7]",
   },
   {
     quote:
       "I didn’t expect to enjoy it this much. The training met me where I was — no technical background needed. I’m already applying it to how I build reports and prep for client meetings.",
     name: "James Brilla",
     role: "Senior Financial Analyst",
-    tone: "from-violet to-[#c36bff]",
+    tone: "from-[#0056a7] to-cyan-deep",
   },
   {
     quote:
@@ -57,7 +57,7 @@ function Card({ t, index }: { t: (typeof testimonials)[number]; index: number })
             <defs>
               <linearGradient id={`tq-${index}`} x1="0" x2="1" y1="0" y2="1">
                 <stop offset="0" stopColor="#ffffff" />
-                <stop offset="1" stopColor="#7c5cff" />
+                <stop offset="1" stopColor="#0056a7" />
               </linearGradient>
             </defs>
             <path
@@ -237,7 +237,7 @@ export function Testimonials() {
             </p>
             <h2 id="testimonials-title" className="display h-section">
               What Our{" "}
-              <span className="bg-gradient-to-r from-cyan-deep via-volt to-violet bg-clip-text text-transparent">Learners</span> Say
+              <span className="bg-gradient-to-r from-cyan-deep via-volt to-[#0056a7] bg-clip-text text-transparent">Learners</span> Say
             </h2>
             <p className="lede mt-6 text-slate">
               Real outcomes from professionals who turned AI training into new ways of working, leading and deciding.

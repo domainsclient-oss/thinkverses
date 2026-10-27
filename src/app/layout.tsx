@@ -1,24 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const archivo = Archivo({
+// Fonts are self-hosted so builds and the dev server never depend on reaching Google Fonts.
+// Archivo is variable on weight and width; the site uses font-stretch for its wide display style.
+const Archivo = localFont({
+  src: "./fonts/Archivo-Variable.woff2",
   variable: "--font-archivo",
-  subsets: ["latin"],
-  axes: ["wdth"],
+  weight: "100 900",
   display: "swap",
+  declarations: [
+    { prop: "font-family", value: "Archivo" },
+    { prop: "font-stretch", value: "62% 125%" },
+  ],
 });
 
-const plex = IBM_Plex_Sans({
-  variable: "--font-plex",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
+// IBM Plex Sans (body) is declared in globals.css so --font-plex can use the exact family names.
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -56,7 +57,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${archivo.variable} ${plex.variable}`} suppressHydrationWarning>
+    <html lang="en" className={Archivo.variable} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }}

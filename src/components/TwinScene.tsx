@@ -21,7 +21,7 @@ function Box({ x, y, w, d, h, accent = false }: { x: number; y: number; w: numbe
   const stroke = accent ? "#7c5cff" : "#ffffff";
   return (
     <g stroke={stroke} strokeWidth="1.2" strokeLinejoin="round">
-      <polygon points={pts(top)} fill={accent ? "rgba(124,92,255,0.18)" : "rgba(255, 255, 255,0.14)"} />
+      <polygon points={pts(top)} fill={accent ? "rgba(124, 92, 255,0.18)" : "rgba(255, 255, 255,0.14)"} />
       <polygon points={pts(right)} fill="rgba(255, 255, 255,0.06)" />
       <polygon points={pts(left)} fill="rgba(58,102,255,0.1)" />
     </g>

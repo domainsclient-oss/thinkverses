@@ -9,9 +9,9 @@ import { site } from "@/lib/content";
 export function Contact() {
   const channels = [
     { icon: Phone, label: "Call us", value: site.phone, href: site.phoneHref, action: "Call now", tone: "from-ink to-volt" },
-    { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}`, action: "Send an email", tone: "from-volt to-violet" },
+    { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}`, action: "Send an email", tone: "from-volt to-[#0056a7]" },
     { icon: MessageCircle, label: "WhatsApp", value: "Message us on WhatsApp", href: site.whatsapp, action: "Start a chat", tone: "from-[#25d366] to-[#128c7e]" },
-    { icon: MapPin, label: "Headquarters", value: site.headquarters, action: "Serving the UAE & GCC", tone: "from-violet to-[#c36bff]" },
+    { icon: MapPin, label: "Headquarters", value: site.headquarters, action: "Serving the UAE & GCC", tone: "from-[#0056a7] to-volt" },
   ];
 
   return (

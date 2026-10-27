@@ -103,7 +103,7 @@ export function About() {
                 as="li"
                 key={a.title}
                 delay={i * 100}
-                className="group relative list-none rounded-[28px] bg-gradient-to-b from-white/15 to-white/[0.03] p-px transition-all duration-500 hover:-translate-y-1 hover:from-cyan/70 hover:to-violet/50"
+                className="group relative list-none rounded-[28px] bg-gradient-to-b from-white/15 to-white/[0.03] p-px transition-all duration-500 hover:-translate-y-1 hover:from-cyan/70 hover:to-[#0056a7]/50"
               >
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[27px] bg-graphite p-5 sm:p-6">
                   <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-cyan/0 blur-3xl transition-colors duration-500 group-hover:bg-cyan/15" aria-hidden="true" />

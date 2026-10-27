@@ -70,11 +70,11 @@ export function CtaBand() {
           </Reveal>
 
           <Reveal delay={120} className="lg:col-span-5">
-            <div className="h-full rounded-[28px] bg-gradient-to-br from-cyan via-volt to-violet p-px shadow-[0_40px_80px_-40px_rgba(255, 255, 255,0.5)]">
+            <div className="h-full rounded-[28px] bg-gradient-to-br from-cyan via-volt to-[#0056a7] p-px shadow-[0_40px_80px_-40px_rgba(255, 255, 255,0.5)]">
               <div className="flex h-full flex-col rounded-[27px] bg-ink-2 p-6 sm:p-10">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#a996ff]">Early adopter program</p>
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-cyan to-violet text-ink">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-cyan to-[#0056a7] text-ink">
                     <Rocket size={19} aria-hidden="true" />
                   </span>
                 </div>

@@ -185,7 +185,7 @@ function Connector() {
       <div className="absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2">
         <div className="relative grid h-24 w-24 place-items-center">
           <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-cyan/50" />
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-cyan via-volt to-violet opacity-40 blur-md" />
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-cyan via-volt to-[#0056a7] opacity-40 blur-md" />
           <div className="relative grid h-16 w-16 place-items-center rounded-full bg-ink font-display text-3xl font-bold text-white ring-1 ring-white/20">
             +
           </div>
@@ -206,7 +206,7 @@ export function DigitalTwin() {
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <h2 className="display h-section lg:col-span-8">
             Digital Twins{" "}
-            <span className="bg-gradient-to-r from-cyan-deep via-volt to-violet bg-clip-text text-transparent">+</span>{" "}
+            <span className="bg-gradient-to-r from-cyan-deep via-volt to-[#0056a7] bg-clip-text text-transparent">+</span>{" "}
             Robotics for Growth
           </h2>
           <p className="lede text-slate lg:col-span-4">

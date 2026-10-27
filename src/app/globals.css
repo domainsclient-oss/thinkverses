@@ -24,6 +24,26 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Body font: self-hosted IBM Plex Sans, plus an Arial fallback tuned to its metrics to avoid layout shift */
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("./fonts/IBMPlexSans-Variable.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans Fallback";
+  src: local("Arial");
+  ascent-override: 101.32%;
+  descent-override: 27.18%;
+  line-gap-override: 0%;
+  size-adjust: 101.17%;
+}
+:root {
+  --font-plex: "IBM Plex Sans", "IBM Plex Sans Fallback";
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;

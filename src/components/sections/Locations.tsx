@@ -151,7 +151,7 @@ export function Locations() {
             </p>
             <h2 className="display h-section max-w-4xl">
               Our Digital Twin, Robotics &amp; IoT Solutions{" "}
-              <span className="bg-gradient-to-r from-cyan via-[#7fa0ff] to-[#a996ff] bg-clip-text text-transparent">across Globe!</span>
+              <span className="bg-gradient-to-r from-cyan via-[#7fa0ff] to-[#0056a7] bg-clip-text text-transparent">across Globe!</span>
             </h2>
           </div>
         </Reveal>
