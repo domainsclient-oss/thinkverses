@@ -35,16 +35,14 @@ export const socials = [
 
 export const valueProps = [
   {
-    title: "Decisions, Not Dashboards",
-    text: "Every model is built to answer the next operational question, not to add another screen.",
+    eyebrow: "Start here if you run a plant or utility",
+    title: "Digital Twin",
+    text: "Higher output and less downtime, from the data your plant already produces.",
   },
   {
-    title: "Foresight as Standard",
-    text: "Simulation and forecasting show what happens next before anything changes on site.",
-  },
-  {
-    title: "Built on Your Data",
-    text: "Your sensors, systems and history become the model, so insight fits how you run.",
+    eyebrow: "Start here if you inspect or secure a site",
+    title: "Physical AI",
+    text: "Robots that inspect the line and patrol the site, and report what they find as it happens.",
   },
 ];
 
@@ -58,7 +56,7 @@ export const industries = [
   },
   {
     slug: "smart-buildings",
-    name: "Smart Facility, Energy Optimization",
+    name: "Smart Facilities & Energy Optimization",
     text: "Ensuring Resilient Operations & Sustainable Energy Use.",
     image: "/images/smart-buildings.jpg",
     alt: "Glass office towers seen from street level",
@@ -66,7 +64,7 @@ export const industries = [
   {
     slug: "manufacturing",
     name: "Manufacturing Process Optimization",
-    text: "Driving Productivity with Sustainable Practices with optimized process.",
+    text: "Driving Productivity with Sustainable Practices and Optimized Processes.",
     image: "/images/manufacturing.jpg",
     alt: "Engineer working on a laptop beside automated manufacturing equipment",
   },
@@ -93,18 +91,27 @@ export const industries = [
   },
 ];
 
+// "How it works" walkthrough on the home page. Pump 3 and the shift are an illustrative example, not a customer case.
 export const approach = [
   {
-    title: "Holistic Data Integration",
-    text: "Seamlessly connect IoT sensors, ERP systems, and cloud services into a unified platform for real-time analytics and management.",
+    stage: "The real pump",
+    title: "Vibration, temperature, flow and pressure",
+    text: "A robot inspection round adds gauge readings and thermal images.",
   },
   {
-    title: "AI-Powered Forecasting",
-    text: "Utilize machine learning and generative AI to predict asset behavior, detect anomalies, and drive proactive decision-making.",
+    stage: "The data comes together",
+    title: "SCADA, maintenance records, ERP and robot inspection data",
+    text: "Checked, cleaned and kept in one place.",
   },
   {
-    title: "Operational Efficiency Optimization",
-    text: "Leverage dynamic dashboards and automation to reduce downtime, streamline processes, and enhance overall efficiency.",
+    stage: "The digital twin",
+    title: "Pump 3: live mirror",
+    text: "The bearing temperature is rising above this pump’s normal pattern.",
+  },
+  {
+    stage: "The decision",
+    title: "“Which pumps need attention this week?”",
+    text: "Pump 3. Plan a bearing check for Thursday’s day shift, before it fails. Asked in plain language and answered from the twin.",
   },
 ];
 
@@ -142,34 +149,40 @@ export const processSteps = [
 
 export const differentiators = [
   {
-    key: "context",
-    title: "Contextual Intelligence",
-    short: "Context",
-    text: "Uncover hidden insights and root causes for strategic decision-making.",
+    key: "predict",
+    title: "“We only see problems after they happen.”",
+    short: "Predict",
+    text: "Digital Twin: predictive maintenance",
   },
   {
-    key: "genai",
-    title: "Gen-AI Integration",
-    short: "Gen-AI",
-    text: "Advanced simulations and “What-If” scenario analysis.",
+    key: "unify",
+    title: "“Our data sits in SCADA, ERP and spreadsheets.”",
+    short: "Unify",
+    text: "Digital Twin: one source of truth",
   },
   {
-    key: "iot",
-    title: "IoT & Sensor Integration",
-    short: "IoT",
-    text: "Built on your data- not generic benchmarks.",
+    key: "answers",
+    title: "“The data is there, but answers reach us too late.”",
+    short: "Answers",
+    text: "Digital Twin: dashboards and plain-language answers",
   },
   {
-    key: "custom",
-    title: "Custom Solutions",
-    short: "Custom",
-    text: "Tailored Digital Twin implementation for unique business needs.",
+    key: "inspect",
+    title: "“Defects still reach customers, and manual checks slip on night shifts.”",
+    short: "Inspect",
+    text: "Physical AI: visual inspection",
   },
   {
-    key: "decision",
-    title: "Decision-first, not visibility-first",
-    short: "Decision",
-    text: "Decisions before dashboards, always.",
+    key: "patrol",
+    title: "“The site is too big to watch every corner, especially at night.”",
+    short: "Patrol",
+    text: "Physical AI: security patrol",
+  },
+  {
+    key: "start",
+    title: "“We don’t know where to start.”",
+    short: "Start",
+    text: "Start with a maturity assessment",
   },
 ];
 
@@ -240,22 +253,22 @@ export const faqs = [
   {
     group: "Validation",
     q: "How do we know it works?",
-    a: "Every decision made by the Digital Twin is tested in simulation first, then validated against real-world outcomes through the Robotics layer. Continuous feedback loops between the “brain” and the “body” let us measure accuracy, reliability, and performance at each stage – not just claim it.",
+    a: "Every decision made by the Digital Twin is tested in simulation first, then validated against real-world outcomes through the Robotics layer. Continuous feedback loops between the “brain” and the “body” let us measure accuracy, reliability, and performance at each stage — not just claim it.",
   },
   {
     group: "Validation",
-    q: "What success metrics shall we target?",
+    q: "What success metrics should we target?",
     a: "Success is measured across three levels: decision accuracy (how well the Digital Twin predicts outcomes), execution precision (how accurately Robotics carries out those decisions), and business impact (efficiency gains, cost savings, or performance improvements in the real-world process being modeled).",
   },
   {
     group: "Security",
-    q: "How's data security ensured?",
+    q: "How is data security ensured?",
     a: "Data is encrypted at rest and in transit, access is role-based and permissioned, and the Digital Twin operates within isolated environments to prevent unauthorized exposure. Security practices align with industry standards to protect both operational and sensitive data.",
   },
   {
     group: "Business Benefits",
     q: "What value does it bring?",
-    a: "Thinkverses reduces risk and cost by letting decisions be simulated and refined before physical action – saving time, avoiding costly errors, and enabling faster, smarter execution in the real world.",
+    a: "Thinkverses reduces risk and cost by letting decisions be simulated and refined before physical action — saving time, avoiding costly errors, and enabling faster, smarter execution in the real world.",
   },
 ];
 

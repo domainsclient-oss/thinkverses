@@ -1,10 +1,13 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { SocialLinks } from "../SocialIcons";
 import { ContactForm } from "../forms/ContactForm";
 import { NewsletterForm } from "../forms/NewsletterForm";
 import { site } from "@/lib/content";
+
+const steps = ["Answer six short questions", "Pick a slot on our live calendar", "The call opens at the right stage for you"];
 
 export function Contact() {
   const channels = [
@@ -24,6 +27,34 @@ export function Contact() {
             Tell us about the operation you want to improve. We will come back with a clear next step, usually within
             one business day.
           </p>
+
+          <div className="mt-10 rounded-[22px] border border-line bg-white p-6 sm:p-8">
+            <h3 className="font-display text-2xl font-bold leading-tight [font-stretch:112%]">
+              Book a 30-minute call, and we will start where you are.
+            </h3>
+            <p className="mt-3 leading-relaxed text-slate">
+              Tell us what you are looking at and pick a time that suits you. The call goes to the person who handles
+              that kind of project, so you do not have to explain yourself twice.
+            </p>
+            <ol className="mt-6 space-y-3.5">
+              {steps.map((s, i) => (
+                <li key={s} className="flex items-center gap-3.5">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-ink/20 font-display text-sm font-semibold text-cyan-deep">
+                    {i + 1}
+                  </span>
+                  <span className="font-medium">{s}</span>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                <MessageCircle size={18} aria-hidden="true" /> Message us on WhatsApp
+              </a>
+              <Link href="/#robotics" className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-deep hover:text-charcoal">
+                <span className="link-draw">Not ready yet? Pick your problem</span>
+              </Link>
+            </div>
+          </div>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {channels.map((c) => {

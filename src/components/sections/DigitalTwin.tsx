@@ -4,23 +4,19 @@ import {
   Activity,
   ArrowRight,
   BarChart3,
-  Brain,
   Bot,
   BrainCircuit,
   Crosshair,
   Gauge,
-  Lightbulb,
-  PlayCircle,
+  Leaf,
   Radio,
   RefreshCcw,
   ShieldCheck,
-  Sparkles,
   TrendingUp,
   Wrench,
 } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { TwinScene } from "../TwinScene";
-import { solutionPath } from "@/lib/locations";
 import roboticsImg from "../../../public/images/robotics-arms.jpg";
 
 const solutionHighlights = [
@@ -29,39 +25,35 @@ const solutionHighlights = [
     title: "Digital Twin",
     role: "Think",
     icon: BrainCircuit,
-    href: solutionPath("digital-twin", "uae"),
-    cta: "Explore Digital Twin Solutions",
-    text: "A Digital Twin is a virtual replica of a physical asset, process, or system that continuously receives real-time data from connected devices and sensors. It enables organizations to monitor performance, predict issues, optimize operations, and make data-driven decisions with greater accuracy and efficiency.",
+    href: "/?topic=digital-twin#contact",
+    cta: "Book a maturity assessment call",
+    text: "A digital twin is worth it only if it changes what happens on your plant floor. So we start with the outcome you want, and then work back to the data you need for it.",
     highlights: [
-      { title: "Real-Time Monitoring", icon: Activity },
-      { title: "Predictive Maintenance", icon: Wrench },
-      { title: "Operational Optimization", icon: BarChart3 },
-      { title: "Data-Driven Insights", icon: Lightbulb },
-      { title: "Performance Simulation", icon: PlayCircle },
-      { title: "Risk Reduction", icon: ShieldCheck },
-      { title: "Improved Asset Lifecycle", icon: RefreshCcw },
-      { title: "Enhanced Decision Making", icon: Brain },
+      { title: "Higher output", icon: TrendingUp },
+      { title: "Less downtime", icon: Wrench },
+      { title: "Lower cost", icon: BarChart3 },
+      { title: "Consistent quality", icon: ShieldCheck },
+      { title: "Lower emissions", icon: Leaf },
+      { title: "Connects DCS, SCADA, PLC, MES, ERP, QMS and IoT sensors", icon: Activity },
     ],
   },
   {
     key: "robotics",
-    title: "Robotics",
+    title: "Physical AI",
     role: "Act",
     icon: Bot,
     image: roboticsImg,
     alt: "Industrial robotic arms assembling a car body on a production line",
     href: "/?topic=robotics#contact",
-    cta: "Discuss a Robotics Project",
-    text: "Robotics combines intelligent automation, artificial intelligence, and advanced control systems to perform complex tasks with precision, efficiency, and consistency. From industrial automation to autonomous robots, robotics solutions help businesses streamline operations, improve productivity, and enhance workplace safety.",
+    cta: "Tell us your task",
+    text: "Our robots inspect the line and patrol the site, and they report what they find as it happens.",
     highlights: [
-      { title: "Intelligent Automation", icon: Bot },
-      { title: "Autonomous Operations", icon: Radio },
-      { title: "Enhanced Productivity", icon: TrendingUp },
-      { title: "Precision & Accuracy", icon: Crosshair },
-      { title: "Real-Time Decision Making", icon: Gauge },
-      { title: "Improved Workplace Safety", icon: ShieldCheck },
-      { title: "AI-Powered Capabilities", icon: Sparkles },
-      { title: "Scalable Robotic Solutions", icon: RefreshCcw },
+      { title: "Visual inspection", icon: Crosshair },
+      { title: "Every defect flagged before the unit moves on", icon: Gauge },
+      { title: "Security patrol", icon: ShieldCheck },
+      { title: "Routes and blind spots mapped with you", icon: Radio },
+      { title: "Night patrols alongside your security systems", icon: Bot },
+      { title: "Other tasks, such as lifting or packing", icon: RefreshCcw },
     ],
   },
 ];
@@ -207,10 +199,10 @@ export function DigitalTwin() {
           <h2 className="display h-section lg:col-span-8">
             Digital Twins{" "}
             <span className="bg-gradient-to-r from-cyan-deep via-volt to-[#0056a7] bg-clip-text text-transparent">+</span>{" "}
-            Robotics for Growth
+            Physical AI
           </h2>
           <p className="lede text-slate lg:col-span-4">
-            One system, two strengths: the Digital Twin works out what should happen, and Robotics makes it happen.
+            One system, two strengths: the Digital Twin works out what should happen, and Physical AI makes it happen.
           </p>
         </Reveal>
 

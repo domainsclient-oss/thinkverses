@@ -7,16 +7,19 @@ import { solutionPath } from "@/lib/locations";
 const audience = [
   {
     icon: Factory,
-    text: "Businesses that want to enhance asset tracking, predictive maintenance, and operational efficiency.",
+    text: "Before: weekly report, built by hand. The team exported data from several systems, put it together, and leaders waited for someone to explain it.",
   },
-  { icon: BrainCircuit, text: "Companies looking for AI-driven insights to optimize their processes." },
-  { icon: LineChart, text: "Industry leaders seeking data-driven decision-making tools." },
+  {
+    icon: BrainCircuit,
+    text: "After: asked in plain language. “Is energy use linked to output at this site?” Here is the trend, by unit, with the source behind every number.",
+  },
+  { icon: LineChart, text: "Reports are produced automatically, and leaders read technical reports on their own." },
 ];
 
 const perks = [
-  "Exclusive access to our product before public release.",
-  "Direct input in feature development tailored to their needs.",
-  "Dedicated support & consultation during implementation.",
+  "40,000+ sensors connected.",
+  "6 plants across two countries.",
+  "[Result] one measured result, to add.",
 ];
 
 export function CtaBand() {
@@ -34,9 +37,9 @@ export function CtaBand() {
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <h2 id="cta-title" className="display h-hero">Start Your Digital Twin Journey Now!</h2>
+            <h2 id="cta-title" className="display h-hero">What changed for a UAE operator that has run our digital twin for over a year.</h2>
             <p className="lede mt-6 text-white/70">
-              Transform operational complexity into intelligent decisions with Digital Twins, AI, IoT, and Robotics.
+              Proof.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
@@ -52,7 +55,7 @@ export function CtaBand() {
         <div className="mt-16 grid gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <div className="h-full rounded-[28px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm sm:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">Who is this for?</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">Before and after</p>
               <ul className="mt-8 divide-y divide-white/10">
                 {audience.map((a) => {
                   const Icon = a.icon;
@@ -78,7 +81,7 @@ export function CtaBand() {
                     <Rocket size={19} aria-hidden="true" />
                   </span>
                 </div>
-                <h3 className="display mt-5 h-sub">What do early adopters get?</h3>
+                <h3 className="display mt-5 h-sub">[Client name, pending approval]</h3>
                 <ol className="mt-8 space-y-4">
                   {perks.map((p) => (
                     <li key={p} className="flex items-start gap-3.5">
@@ -93,7 +96,7 @@ export function CtaBand() {
                   href={solutionPath("digital-twin", "uae")}
                   className="mt-auto inline-flex items-center gap-2 pt-10 font-semibold text-white"
                 >
-                  <span className="link-draw">Learn more</span> <ArrowRight size={17} aria-hidden="true" />
+                  <span className="link-draw">Read the case study</span> <ArrowRight size={17} aria-hidden="true" />
                 </Link>
               </div>
             </div>

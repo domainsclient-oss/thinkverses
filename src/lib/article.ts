@@ -15,7 +15,7 @@ export const articleSections: ArticleSection[] = [
         p: "Dubai and the wider UAE have become regional hubs for digital transformation, smart infrastructure and advanced technology. Businesses across the country are adopting AI, IoT, automation, cloud platforms and real-time analytics to run more efficiently and compete globally.",
       },
       {
-        p: "Among these technologies, Digital Twins stand out because they connect the physical and digital worlds directly. They give organisations a way to see, test and improve their operations without disrupting them.",
+        p: "Among these technologies, Digital Twins stand out because they connect the physical and digital worlds directly. They give organizations a way to see, test and improve their operations without disrupting them.",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const articleSections: ArticleSection[] = [
         p: "A Digital Twin is a dynamic virtual representation of a physical asset, process, system or environment. It is kept up to date with real-time data from sensors, machines and business systems, so it reflects what is actually happening rather than what was planned.",
       },
       {
-        p: "Unlike a static model, a Digital Twin keeps interacting with real-world data. That makes it useful for monitoring, simulation, prediction and optimisation across the full life of an asset.",
+        p: "Unlike a static model, a Digital Twin keeps interacting with real-world data. That makes it useful for monitoring, simulation, prediction and optimization across the full life of an asset.",
       },
     ],
   },
@@ -40,8 +40,8 @@ export const articleSections: ArticleSection[] = [
           "IoT sensors and devices that capture live operating conditions",
           "Connectivity and data integration that bring OT, IT and ERP data together",
           "Cloud and edge computing to store and process data at the right place",
-          "AI and machine learning to detect patterns, forecast behaviour and recommend actions",
-          "3D visualisation and simulation engines to explore scenarios",
+          "AI and machine learning to detect patterns, forecast behavior and recommend actions",
+          "3D visualization and simulation engines to explore scenarios",
         ],
       },
     ],
@@ -61,11 +61,11 @@ export const articleSections: ArticleSection[] = [
     blocks: [
       { h3: "Growing focus on smart cities" },
       {
-        p: "Large-scale smart city and infrastructure programmes need a way to plan, monitor and operate complex, connected environments. Digital Twins provide a shared, living view of those environments.",
+        p: "Large-scale smart city and infrastructure programs need a way to plan, monitor and operate complex, connected environments. Digital Twins provide a shared, living view of those environments.",
       },
       { h3: "Demand for data-driven operations" },
       {
-        p: "Organisations want decisions grounded in real operating data instead of periodic reports. A Digital Twin turns that data into something teams can explore and act on.",
+        p: "Organizations want decisions grounded in real operating data instead of periodic reports. A Digital Twin turns that data into something teams can explore and act on.",
       },
       { h3: "Growth of Industry 4.0" },
       {
@@ -90,7 +90,7 @@ export const articleSections: ArticleSection[] = [
           "Real-time monitoring of condition and performance",
           "AI analysis and simulation of possible scenarios",
           "Predictive insights about what will happen next",
-          "Continuous optimisation as results feed back into the model",
+          "Continuous optimization as results feed back into the model",
         ],
       },
     ],
@@ -102,7 +102,7 @@ export const articleSections: ArticleSection[] = [
       {
         ul: [
           "Predictive maintenance that reduces unplanned downtime",
-          "Better asset utilisation and longer asset life",
+          "Better asset utilization and longer asset life",
           "Remote monitoring of distributed sites",
           "Safer testing of changes through simulation",
           "Faster, better-informed decisions",
@@ -183,7 +183,7 @@ export const articleSections: ArticleSection[] = [
     title: "Conclusion",
     blocks: [
       {
-        p: "Digital Twin technology is becoming a foundation for smart business operations in Dubai and the UAE. Organisations that start now, with a clear decision to improve and a model built on their own data, will be best placed to benefit as the technology and the region's digital infrastructure continue to grow.",
+        p: "Digital Twin technology is becoming a foundation for smart business operations in Dubai and the UAE. Organizations that start now, with a clear decision to improve and a model built on their own data, will be best placed to benefit as the technology and the region's digital infrastructure continue to grow.",
       },
     ],
   },

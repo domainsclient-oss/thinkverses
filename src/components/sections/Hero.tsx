@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Compass, Database, Waypoints } from "lucide-react";
+import { ArrowRight, Bot, BrainCircuit } from "lucide-react";
 import { TwinScene } from "../TwinScene";
 import { HeroBackdrop } from "../HeroBackdrop";
 import { BackgroundVideo } from "../BackgroundVideo";
 import { valueProps } from "@/lib/content";
 
-const propIcons = [Waypoints, Compass, Database];
+const propIcons = [BrainCircuit, Bot];
 
 export function Hero() {
   return (
@@ -22,26 +22,26 @@ export function Hero() {
         <div className="relative z-10 lg:col-span-7">
           <p className="hero-rise mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm text-fog backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" />
-            Digital Twin, AI, IoT and Robotics from Dubai
+            Digital twin live with a UAE operator for over a year
           </p>
           <h1 className="hero-rise display h-hero" style={{ "--d": "80ms" } as React.CSSProperties}>
-            Empowering Businesses with Digital Twins &amp; Robotics Solutions
+            We help industrial teams in the UAE catch problems early.
           </h1>
           <p className="hero-rise lede mt-7 text-white/75" style={{ "--d": "180ms" } as React.CSSProperties}>
-            Thinkverses builds decision-intelligence systems and robotics solutions for operationally complex
-            environments.
+            We do it in two ways: digital twins built on your own plant data, and AI robots that inspect your line
+            and patrol your site. You can start with either one, and they work better together.
           </p>
           <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ "--d": "260ms" } as React.CSSProperties}>
             <Link href="/#contact" className="btn btn-primary">
-              Get in Touch <ArrowRight size={18} aria-hidden="true" />
+              Book a discovery call <ArrowRight size={18} aria-hidden="true" />
             </Link>
             <Link href="/#robotics" className="btn btn-ghost">
-              Explore Our Solutions
+              Pick your problem
             </Link>
           </div>
 
           <ul
-            className="hero-rise mt-14 grid gap-6 border-t border-white/12 pt-8 sm:grid-cols-3 sm:gap-0"
+            className="hero-rise mt-14 grid gap-6 border-t border-white/12 pt-8 sm:grid-cols-2 sm:gap-0"
             style={{ "--d": "380ms" } as React.CSSProperties}
           >
             {valueProps.map((v, i) => {
@@ -49,7 +49,8 @@ export function Hero() {
               return (
                 <li key={v.title} className="sm:border-l sm:border-white/12 sm:px-5 sm:first:border-l-0 sm:first:pl-0">
                   <Icon size={20} className="text-cyan" aria-hidden="true" />
-                  <p className="mt-3 font-display text-[1.05rem] font-semibold leading-snug [font-stretch:110%]">
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/50">{v.eyebrow}</p>
+                  <p className="mt-1.5 font-display text-[1.05rem] font-semibold leading-snug [font-stretch:110%]">
                     {v.title}
                   </p>
                   <p className="mt-1.5 text-[0.92rem] leading-relaxed text-white/60">{v.text}</p>

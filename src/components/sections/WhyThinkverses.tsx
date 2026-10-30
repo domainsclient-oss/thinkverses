@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Boxes, Cpu, Radio, Sparkles, Target, type LucideIcon } from "lucide-react";
+import { CircleHelp, Clock, LayoutGrid, ScanEye, Shield, TrendingUp, type LucideIcon } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { differentiators } from "@/lib/content";
 
 const icons: Record<string, LucideIcon> = {
-  context: Boxes,
-  genai: Sparkles,
-  iot: Radio,
-  custom: Cpu,
-  decision: Target,
+  predict: TrendingUp,
+  unify: LayoutGrid,
+  answers: Clock,
+  inspect: ScanEye,
+  patrol: Shield,
+  start: CircleHelp,
 };
 
 const C = 260;
@@ -18,7 +19,7 @@ const R = 190;
 
 function Hub({ active }: { active: number }) {
   const nodes = differentiators.map((d, i) => {
-    const a = ((-90 + i * 72) * Math.PI) / 180;
+    const a = ((-90 + (i * 360) / differentiators.length) * Math.PI) / 180;
     return { ...d, x: Math.round(C + R * Math.cos(a)), y: Math.round(C + R * Math.sin(a)) };
   });
   return (
@@ -69,10 +70,9 @@ export function WhyThinkverses() {
 
       <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
-          <h2 className="display h-section lg:col-span-7">Transforming Industries with Digital Twin Solutions</h2>
+          <h2 className="display h-section lg:col-span-7">Pick Your Problem</h2>
           <p className="lede text-white/65 lg:col-span-5">
-            Five choices shape every system we build, and they all point to the same place: the decision your team needs
-            to make next.
+            Which of these sounds most like your operation today?
           </p>
         </Reveal>
 

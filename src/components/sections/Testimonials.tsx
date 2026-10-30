@@ -30,7 +30,7 @@ const testimonials = [
     quote:
       "I needed to understand AI well enough to lead through it — not just delegate it. This course gave me exactly that. I made three strategic decisions differently the week after.",
     name: "Lynda Doe",
-    role: "Tech student",
+    role: "Tech Student",
     tone: "from-cyan-deep to-volt",
   },
 ];

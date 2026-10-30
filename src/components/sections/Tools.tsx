@@ -52,6 +52,12 @@ const tools: Tool[] = [
   },
 ];
 
+const industries = [
+  "Manufacturing",
+  "Water and power utilities",
+  "Controlled-environment agriculture",
+];
+
 function LogoTile({
   tool,
   className = "",
@@ -155,43 +161,62 @@ export function Tools() {
             </div>
           </Reveal>
 
-          <ul className="grid gap-4 sm:grid-cols-6 lg:col-span-7">
-            {tools.map((t, i) => (
-              <Reveal
-                as="li"
-                key={t.name}
-                delay={i * 90}
-                className={`group list-none ${t.span}`}
-              >
-                <div className="h-full rounded-[24px] bg-gradient-to-br from-line to-line p-px transition-all duration-500 group-hover:-translate-y-1 group-hover:from-ink group-hover:to-[#0056a7] group-hover:shadow-[0_30px_60px_-30px_rgba(10,22,48,0.4)]">
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-white p-6 sm:p-7">
-                    <div
-                      className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-ink/0 blur-2xl transition-colors duration-500 group-hover:bg-ink/10"
-                      aria-hidden="true"
-                    />
-                    <div className="relative flex items-start justify-between gap-4">
-                      <LogoTile
-                        tool={t}
-                        className="h-16 w-28 transition-transform duration-500 group-hover:scale-105"
+          <div className="lg:col-span-7">
+            <ul className="grid gap-4 sm:grid-cols-6">
+              {tools.map((t, i) => (
+                <Reveal
+                  as="li"
+                  key={t.name}
+                  delay={i * 90}
+                  className={`group list-none ${t.span}`}
+                >
+                  <div className="h-full rounded-[24px] bg-gradient-to-br from-line to-line p-px transition-all duration-500 group-hover:-translate-y-1 group-hover:from-ink group-hover:to-[#0056a7] group-hover:shadow-[0_30px_60px_-30px_rgba(10,22,48,0.4)]">
+                    <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-white p-6 sm:p-7">
+                      <div
+                        className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-ink/0 blur-2xl transition-colors duration-500 group-hover:bg-ink/10"
+                        aria-hidden="true"
                       />
-                      <span className="font-display text-sm font-bold text-line transition-colors duration-500 group-hover:text-cyan-deep">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                      <div className="relative flex items-start justify-between gap-4">
+                        <LogoTile
+                          tool={t}
+                          className="h-16 w-28 transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <span className="font-display text-sm font-bold text-line transition-colors duration-500 group-hover:text-cyan-deep">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <p className="relative mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-deep">
+                        {t.category}
+                      </p>
+                      <h3 className="relative mt-1.5 font-display text-xl font-bold [font-stretch:110%]">
+                        {t.name}
+                      </h3>
+                      <p className="relative mt-2 text-[0.95rem] leading-relaxed text-slate">
+                        {t.text}
+                      </p>
                     </div>
-                    <p className="relative mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-deep">
-                      {t.category}
-                    </p>
-                    <h3 className="relative mt-1.5 font-display text-xl font-bold [font-stretch:110%]">
-                      {t.name}
-                    </h3>
-                    <p className="relative mt-2 text-[0.95rem] leading-relaxed text-slate">
-                      {t.text}
-                    </p>
                   </div>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
+                </Reveal>
+              ))}
+            </ul>
+            <Reveal className="mt-6 flex flex-wrap items-center gap-2.5">
+              <p className="mr-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-deep">
+                Industries we work with
+              </p>
+              {industries.map((name) => (
+                <span
+                  key={name}
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-ink"
+                >
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-cyan-deep"
+                    aria-hidden="true"
+                  />
+                  {name}
+                </span>
+              ))}
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

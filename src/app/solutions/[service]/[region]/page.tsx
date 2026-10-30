@@ -83,7 +83,7 @@ export default async function SolutionPage({ params }: PageProps<"/solutions/[se
           <div className="lg:col-span-5">
             <h2 className="display h-section">What you get</h2>
             <p className="mt-5 text-slate prose-measure">
-              Delivered by our Dubai-based team for organisations in {region.name}, built on your own data and systems and
+              Delivered by our Dubai-based team for organizations in {region.name}, built on your own data and systems and
               shaped around the decisions that matter most to your operation.
             </p>
           </div>

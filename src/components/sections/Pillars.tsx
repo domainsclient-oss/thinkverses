@@ -11,24 +11,35 @@ const pillars = [
     icon: BrainCircuit,
     name: "Digital Twin",
     role: "The Brain Decides",
-    text: "A living, learning model of the real world simulating scenarios, predicting outcomes, and making decisions before a single physical action is taken. The Digital Twin is where intelligence is formed: perceiving context, reasoning through possibilities, and directing what happens next.",
-    points: ["Perceives context", "Reasons through possibilities", "Directs what happens next"],
+    text: "A digital twin is worth it only if it changes what happens on your plant floor. So we start with the outcome you want, and then work back to the data you need for it. “We only see problems after they happen.” “Our data sits in SCADA, ERP and spreadsheets.” “The data is there, but answers reach us too late.”",
+    points: [
+      "Layer 5 · Business value: output, cost, risk",
+      "Layer 4 · Serve and decide: answers, alerts",
+      "Layer 3 · Model and analyze: foresight",
+      "Layer 2 · Ingest and store: one source of truth",
+      "Layer 1 · Foundation: every project starts here",
+      "Data sources we connect: DCS, SCADA, PLC, MES, ERP, QMS, IoT sensors, spreadsheets",
+    ],
     image: brainImg,
-    alt: "Person standing before a wall of flowing blue data visualisation",
+    alt: "Person standing before a wall of flowing blue data visualization",
     accent: "text-cyan",
     link: "text-white",
     ring: "border-cyan/30",
     panel: "bg-ink",
-    href: "/#digital-twin",
-    cta: "See Digital Twin capabilities",
+    href: "/?topic=digital-twin#contact",
+    cta: "Book a maturity assessment call",
   },
   {
     key: "robotics",
     icon: Bot,
-    name: "Robotics",
-    role: "The Body that Acts",
-    text: "The physical extension of that intelligence translating decisions into motion, manipulation, and real-world execution. Robotics is where thought becomes action, closing the loop between digital cognition and physical outcome.",
-    points: ["Motion and manipulation", "Real-world execution", "Closes the loop between digital cognition and physical outcome"],
+    name: "Physical AI",
+    role: "The Body That Acts",
+    text: "Our robots inspect the line and patrol the site, and they report what they find as it happens. “Defects still reach customers, and manual checks slip on night shifts.” “The site is too big to watch every corner, especially at night.”",
+    points: [
+      "Visual inspection · For quality, production and plant heads. The camera checks every unit on the line, draws a box around each defect it finds, and flags it before the unit moves on.",
+      "Security patrol · For security heads and facility managers. We walk the site with you, map the routes and blind spots, and the robot patrols them through the night alongside your existing security systems.",
+      "Have a different task, such as lifting or packing? Tell us the task, the site and how often it runs. Our team checks the fit and gives you an honest answer.",
+    ],
     image: armsImg,
     alt: "Industrial robotic arms assembling a car body on a production line",
     accent: "text-[#a996ff]",
@@ -41,11 +52,11 @@ const pillars = [
 ];
 
 const capabilities = [
-  "Building intelligent digital replicas of real-world assets and operations.",
-  "Combining AI, IoT, and analytics to deliver actionable business insights.",
-  "Helping organizations optimize performance, efficiency, and reliability.",
-  "Transforming live operational data into smarter decisions.",
-  "Empowering industries with scalable, sustainable, and predictive solutions.",
+  "Higher output: fewer stoppages mean more production hours.",
+  "Less downtime: repairs are planned before a breakdown.",
+  "Lower cost: energy and spares are used where they matter.",
+  "Consistent quality: drift is caught before it becomes a reject.",
+  "Lower emissions: you can see and act on energy waste.",
 ];
 
 function Pillar({ p }: { p: (typeof pillars)[number] }) {
@@ -109,11 +120,10 @@ export function Pillars() {
       <div className="absolute inset-0 bg-blueprint-light [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
-          <h2 className="display h-section lg:col-span-7">Two Pillars, One Intelligence</h2>
+          <h2 className="display h-section lg:col-span-7">Which of these sounds most like your operation today?</h2>
           <p className="lede text-slate lg:col-span-5">
-            Together, the Digital Twin and Robotics form a single system:{" "}
-            <strong className="font-semibold text-ink">think, then move.</strong> One pillar decides, the other
-            delivers.
+            Pick your problem. <strong className="font-semibold text-ink">Don&apos;t know where to start?</strong>{" "}
+            Start with a maturity assessment. Where are you today? Most companies we speak to start at layer one or two.
           </p>
         </Reveal>
 

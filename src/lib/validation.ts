@@ -6,6 +6,10 @@ export type ContactInput = {
   company: string;
   topic: string;
   message: string;
+  phone: string;
+  interest: string;
+  stage: string;
+  slot: string;
 };
 
 export type ContactErrors = Partial<Record<keyof ContactInput, string>>;

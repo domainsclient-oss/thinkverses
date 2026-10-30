@@ -7,7 +7,7 @@ import { validateContact, type ContactErrors, type ContactInput } from "@/lib/va
 import { site } from "@/lib/content";
 
 const topics = [
-  { value: "general", label: "General enquiry" },
+  { value: "general", label: "General inquiry" },
   { value: "consultation", label: "Book a consultation" },
   { value: "digital-twin", label: "Digital Twin solutions" },
   { value: "robotics", label: "Robotics solutions" },
@@ -22,7 +22,21 @@ const topics = [
   { value: "infrastructure", label: "Infrastructure & Industrial Operations" },
 ];
 
-const empty: ContactInput = { name: "", email: "", company: "", topic: "general", message: "" };
+const interests = ["Digital Twin", "Inspection", "Patrol", "Another task", "Not sure"];
+const stages = ["Just starting", "Data in many systems", "Data in one place", "Already predicting"];
+const slots = ["Tue 10:00", "Tue 14:30", "Wed 11:00", "Thu 09:30"];
+
+const empty: ContactInput = {
+  name: "",
+  email: "",
+  company: "",
+  topic: "general",
+  message: "",
+  phone: "",
+  interest: "",
+  stage: "",
+  slot: "",
+};
 
 export function ContactForm() {
   const params = useSearchParams();
@@ -110,6 +124,34 @@ export function ContactForm() {
         {errors[k]}
       </p>
     ) : null;
+  // Single-choice pill group backed by native radios, so it stays keyboard and screen-reader friendly.
+  const choices = (k: "interest" | "stage" | "slot", legend: string, options: string[], aside?: string) => (
+    <fieldset className="sm:col-span-2">
+      <div className="mb-2.5 flex items-baseline justify-between gap-4">
+        <legend className="text-sm font-medium">{legend}</legend>
+        {aside && <span className="text-sm text-slate">{aside}</span>}
+      </div>
+      <div className={k === "slot" ? "grid grid-cols-2 gap-2.5 sm:grid-cols-4" : "flex flex-wrap gap-2.5"}>
+        {options.map((o) => (
+          <label key={o} className="cursor-pointer">
+            <input
+              type="radio"
+              name={k}
+              value={o}
+              checked={values[k] === o}
+              onChange={set(k)}
+              className="peer sr-only"
+            />
+            <span
+              className={`block border border-line bg-white px-4 py-2.5 text-center text-[0.95rem] font-medium transition-colors duration-200 hover:border-ink/50 peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-4 peer-focus-visible:ring-volt/20 ${k === "slot" ? "rounded-xl" : "rounded-full"}`}
+            >
+              {o}
+            </span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
 
   return (
     <form noValidate onSubmit={onSubmit} className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -134,6 +176,15 @@ export function ContactForm() {
         <input {...field("company")} autoComplete="organization" className="field" placeholder="Company name" />
       </div>
       <div>
+        <label htmlFor="contact-phone" className="mb-1.5 block text-sm font-medium">
+          Phone or WhatsApp <span className="text-slate">(optional)</span>
+        </label>
+        <input {...field("phone")} type="tel" autoComplete="tel" inputMode="tel" className="field" placeholder="+971" />
+      </div>
+      {choices("interest", "What are you looking at?", interests)}
+      {choices("stage", "Where are you today?", stages)}
+      {choices("slot", "Pick a slot", slots, "Gulf Standard Time")}
+      <div className="sm:col-span-2">
         <label htmlFor="contact-topic" className="mb-1.5 block text-sm font-medium">
           What can we help with?
         </label>
@@ -175,7 +226,7 @@ export function ContactForm() {
             </>
           ) : (
             <>
-              Send message <ArrowRight size={18} aria-hidden="true" />
+              Book my 30-minute call <ArrowRight size={18} aria-hidden="true" />
             </>
           )}
         </button>

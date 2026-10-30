@@ -3,7 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { BackgroundVideo } from "../BackgroundVideo";
 
-const tracks = ["Digital Twin fundamentals", "AI for operations", "IoT and sensor integration", "Robotics and automation"];
+const tracks = [
+  "Robot inspection round — walks the route on schedule",
+  "Readings and thermal images — from gauges sensors cannot reach",
+  "The digital twin — adds them to live plant data",
+  "An earlier decision — sent to the person who acts",
+];
 
 export function Training() {
   return (
@@ -24,9 +29,9 @@ export function Training() {
           <div className="min-h-[13rem] sm:min-h-[16rem] lg:order-2 lg:min-h-full" aria-hidden="true" />
 
           <div className="p-7 sm:p-12 lg:p-16">
-            <h2 className="display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)]">Transform Operations with Digital Twins, AI, and Robotics.</h2>
+            <h2 className="display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)]">What the robots see feeds the twin, so you get one view of your site.</h2>
             <p className="lede mt-6 text-white/75">
-              Practical training for people who want to grow — and businesses that need to move faster.
+              Better together.
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {tracks.map((t) => (

@@ -20,6 +20,10 @@ export async function POST(request: Request) {
     company: str(body.company, 200),
     topic: str(body.topic, 60),
     message: str(body.message),
+    phone: str(body.phone, 60),
+    interest: str(body.interest, 60),
+    stage: str(body.stage, 60),
+    slot: str(body.slot, 60),
   };
   const errors = validateContact(input);
   if (Object.keys(errors).length) {
