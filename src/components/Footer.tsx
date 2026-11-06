@@ -1,8 +1,33 @@
 import Link from "next/link";
 import { FooterLogo } from "./Logo";
 import { SocialLinks } from "./SocialIcons";
-import { nav, site } from "@/lib/content";
-import { services, solutionPath, articleSlug } from "@/lib/locations";
+import { solutionPath } from "@/lib/locations";
+
+const footerMenu = [
+  {
+    title: "Solutions",
+    links: [
+      { label: "Digital Twin", href: solutionPath("digital-twin", "uae") },
+      { label: "Physical AI", href: solutionPath("robotic-process-automation", "uae") },
+      { label: "Use cases", href: "/#industries" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About and team", href: "/#about" },
+      { label: "Case studies", href: solutionPath("digital-twin", "uae") },
+      { label: "Security and data handling", href: "/#faq" },
+    ],
+  },
+  {
+    title: "More",
+    links: [
+      { label: "Insights", href: "/#insights" },
+      { label: "Contact", href: "/#contact" },
+    ],
+  },
+];
 
 const legalLinks = [
   { label: "Terms of Service", href: "/terms-of-service" },
@@ -12,8 +37,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink text-white">
-      <div className="absolute inset-0 bg-blueprint opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true" />
+    <footer className="relative isolate overflow-hidden bg-[#0b1a2b] text-white">
       <div className="relative mx-auto max-w-[90rem] px-4 pb-10 pt-20 sm:px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -27,57 +51,21 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Footer" className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
-            <div>
-              <h2 className="text-sm font-semibold text-cyan">Company</h2>
-              <ul className="mt-4 space-y-2.5 text-white/70">
-                {nav.map((n) => (
-                  <li key={n.href}>
-                    <Link href={n.href} className="link-draw hover:text-white">
-                      {n.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-cyan">Solutions</h2>
-              <ul className="mt-4 space-y-2.5 text-white/70">
-                {services.map((s) => (
-                  <li key={s.key}>
-                    <Link href={solutionPath(s.key, "uae")} className="link-draw hover:text-white">
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/?topic=training#contact" className="link-draw hover:text-white">
-                    Training &amp; Consultation
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/articles/${articleSlug}`} className="link-draw hover:text-white">
-                    Latest article
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-cyan">Contact</h2>
-              <ul className="mt-4 space-y-2.5 text-white/70">
-                <li>
-                  <a href={site.phoneHref} className="link-draw hover:text-white">
-                    {site.phone}
-                  </a>
-                </li>
-                <li>
-                  <a href={`mailto:${site.email}`} className="link-draw hover:text-white">
-                    {site.email}
-                  </a>
-                </li>
-                <li>{site.headquarters}</li>
-              </ul>
-            </div>
+          <nav aria-label="Footer" className="grid gap-10 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
+            {footerMenu.map((col) => (
+              <div key={col.title}>
+                <h2 className="text-[0.95rem] font-semibold text-white">{col.title}</h2>
+                <ul className="mt-4 space-y-2.5">
+                  {col.links.map((l) => (
+                    <li key={l.label}>
+                      <Link href={l.href} className="link-draw text-[#8fb3d9] transition-colors hover:text-white">
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
 

@@ -41,7 +41,7 @@ export const valueProps = [
   },
   {
     eyebrow: "Start here if you inspect or secure a site",
-    title: "Physical AI",
+    title: "Robotics AI",
     text: "Robots that inspect the line and patrol the site, and report what they find as it happens.",
   },
 ];
@@ -170,13 +170,13 @@ export const differentiators = [
     key: "inspect",
     title: "“Defects still reach customers, and manual checks slip on night shifts.”",
     short: "Inspect",
-    text: "Physical AI: visual inspection",
+    text: "Robotics AI: visual inspection",
   },
   {
     key: "patrol",
     title: "“The site is too big to watch every corner, especially at night.”",
     short: "Patrol",
-    text: "Physical AI: security patrol",
+    text: "Robotics AI: security patrol",
   },
   {
     key: "start",

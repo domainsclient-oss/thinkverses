@@ -5,6 +5,14 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    // three.js scene objects are mutable by design and are updated every frame inside useFrame,
+    // outside React state; the React Compiler immutability rule does not apply to them.
+    files: ["src/components/three/**/*.tsx"],
+    rules: {
+      "react-hooks/immutability": "off",
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

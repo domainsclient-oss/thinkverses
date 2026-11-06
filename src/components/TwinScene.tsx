@@ -18,10 +18,10 @@ function Box({ x, y, w, d, h, accent = false }: { x: number; y: number; w: numbe
   const top = [iso(x, y, h), iso(x + w, y, h), iso(x + w, y + d, h), iso(x, y + d, h)];
   const right = [iso(x + w, y, 0), iso(x + w, y + d, 0), iso(x + w, y + d, h), iso(x + w, y, h)];
   const left = [iso(x, y + d, 0), iso(x + w, y + d, 0), iso(x + w, y + d, h), iso(x, y + d, h)];
-  const stroke = accent ? "#7c5cff" : "#ffffff";
+  const stroke = accent ? "#22a85a" : "#ffffff";
   return (
     <g stroke={stroke} strokeWidth="1.2" strokeLinejoin="round">
-      <polygon points={pts(top)} fill={accent ? "rgba(124, 92, 255,0.18)" : "rgba(255, 255, 255,0.14)"} />
+      <polygon points={pts(top)} fill={accent ? "rgba(34,168,90,0.18)" : "rgba(255, 255, 255,0.14)"} />
       <polygon points={pts(right)} fill="rgba(255, 255, 255,0.06)" />
       <polygon points={pts(left)} fill="rgba(58,102,255,0.1)" />
     </g>
@@ -93,16 +93,16 @@ export function TwinScene({ className = "" }: { className?: string }) {
         <Box x={6.6} y={6.5} w={0.8} d={0.8} h={1.3} accent />
         <polyline points={pipe} fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <polyline points={pipe2} fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <polyline points={arm} fill="none" stroke="#7c5cff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points={arm} fill="none" stroke="#22a85a" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 
-      <polyline points={pipe} fill="none" stroke="#e8fbff" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
-      <polyline points={pipe2} fill="none" stroke="#e8fbff" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
-      <polyline points={flow} fill="none" stroke="#7c5cff" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
+      <polyline points={pipe} fill="none" stroke="#e9fff4" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
+      <polyline points={pipe2} fill="none" stroke="#e9fff4" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
+      <polyline points={flow} fill="none" stroke="#22a85a" strokeWidth="1.4" strokeDasharray="4 16" className="twin-flow" />
 
       <Node at={iso(7, 1.9, 3.2)} />
       <Node at={iso(2.2, 2, 2.6)} d={700} />
-      <Node at={iso(4.6, 7.4, 3.1)} d={1400} color="#7c5cff" />
+      <Node at={iso(4.6, 7.4, 3.1)} d={1400} color="#22a85a" />
       <Node at={iso(8.6, 3.6, 2.4)} d={2100} />
     </svg>
   );

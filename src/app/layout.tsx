@@ -22,8 +22,13 @@ const Archivo = localFont({
 
 // IBM Plex Sans (body) is declared in globals.css so --font-plex can use the exact family names.
 
+// On Vercel, resolve absolute URLs (og:image, canonical) against the deployment actually being served,
+// so shared links preview correctly before the custom domain points here. Falls back to site.url locally.
+const vercelHost =
+  process.env.VERCEL_ENV === "production" ? process.env.VERCEL_PROJECT_PRODUCTION_URL : process.env.VERCEL_URL;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(vercelHost ? `https://${vercelHost}` : site.url),
   title: {
     default: "Thinkverses Solutions | Digital Twin & Robotics Solutions in the UAE",
     template: "%s | Thinkverses Solutions",

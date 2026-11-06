@@ -17,14 +17,14 @@ const testimonials = [
       "We’ve been talking about AI adoption for over a year. This program gave us the language, the confidence, and the practical tools to finally act on it. It changed how I think about my role.",
     name: "Prya Morris",
     role: "Head of People Operations",
-    tone: "from-volt to-[#0056a7]",
+    tone: "from-volt to-[#1f3a72]",
   },
   {
     quote:
       "I didn’t expect to enjoy it this much. The training met me where I was — no technical background needed. I’m already applying it to how I build reports and prep for client meetings.",
     name: "James Brilla",
     role: "Senior Financial Analyst",
-    tone: "from-[#0056a7] to-cyan-deep",
+    tone: "from-[#1f3a72] to-cyan-deep",
   },
   {
     quote:
@@ -50,14 +50,14 @@ function splitQuote(q: string) {
 function Card({ t, index }: { t: (typeof testimonials)[number]; index: number }) {
   const [lead, rest] = splitQuote(t.quote);
   return (
-    <figure className="group relative flex h-full flex-col rounded-[28px] border border-line bg-white p-8 shadow-[0_24px_50px_-36px_rgba(10,22,48,0.3)] transition-colors duration-500 hover:border-ink/50 sm:p-10">
+    <figure className="group relative flex h-full flex-col glass rounded-[28px] p-8 transition-colors duration-500 hover:border-cyan/40 sm:p-10">
       <div className="flex items-center justify-between">
-        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ink" aria-hidden="true">
+        <span className="grid h-12 w-12 place-items-center rounded-2xl border border-cyan/30 bg-cyan/10" aria-hidden="true">
           <svg viewBox="0 0 64 48" className="h-5 w-7">
             <defs>
               <linearGradient id={`tq-${index}`} x1="0" x2="1" y1="0" y2="1">
                 <stop offset="0" stopColor="#ffffff" />
-                <stop offset="1" stopColor="#0056a7" />
+                <stop offset="1" stopColor="#1f3a72" />
               </linearGradient>
             </defs>
             <path
@@ -66,27 +66,27 @@ function Card({ t, index }: { t: (typeof testimonials)[number]; index: number })
             />
           </svg>
         </span>
-        <span className="font-display text-sm font-bold tabular-nums text-slate/60 [font-stretch:115%]">
+        <span className="font-display text-sm font-bold tabular-nums text-white/35 [font-stretch:115%]">
           {String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
         </span>
       </div>
 
-      <blockquote className="mt-8 flex-1 text-[1.12rem] leading-[1.7] text-slate sm:text-[1.2rem]">
+      <blockquote className="mt-8 flex-1 text-[1.12rem] leading-[1.7] text-white/65 sm:text-[1.2rem]">
         <p>
-          “<span className="font-semibold text-ink">{lead}</span>
+          “<span className="font-semibold text-white">{lead}</span>
           {rest && <> {rest}</>}”
         </p>
       </blockquote>
 
-      <figcaption className="mt-10 flex items-center gap-4 border-t border-line pt-6">
+      <figcaption className="mt-10 flex items-center gap-4 border-t border-white/10 pt-6">
         <span className={`rounded-full bg-gradient-to-br p-[2px] ${t.tone}`} aria-hidden="true">
           <span className="grid h-12 w-12 place-items-center rounded-full bg-ink font-display text-sm font-bold text-white">
             {initials(t.name)}
           </span>
         </span>
         <span>
-          <span className="block font-semibold text-ink">{t.name}</span>
-          <span className="block text-sm text-slate">{t.role}</span>
+          <span className="block font-semibold text-white">{t.name}</span>
+          <span className="block text-sm text-white/55">{t.role}</span>
         </span>
       </figcaption>
     </figure>
@@ -169,8 +169,8 @@ function Carousel() {
 
       <div className="mt-6 flex items-center justify-between gap-6">
         <div className="flex flex-1 items-center gap-4">
-          <p className="font-display text-sm font-bold tabular-nums text-slate [font-stretch:115%]">
-            <span className="text-ink">{String(active + 1).padStart(2, "0")}</span> / {String(testimonials.length).padStart(2, "0")}
+          <p className="font-display text-sm font-bold tabular-nums text-white/50 [font-stretch:115%]">
+            <span className="text-cyan">{String(active + 1).padStart(2, "0")}</span> / {String(testimonials.length).padStart(2, "0")}
           </p>
           <div className="flex max-w-xs flex-1 gap-1.5">
             {testimonials.map((t, i) => (
@@ -184,7 +184,7 @@ function Carousel() {
               >
                 <span
                   className={`absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 rounded-full transition-colors duration-300 ${
-                    i === active ? `bg-gradient-to-r ${t.tone}` : "bg-line group-hover/dot:bg-slate/40"
+                    i === active ? `bg-gradient-to-r ${t.tone}` : "bg-white/15 group-hover/dot:bg-white/35"
                   }`}
                 />
               </button>
@@ -195,7 +195,7 @@ function Carousel() {
           <button
             type="button"
             onClick={() => goTo(active - 1)}
-            className="grid h-12 w-12 place-items-center rounded-full border border-line bg-white text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+            className="grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:border-cyan hover:bg-cyan hover:text-ink"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={19} aria-hidden="true" />
@@ -203,7 +203,7 @@ function Carousel() {
           <button
             type="button"
             onClick={() => goTo(active + 1)}
-            className="grid h-12 w-12 place-items-center rounded-full bg-ink text-white ring-1 ring-ink transition-colors hover:bg-white hover:text-ink"
+            className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-cyan to-volt text-white transition-colors hover:brightness-110"
             aria-label="Next testimonial"
           >
             <ChevronRight size={19} aria-hidden="true" />
@@ -219,31 +219,31 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-title"
-      className="relative isolate overflow-hidden bg-paper py-24 sm:py-32"
+      className="relative isolate overflow-hidden surface-deep py-24 text-white sm:py-32"
     >
       <div
-        className="absolute inset-0 -z-10 bg-blueprint-light [mask-image:linear-gradient(to_bottom,black,transparent_80%)]"
+        className="absolute inset-0 -z-10 bg-tech-grid opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]"
         aria-hidden="true"
       />
-      <div className="absolute -right-40 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-violet/15 blur-[140px]" aria-hidden="true" />
+      <div className="absolute -right-40 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-volt/15 blur-[140px]" aria-hidden="true" />
 
       <div className="mx-auto grid max-w-[90rem] gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
         {/* Sticky intro */}
         <div className="lg:col-span-4">
           <Reveal className="lg:sticky lg:top-28">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-deep/30 bg-cyan-deep/5 px-3.5 py-1.5 text-sm font-medium text-cyan-deep">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-deep" aria-hidden="true" />
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-sm font-medium text-cyan">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" />
               Testimonials
             </p>
             <h2 id="testimonials-title" className="display h-section">
               What Our{" "}
-              <span className="text-[#0056A7]">Learners</span> Say
+              <span className="text-brand-gradient-light">Learners</span> Say
             </h2>
-            <p className="lede mt-6 text-slate">
+            <p className="lede mt-6 text-white/65">
               Real outcomes from professionals who turned AI training into new ways of working, leading and deciding.
             </p>
 
-            <div className="mt-10 rounded-[24px] bg-ink p-6 text-white">
+            <div className="glass-strong ring-metal mt-10 rounded-[24px] p-6 text-white">
               <div className="flex -space-x-3" aria-hidden="true">
                 {testimonials.map((t) => (
                   <span key={t.name} className={`rounded-full bg-gradient-to-br p-[2px] ring-4 ring-ink ${t.tone}`}>

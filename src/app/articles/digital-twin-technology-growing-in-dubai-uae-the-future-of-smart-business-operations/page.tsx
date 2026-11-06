@@ -31,7 +31,7 @@ export default function ArticlePage() {
     datePublished: article.date,
     image: `${site.url}/images/article-dubai.jpg`,
     author: { "@type": "Organization", name: site.legalName },
-    publisher: { "@type": "Organization", name: site.legalName, logo: { "@type": "ImageObject", url: `${site.url}/icon.svg` } },
+    publisher: { "@type": "Organization", name: site.legalName, logo: { "@type": "ImageObject", url: `${site.url}/logo/footer-logo.webp` } },
     mainEntityOfPage: `${site.url}${path}`,
   };
 

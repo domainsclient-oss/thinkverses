@@ -102,10 +102,12 @@ export function HeroBackdrop({ minimal = false }: { minimal?: boolean }) {
       className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
       aria-hidden="true"
     >
-      {/* 1 · Aurora: slowest, deepest layer */}
-      <div className="hero-drift-a absolute -left-[15%] top-[10%] h-[42rem] w-[42rem] rounded-full bg-volt/25 blur-[150px]" />
-      <div className="hero-drift-b absolute right-[-10%] top-[-20%] h-[38rem] w-[38rem] rounded-full bg-violet/20 blur-[150px]" />
-      <div className="hero-drift-c absolute bottom-[-25%] left-[35%] h-[34rem] w-[34rem] rounded-full bg-cyan/12 blur-[140px]" />
+      {/* 1 · Aurora: slowest, deepest layer; faint in minimal mode so a video beneath stays visible */}
+      <div className={minimal ? "opacity-40" : undefined}>
+        <div className="hero-drift-a absolute -left-[15%] top-[10%] h-[42rem] w-[42rem] rounded-full bg-volt/25 blur-[150px]" />
+        <div className="hero-drift-b absolute right-[-10%] top-[-20%] h-[38rem] w-[38rem] rounded-full bg-violet/20 blur-[150px]" />
+        <div className="hero-drift-c absolute bottom-[-25%] left-[35%] h-[34rem] w-[34rem] rounded-full bg-cyan/12 blur-[140px]" />
+      </div>
 
       {!minimal && (
         <>
@@ -132,7 +134,7 @@ export function HeroBackdrop({ minimal = false }: { minimal?: boolean }) {
       </div>
 
       {/* Readability scrim behind the copy */}
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink/60 lg:bg-gradient-to-r lg:from-ink/80 lg:via-ink/30 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink/60 lg:bg-gradient-to-r lg:from-ink/75 lg:via-ink/15 lg:to-transparent" />
     </div>
   );
 }
