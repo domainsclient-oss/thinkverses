@@ -67,8 +67,14 @@ export function Hero() {
               poster="/scenes/station-hero.webp"
               priority
               posterDesktopOnly
-              className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)] lg:[mask-image:linear-gradient(to_right,transparent,black_24%),linear-gradient(to_top,transparent,black_20%)] lg:[mask-composite:intersect]"
+              autoStart
+              className="absolute inset-0"
             />
+            {/* Edge fades as overlays (a CSS mask on a live WebGL canvas is re-composited every frame) */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[12%] bg-gradient-to-b from-white to-transparent lg:hidden" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[12%] bg-gradient-to-t from-white to-transparent lg:hidden" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[24%] bg-gradient-to-r from-white to-transparent lg:block" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-[20%] bg-gradient-to-t from-white to-transparent lg:block" aria-hidden="true" />
           </div>
 
           {/* Two ways in */}

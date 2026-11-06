@@ -80,7 +80,7 @@ const twin = {
 // Physical AI copy and colours follow the approved reference:
 // green #0b6e50 (label, links) · navy #14304f (headings) · grey #4a5868 (body)
 const physical = {
-  eyebrow: "Physical AI",
+  eyebrow: "Robotic Solutions",
   title: "Our robots inspect the line and patrol the site, and they report what they find as it happens.",
   inspection: {
     title: "Visual inspection",
@@ -159,8 +159,8 @@ function InspectionView({ on = true }: { on?: boolean }) {
       {/* Camera HUD */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(15,26,43,0.65))]" aria-hidden="true" />
       <div className="absolute inset-x-4 top-3.5 flex items-center justify-between text-[0.75rem]">
-        <span className="rounded-md bg-[#0f1a2b]/70 px-2 py-1 text-[#c9d2e0] backdrop-blur-sm">Camera 02, line 1</span>
-        <span className="inline-flex items-center gap-1.5 rounded-md bg-[#0f1a2b]/70 px-2 py-1 font-semibold text-[#5fd4a0] backdrop-blur-sm">
+        <span className="rounded-md bg-[#0f1a2b]/85 px-2 py-1 text-[#c9d2e0]">Camera 02, line 1</span>
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-[#0f1a2b]/85 px-2 py-1 font-semibold text-[#5fd4a0]">
           <span className="blink h-1.5 w-1.5 rounded-full bg-[#5fd4a0]" aria-hidden="true" />
           Live
         </span>
@@ -326,7 +326,7 @@ function PhysicalShowcase() {
                   <span key={m.item.title} className="relative h-1 flex-1 overflow-hidden rounded-full bg-[#14304f]/10">
                     {i === active &&
                       (motionOk ? (
-                        <span key={active} className="pai-progress absolute inset-y-0 left-0 block bg-[#0b6e50]" style={{ animationDuration: `${MODE_MS}ms`, animationPlayState: paused ? "paused" : "running" }} />
+                        <span key={active} className="pai-progress absolute inset-0 block origin-left bg-[#0b6e50]" style={{ animationDuration: `${MODE_MS}ms`, animationPlayState: paused ? "paused" : "running" }} />
                       ) : (
                         <span className="absolute inset-0 bg-[#0b6e50]" />
                       ))}
@@ -477,7 +477,7 @@ export function Pillars() {
                   className="absolute inset-x-0 bottom-44 top-56 sm:bottom-36 sm:top-24"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 border-t border-white/[0.08] bg-[#0f2742]/90 px-5 pb-5 pt-3 backdrop-blur-md sm:px-8">
+                <div className="absolute inset-x-0 bottom-0 border-t border-white/[0.08] bg-[#0f2742]/95 px-5 pb-5 pt-3 sm:px-8">
                   <SourceFlow />
                   <div className="mt-1 flex flex-wrap items-center justify-center gap-1.5">
                     <span className="mr-1 text-[0.82rem] font-semibold text-white/80">{twin.sourcesLabel}</span>

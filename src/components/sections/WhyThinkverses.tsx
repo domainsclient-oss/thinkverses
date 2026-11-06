@@ -11,8 +11,8 @@ const problems: { quote: string; answer: string; icon: LucideIcon; tone: Tone }[
   { quote: "“We only see problems after they happen.”", answer: "Digital Twin: predictive maintenance", icon: TrendingUp, tone: "twin" },
   { quote: "“Our data sits in SCADA, ERP and spreadsheets.”", answer: "Digital Twin: one source of truth", icon: LayoutGrid, tone: "twin" },
   { quote: "“The data is there, but answers reach us too late.”", answer: "Digital Twin: dashboards and plain-language answers", icon: Clock, tone: "twin" },
-  { quote: "“Defects still reach customers, and manual checks slip on night shifts.”", answer: "Physical AI: visual inspection", icon: ScanEye, tone: "ai" },
-  { quote: "“The site is too big to watch every corner, especially at night.”", answer: "Physical AI: security patrol", icon: Shield, tone: "ai" },
+  { quote: "“Defects still reach customers, and manual checks slip on night shifts.”", answer: "Robotic Solutions: visual inspection", icon: ScanEye, tone: "ai" },
+  { quote: "“The site is too big to watch every corner, especially at night.”", answer: "Robotic Solutions: security patrol", icon: Shield, tone: "ai" },
   { quote: "“We don’t know where to start.”", answer: "Start with a maturity assessment", icon: CircleHelp, tone: "start" },
 ];
 
@@ -54,7 +54,7 @@ function Routing({ active }: { active: number | null }) {
   ];
   const hubFor = (i: number) => (i < 3 ? hubs[0] : i < 5 ? hubs[1] : hubs[2]);
   return (
-    <svg viewBox="0 0 320 244" className="mx-auto h-auto w-full max-w-[19rem] overflow-visible" aria-hidden="true">
+    <svg viewBox="0 0 320 244" className="mx-auto h-auto w-full max-w-[19rem] overflow-visible will-change-transform" aria-hidden="true">
       {ys.map((y, i) => {
         const h = hubFor(i);
         const on = active === null || active === i;
@@ -111,7 +111,7 @@ export function WhyThinkverses() {
             <h2 className="display mt-5 text-[clamp(2rem,1.4rem+1.9vw,2.85rem)] leading-[1.08] text-[#14304f]">
               Which of these sounds most like your operation today?
             </h2>
-            <div className="mt-8 hidden rounded-[24px] border border-[#14304f]/10 bg-white/70 px-6 py-5 shadow-[0_24px_50px_-40px_rgba(20,48,79,0.5)] backdrop-blur lg:block">
+            <div className="mt-8 hidden rounded-[24px] border border-[#14304f]/10 bg-white/90 px-6 py-5 shadow-[0_24px_50px_-40px_rgba(20,48,79,0.5)] lg:block">
               <Routing active={active} />
             </div>
           </div>

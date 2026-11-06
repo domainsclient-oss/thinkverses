@@ -336,7 +336,9 @@ export function CtaBand() {
             {/* Seam: a dividing line with the transformation knob */}
             <div className="pointer-events-none absolute inset-0 z-10 hidden lg:block" aria-hidden="true">
               <span className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#0b6e50]/40 to-transparent" />
-              <span className="proof-drop absolute left-1/2 top-0 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#0b6e50] to-transparent" />
+              <span className="proof-drop absolute inset-0">
+                <span className="absolute -top-16 left-1/2 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#0b6e50] to-transparent" />
+              </span>
             </div>
             <span className="pointer-events-none absolute left-1/2 top-1/2 z-20 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#0b6e50] text-white shadow-[0_16px_34px_-12px_rgba(11,110,80,0.9)] ring-8 ring-white lg:grid" aria-hidden="true">
               <span className="absolute inset-0 animate-ping rounded-full bg-[#0b6e50]/20 [animation-duration:2.4s] motion-reduce:animate-none" />

@@ -67,7 +67,7 @@ const entries: Entry[] = [
   },
   {
     eyebrow: "Start here if you inspect or secure a site",
-    title: "Physical AI",
+    title: "Robotic Solutions",
     text: "Robots that inspect the line and patrol the site, and report what they find as it happens.",
     href: "/#robotics",
     tone: "dark",
@@ -105,7 +105,7 @@ function Card({ e }: { e: Entry }) {
   return (
     <Link ref={ref} href={e.href} onPointerMove={move} onPointerLeave={leave} className="entry-card group relative block h-full rounded-[24px]">
       <span className="entry-ring pointer-events-none absolute -inset-px rounded-[25px]" aria-hidden="true" />
-      <span className="entry-body relative flex h-full items-center gap-5 overflow-hidden rounded-[24px] border border-[#14304f]/10 bg-white/95 p-4 pr-6 backdrop-blur sm:gap-6 sm:p-5 sm:pr-8">
+      <span className="entry-body relative flex h-full items-center gap-5 overflow-hidden rounded-[24px] border border-[#14304f]/10 bg-white p-4 pr-6 sm:gap-6 sm:p-5 sm:pr-8">
         {/* Cursor spotlight */}
         <span className="entry-spot pointer-events-none absolute inset-0" aria-hidden="true" />
 

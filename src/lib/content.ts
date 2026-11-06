@@ -12,13 +12,12 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "/" },
-  { label: "Digital Twin Solutions", href: "/#digital-twin" },
+  { label: "Digital Twin", href: "/#digital-twin" },
   { label: "Robotics Solutions", href: "/#robotics" },
-  { label: "Our Industries", href: "#" },
-  { label: "About Us", href: "/#about" },
-  { label: "Articles & Insights", href: "#" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Use cases", href: "#" },
+  { label: "Industries", href: "#" },
+  { label: "Case studies", href: "#" },
+  { label: "About", href: "/#about" },
 ];
 
 export const consultationHref = "/?topic=consultation#contact";

@@ -113,10 +113,10 @@ function TwinContent({ selected = HOT_PUMP, onSelect, small }: { selected?: numb
   );
 }
 
-export default function StationScene({ active, still, mode = "hero", light = false, selected, onSelect }: Props) {
+export default function StationScene({ active, still, immediate, mode = "hero", light = false, selected, onSelect }: Props) {
   const small = useIsSmall();
   return (
-    <SceneCanvas active={active} still={still} camera={{ position: [-10.4, 5.8, 9.6], fov: 38, near: 0.1, far: 80 }}>
+    <SceneCanvas active={active} still={still} immediate={immediate} camera={{ position: [-10.4, 5.8, 9.6], fov: 38, near: 0.1, far: 80 }}>
       {mode === "hero" ? <HeroContent small={small} light={light} /> : <TwinContent selected={selected} onSelect={onSelect} small={small} />}
     </SceneCanvas>
   );

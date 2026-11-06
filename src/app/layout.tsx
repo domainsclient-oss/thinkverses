@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
+import { AnimationGovernor } from "@/components/motion/AnimationGovernor";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
+        <AnimationGovernor />
       </body>
     </html>
   );

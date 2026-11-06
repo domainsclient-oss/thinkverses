@@ -1075,11 +1075,14 @@ body {
   .hiw-floor {
     transform: perspective(300px) rotateX(62deg);
     transform-origin: 50% 100%;
+    mask-image: linear-gradient(to top, black, transparent);
+  }
+  /* The grid slides with transform (one tile per loop) instead of animating background-position */
+  .hiw-floor-grid {
     background-image:
       linear-gradient(rgba(169, 156, 255, 0.35) 1px, transparent 1px),
       linear-gradient(90deg, rgba(169, 156, 255, 0.35) 1px, transparent 1px);
     background-size: 26px 26px;
-    mask-image: linear-gradient(to top, black, transparent);
   }
 }
 
@@ -1090,7 +1093,7 @@ body {
 }
 @keyframes hiw-floor-run {
   to {
-    background-position: 0 26px;
+    transform: translateY(26px);
   }
 }
 @keyframes hiw-src-in {
@@ -1187,7 +1190,7 @@ body {
   .hiw-ring {
     animation: hiw-spin 9s linear infinite;
   }
-  .hiw-floor {
+  .hiw-floor-grid {
     animation: hiw-floor-run 1.8s linear infinite;
   }
   [data-visible="true"] .hiw-src {
@@ -1281,10 +1284,10 @@ body {
 
 @keyframes pai-progress {
   from {
-    width: 0;
+    transform: scaleX(0);
   }
   to {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 .pai-progress {
@@ -1322,9 +1325,11 @@ body {
     animation: bt-scan 3s ease-in-out infinite;
   }
 }
+/* Moving markers animate a full-size wrapper with transform (compositor-only), so 100% still
+   means "the whole track" without animating left/top (which repaints every frame). */
 @keyframes bt-dot {
   0% {
-    left: 0;
+    transform: translateX(0);
     opacity: 0;
   }
   20%,
@@ -1332,13 +1337,13 @@ body {
     opacity: 1;
   }
   100% {
-    left: 100%;
+    transform: translateX(100%);
     opacity: 0;
   }
 }
 @keyframes bt-dot-y {
   0% {
-    top: 0;
+    transform: translateY(0);
     opacity: 0;
   }
   20%,
@@ -1346,16 +1351,16 @@ body {
     opacity: 1;
   }
   100% {
-    top: 100%;
+    transform: translateY(100%);
     opacity: 0;
   }
 }
 @keyframes bt-scan {
   0% {
-    left: -2.5rem;
+    transform: translateX(0);
   }
   100% {
-    left: 100%;
+    transform: translateX(calc(100% + 2.5rem));
   }
 }
 
@@ -1475,7 +1480,7 @@ body {
 }
 @keyframes proof-drop {
   0% {
-    top: -4rem;
+    transform: translateY(0);
     opacity: 0;
   }
   15%,
@@ -1483,7 +1488,7 @@ body {
     opacity: 1;
   }
   100% {
-    top: 100%;
+    transform: translateY(calc(100% + 4rem));
     opacity: 0;
   }
 }

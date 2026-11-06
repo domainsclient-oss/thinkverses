@@ -7,7 +7,7 @@ const footerMenu = [
     title: "Solutions",
     links: [
       { label: "Digital Twin", href: "#" },
-      { label: "Physical AI", href: "#" },
+      { label: "Robotic Solutions", href: "#" },
       { label: "Use cases", href: "#" },
     ],
   },
@@ -29,7 +29,6 @@ const footerMenu = [
 ];
 
 const legalLinks = [
-  { label: "Terms of Service", href: "/terms-of-service" },
   { label: "Privacy Policy", href: "#" },
   { label: "Cookie Policy", href: "/cookie-policy" },
 ];
@@ -42,8 +41,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <FooterLogo />
             <p className="mt-5 max-w-sm text-white/65">
-              Digital Twin decision-intelligence systems and robotics solutions for operationally complex environments.
-              Headquartered in Dubai, UAE.
+              Digital twins and Robotic Solutions for industrial teams in the UAE.
             </p>
             <div className="mt-7">
               <SocialLinks />

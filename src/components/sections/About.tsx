@@ -134,7 +134,9 @@ function TwinVisual() {
   const line = "M20 160 L70 156 L110 160 L150 154 L190 158 L230 146 L270 128 L310 100";
   return (
     <Panel>
-      <div className="hiw-floor absolute inset-x-[-30%] bottom-0 h-24" aria-hidden="true" />
+      <div className="hiw-floor absolute inset-x-[-30%] bottom-0 h-24 overflow-hidden" aria-hidden="true">
+        <div className="hiw-floor-grid absolute inset-x-0 -top-[26px] bottom-0" />
+      </div>
       <div className="hiw-stage absolute inset-0">
         <div className="absolute inset-x-5 top-5">
           <p className="font-display text-[1.1rem] font-bold text-white [font-stretch:105%]">Pump 3: live mirror</p>

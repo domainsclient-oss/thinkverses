@@ -38,7 +38,9 @@ function ThermalVisual() {
     <div className="relative h-11 overflow-hidden rounded-lg bg-[#0f2236] ring-1 ring-white/10" aria-hidden="true">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_60%,rgba(95,212,160,0.55),transparent_45%),radial-gradient(circle_at_72%_40%,rgba(11,110,80,0.7),transparent_40%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:12px_100%]" />
-      <span className="bt-scan absolute inset-y-0 w-10 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      <span className="bt-scan absolute inset-0">
+        <span className="absolute inset-y-0 -left-10 w-10 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      </span>
     </div>
   );
 }
@@ -83,7 +85,9 @@ function StepCard({
         }`}
         aria-hidden="true"
       >
-        <span className="bt-dot absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#5fd4a0] shadow-[0_0_10px_2px_rgba(95,212,160,0.7)]" />
+        <span className="bt-dot absolute inset-0">
+          <span className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#5fd4a0] shadow-[0_0_10px_2px_rgba(95,212,160,0.7)]" />
+        </span>
       </span>
 
       <div className="relative overflow-hidden rounded-[22px] bg-gradient-to-br from-white/20 via-white/[0.06] to-white/[0.02] p-px transition-transform duration-500 group-hover:-translate-y-1">
@@ -109,7 +113,9 @@ function StepCard({
 function MobileLink() {
   return (
     <span className="relative mx-auto block h-10 w-px bg-gradient-to-b from-[#5fd4a0]/50 to-[#5fd4a0]/10 lg:hidden" aria-hidden="true">
-      <span className="bt-dot-y absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#5fd4a0] shadow-[0_0_10px_2px_rgba(95,212,160,0.7)]" />
+      <span className="bt-dot-y absolute inset-0">
+        <span className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#5fd4a0] shadow-[0_0_10px_2px_rgba(95,212,160,0.7)]" />
+      </span>
     </span>
   );
 }
