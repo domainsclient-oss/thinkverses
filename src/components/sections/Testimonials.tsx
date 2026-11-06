@@ -225,7 +225,7 @@ export function Testimonials() {
         className="absolute inset-0 -z-10 bg-tech-grid opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]"
         aria-hidden="true"
       />
-      <div className="absolute -right-40 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-volt/15 blur-[140px]" aria-hidden="true" />
+      <div className="absolute -right-40 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-volt/15 glow-soft" aria-hidden="true" />
 
       <div className="mx-auto grid max-w-[90rem] gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
         {/* Sticky intro */}

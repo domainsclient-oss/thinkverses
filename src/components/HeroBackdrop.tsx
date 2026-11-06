@@ -104,9 +104,9 @@ export function HeroBackdrop({ minimal = false }: { minimal?: boolean }) {
     >
       {/* 1 · Aurora: slowest, deepest layer; faint in minimal mode so a video beneath stays visible */}
       <div className={minimal ? "opacity-40" : undefined}>
-        <div className="hero-drift-a absolute -left-[15%] top-[10%] h-[42rem] w-[42rem] rounded-full bg-volt/25 blur-[150px]" />
-        <div className="hero-drift-b absolute right-[-10%] top-[-20%] h-[38rem] w-[38rem] rounded-full bg-violet/20 blur-[150px]" />
-        <div className="hero-drift-c absolute bottom-[-25%] left-[35%] h-[34rem] w-[34rem] rounded-full bg-cyan/12 blur-[140px]" />
+        <div className="hero-drift-a absolute -left-[15%] top-[10%] h-[42rem] w-[42rem] rounded-full bg-volt/25 glow-soft" />
+        <div className="hero-drift-b absolute right-[-10%] top-[-20%] h-[38rem] w-[38rem] rounded-full bg-violet/20 glow-soft" />
+        <div className="hero-drift-c absolute bottom-[-25%] left-[35%] h-[34rem] w-[34rem] rounded-full bg-cyan/12 glow-soft" />
       </div>
 
       {!minimal && (

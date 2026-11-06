@@ -25,8 +25,8 @@ export function Insights() {
   return (
     <section id="insights" className="relative isolate overflow-hidden surface-void py-24 text-white sm:py-32">
       <div className="absolute inset-0 -z-10 bg-tech-grid opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" aria-hidden="true" />
-      <div className="absolute -left-40 top-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-volt/20 blur-[140px]" aria-hidden="true" />
-      <div className="absolute -right-40 bottom-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-violet/20 blur-[140px]" aria-hidden="true" />
+      <div className="absolute -left-40 top-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-volt/20 glow-soft" aria-hidden="true" />
+      <div className="absolute -right-40 bottom-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-violet/20 glow-soft" aria-hidden="true" />
       <p
         className="pointer-events-none absolute -top-6 right-0 -z-10 select-none font-display text-[clamp(6rem,18vw,17rem)] font-bold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.07)] [font-stretch:125%]"
         aria-hidden="true"

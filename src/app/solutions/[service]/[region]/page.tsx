@@ -42,7 +42,7 @@ export default async function SolutionPage({ params }: PageProps<"/solutions/[se
     <>
       <section className="relative isolate overflow-hidden bg-ink pb-20 pt-36 text-white sm:pb-28 sm:pt-44">
         <div className="absolute inset-0 -z-10 bg-blueprint [mask-image:radial-gradient(ellipse_at_top_left,black,transparent_70%)]" aria-hidden="true" />
-        <div className="absolute -right-32 top-10 -z-10 h-[28rem] w-[28rem] rounded-full bg-volt/25 blur-[130px]" aria-hidden="true" />
+        <div className="absolute -right-32 top-10 -z-10 h-[28rem] w-[28rem] rounded-full bg-volt/25 glow-soft" aria-hidden="true" />
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <nav aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-fog">

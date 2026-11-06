@@ -88,7 +88,7 @@ function StepCard({
 
       <div className="relative overflow-hidden rounded-[22px] bg-gradient-to-br from-white/20 via-white/[0.06] to-white/[0.02] p-px transition-transform duration-500 group-hover:-translate-y-1">
         <div className="relative h-full rounded-[21px] bg-[#0b1a2b]/90 p-5 backdrop-blur sm:p-6">
-          <span className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0b6e50]/0 blur-2xl transition-colors duration-700 group-hover:bg-[#0b6e50]/40" aria-hidden="true" />
+          <span className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0b6e50]/0 glow-soft transition-colors duration-700 group-hover:bg-[#0b6e50]/40" aria-hidden="true" />
           <div className="relative flex items-start gap-4">
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-[#5fd4a0]/30 bg-[#0f2236] text-[#5fd4a0] transition-colors duration-500 group-hover:border-[#5fd4a0]/70" aria-hidden="true">
               <Icon size={22} />
@@ -122,7 +122,7 @@ function Hub({ title, text }: { title: string; text: string }) {
   return (
     <div className="relative mx-auto grid aspect-square w-[min(20rem,86vw)] place-items-center lg:w-[23rem]">
       {/* Glow */}
-      <div className="absolute inset-[12%] rounded-full bg-[#0b6e50]/40 blur-[60px]" aria-hidden="true" />
+      <div className="absolute inset-[12%] rounded-full bg-[#0b6e50]/40 glow-soft" aria-hidden="true" />
       {/* Rotating rings */}
       <div className="absolute inset-0 animate-spin rounded-full border border-dashed border-[#5fd4a0]/45 [animation-duration:40s] motion-reduce:animate-none" aria-hidden="true">
         {[0, 120, 240].map((d) => (
@@ -151,9 +151,9 @@ function Hub({ title, text }: { title: string; text: string }) {
 export function Training() {
   const [robot, readings, twin, decision] = steps;
   return (
-    <section id="training" className="relative isolate overflow-hidden bg-[#0b1a2b] py-24 text-white sm:py-32">
+    <section id="training" className="cv-auto [contain-intrinsic-size:auto_1406px] lg:[contain-intrinsic-size:auto_938px] relative isolate overflow-hidden bg-[#0b1a2b] py-24 text-white sm:py-32">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden="true" />
-      <div className="absolute left-1/2 top-1/2 -z-10 h-[26rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0b6e50]/20 blur-[140px]" aria-hidden="true" />
+      <div className="absolute left-1/2 top-1/2 -z-10 h-[26rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0b6e50]/20 glow-soft" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-[#5fd4a0]/40 to-transparent" aria-hidden="true" />
 
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">

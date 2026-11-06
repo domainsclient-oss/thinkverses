@@ -96,9 +96,9 @@ export function WhyThinkverses() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section id="why" data-header-light className="relative isolate overflow-hidden bg-[#f7f9fb] py-24 sm:py-28">
+    <section id="why" data-header-light className="cv-auto [contain-intrinsic-size:auto_1146px] lg:[contain-intrinsic-size:auto_833px] relative isolate overflow-hidden bg-[#f7f9fb] py-24 sm:py-28">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(rgba(20,48,79,0.08)_1px,transparent_1.3px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" aria-hidden="true" />
-      <div className="absolute -left-48 top-1/3 -z-10 h-[28rem] w-[28rem] rounded-full bg-[#0b6e50]/[0.07] blur-[110px]" aria-hidden="true" />
+      <div className="absolute -left-48 top-1/3 -z-10 h-[28rem] w-[28rem] rounded-full bg-[#0b6e50]/[0.07] glow-soft" aria-hidden="true" />
 
       <div className="mx-auto grid max-w-[90rem] gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-10">
         {/* Left: question + routing map */}

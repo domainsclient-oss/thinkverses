@@ -4,6 +4,10 @@ import { articleSlug, legacyRedirects } from "./src/lib/locations";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    // Tailwind output is compact (~24 KB gzipped): inlining removes the render-blocking stylesheet request
+    inlineCss: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },

@@ -17,11 +17,11 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden bg-[#14304f] py-24 text-white sm:py-32">
+    <section id="contact" className="cv-auto [contain-intrinsic-size:auto_2809px] lg:[contain-intrinsic-size:auto_1249px] relative isolate overflow-hidden bg-[#14304f] py-24 text-white sm:py-32">
       {/* Ambient layers */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_30%_20%,black,transparent_70%)]" aria-hidden="true" />
-      <div className="absolute -left-40 -top-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#0b6e50]/35 blur-[140px]" aria-hidden="true" />
-      <div className="absolute -bottom-40 right-0 -z-10 h-[30rem] w-[40rem] rounded-full bg-[#5fd4a0]/10 blur-[140px]" aria-hidden="true" />
+      <div className="absolute -left-40 -top-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#0b6e50]/35 glow-soft" aria-hidden="true" />
+      <div className="absolute -bottom-40 right-0 -z-10 h-[30rem] w-[40rem] rounded-full bg-[#5fd4a0]/10 glow-soft" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-[#5fd4a0]/50 to-transparent" aria-hidden="true" />
 
       <div className="relative mx-auto grid max-w-[90rem] gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-10">

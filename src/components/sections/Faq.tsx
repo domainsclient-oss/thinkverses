@@ -13,7 +13,7 @@ export function Faq() {
   return (
     <section id="faq" className="relative isolate overflow-hidden bg-paper py-24 sm:py-32">
       <div className="absolute inset-0 -z-10 bg-blueprint-light [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" aria-hidden="true" />
-      <div className="absolute -right-40 -top-20 -z-10 h-96 w-96 rounded-full bg-cyan/15 blur-[120px]" aria-hidden="true" />
+      <div className="absolute -right-40 -top-20 -z-10 h-96 w-96 rounded-full bg-cyan/15 glow-soft" aria-hidden="true" />
       <div className="mx-auto grid max-w-[90rem] gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-10">
         <Reveal className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">

@@ -36,7 +36,7 @@ export function Hero() {
               Digital twin live with a UAE operator for over a year
             </p>
 
-            <h1 className="hero-rise display mt-8 max-w-[15ch] text-[clamp(2.4rem,1.2rem+3.3vw,4.5rem)] leading-[1.02] text-[#14304f]" style={d(120)}>
+            <h1 className="hero-rise-solid display mt-8 max-w-[15ch] text-[clamp(2.4rem,1.2rem+3.3vw,4.5rem)] leading-[1.02] text-[#14304f]">
               We help industrial teams in the UAE <span className="text-[#0b6e50]">catch problems early.</span>
             </h1>
             <p className="hero-rise lede mt-7 max-w-[46ch] text-[#4a5868]" style={d(220)}>
@@ -64,6 +64,9 @@ export function Hero() {
             <SceneMount
               scene="station"
               props={{ mode: "hero", light: true }}
+              poster="/scenes/station-hero.webp"
+              priority
+              posterDesktopOnly
               className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)] lg:[mask-image:linear-gradient(to_right,transparent,black_24%),linear-gradient(to_top,transparent,black_20%)] lg:[mask-composite:intersect]"
             />
           </div>

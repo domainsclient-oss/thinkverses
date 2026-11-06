@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Components no longer rendered anywhere: keep the files, skip their classes (smaller inlined CSS) */
+@source not "../components/sections/Industries.tsx";
+@source not "../components/sections/Tools.tsx";
+@source not "../components/sections/Insights.tsx";
+@source not "../components/sections/Testimonials.tsx";
+@source not "../components/sections/Faq.tsx";
+@source not "../components/sections/Locations.tsx";
+@source not "../components/sections/DigitalTwin.tsx";
+@source not "../components/TwinScene.tsx";
+@source not "../components/HeroBackdrop.tsx";
+
 @theme {
   /* Midnight industrial palette */
   --color-void: #03050a;
@@ -285,6 +296,29 @@ body {
     transform: none;
   }
 }
+/* Keyed content swaps (tab panels, picked layer) */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .enter-up {
+    animation: enter-up 0.55s var(--ease-out-soft) both;
+  }
+}
+
+/* Headline entrance: slide only. Text that starts at opacity 0 is not counted as the
+   page's Largest Contentful Paint, so the h1 stays visible from the first frame. */
+@keyframes rise-solid {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: none;
+  }
+}
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
@@ -375,6 +409,9 @@ body {
   .hero-rise {
     animation: rise 0.9s var(--ease-out-soft) both;
     animation-delay: var(--d, 0ms);
+  }
+  .hero-rise-solid {
+    animation: rise-solid 0.9s var(--ease-out-soft) both;
   }
   .twin-draw path,
   .twin-draw line,
@@ -567,6 +604,20 @@ body {
 }
 
 @layer components {
+/* Soft ambient glow. A radial mask instead of a large CSS blur(): same falloff, but no
+   expensive blur pass when the page is first rasterised (notably on low-end/mobile GPUs). */
+.glow-soft {
+  -webkit-mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  scale: 1.45;
+}
+
+/* Below-the-fold sections: skip layout/paint until near the viewport. Pair with a
+   contain-intrinsic-size hint so the scrollbar and #anchor jumps stay accurate. */
+.cv-auto {
+  content-visibility: auto;
+}
+
 /* ===================== Industrial dark system ===================== */
 
 /* Section surfaces */
@@ -1365,82 +1416,52 @@ body {
     animation: proof-drop 2.6s linear infinite;
   }
 }
-/* Before card: a report pasted together by hand */
-@keyframes proof-cell {
-  0% {
-    transform: scaleX(0);
-  }
-  4%,
-  80% {
-    transform: scaleX(1);
-  }
-  88%,
-  100% {
-    transform: scaleX(0);
-  }
-}
-@keyframes proof-cursor {
+/* Before card: report typed by hand, leaders waiting */
+@keyframes mr-dot {
   0%,
-  2.6% {
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-3px);
     opacity: 1;
   }
-  3%,
-  100% {
-    opacity: 0;
-  }
 }
-@keyframes proof-file {
-  0% {
-    transform: translateX(-10px);
-    opacity: 0;
+@keyframes mr-flip {
+  0%,
+  42% {
+    transform: rotate(0deg);
   }
-  12%,
-  55% {
-    transform: translateX(0);
-    opacity: 1;
+  50%,
+  92% {
+    transform: rotate(180deg);
   }
-  75%,
   100% {
-    transform: translateX(26px) scale(0.85);
-    opacity: 0;
-  }
-}
-@keyframes proof-hand {
-  to {
     transform: rotate(360deg);
   }
 }
-.proof-cell {
-  transform-origin: left;
+@keyframes mr-blink {
+  50% {
+    opacity: 0;
+  }
 }
-.proof-cursor {
-  opacity: 0;
-}
-.proof-hand-h,
-.proof-hand-m {
-  transform-box: view-box;
-  transform-origin: 12px 12px;
+.mr-dot,
+.mr-flip {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .proof-cell {
-    transform: scaleX(0);
-    animation: proof-cell 8s linear infinite;
+  .mr-dot {
+    animation: mr-dot 1.2s ease-in-out infinite;
     animation-delay: var(--d, 0s);
   }
-  .proof-cursor {
-    animation: proof-cursor 8s linear infinite;
-    animation-delay: var(--d, 0s);
+  .mr-flip {
+    animation: mr-flip 3.2s var(--ease-out-soft) infinite;
   }
-  .proof-file {
-    opacity: 0;
-    animation: proof-file 3.3s var(--ease-out-soft) infinite;
-    animation-delay: var(--d, 0s);
-  }
-  .proof-hand-m {
-    animation: proof-hand 3s linear infinite;
-  }
-  .proof-hand-h {
-    animation: proof-hand 36s linear infinite;
+  .mr-blink {
+    animation: mr-blink 0.9s steps(1) infinite;
   }
 }
 @keyframes proof-sweep {

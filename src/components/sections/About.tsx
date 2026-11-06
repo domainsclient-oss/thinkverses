@@ -197,9 +197,9 @@ const steps = [
 
 export function About() {
   return (
-    <section id="about" className="relative isolate overflow-hidden bg-[#0b1a2b] py-24 text-white sm:py-32">
+    <section id="about" className="cv-auto [contain-intrinsic-size:auto_2244px] lg:[contain-intrinsic-size:auto_931px] relative isolate overflow-hidden bg-[#0b1a2b] py-24 text-white sm:py-32">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" aria-hidden="true" />
-      <div className="absolute -right-32 -top-32 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#7c6cf0]/15 blur-[130px]" aria-hidden="true" />
+      <div className="absolute -right-32 -top-32 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#7c6cf0]/15 glow-soft" aria-hidden="true" />
 
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-8 lg:grid-cols-12 lg:items-end">

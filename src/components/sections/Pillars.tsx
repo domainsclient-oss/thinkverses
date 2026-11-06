@@ -3,7 +3,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { ArrowRight, BrainCircuit, Coins, Database, Leaf, ScanEye, Shield, ShieldCheck, Target, TrendingUp, Wrench } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { SceneMount } from "../three/SceneMount";
@@ -147,6 +146,7 @@ function InspectionView({ on = true }: { on?: boolean }) {
       <SceneMount
         scene="inspection"
         className="absolute inset-0"
+        poster="/scenes/inspection.webp"
         paused={!on}
         props={{
           tone: "section",
@@ -174,7 +174,7 @@ function InspectionView({ on = true }: { on?: boolean }) {
 function PatrolMap({ on = true }: { on?: boolean }) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#f3f7f5]">
-      <SceneMount scene="patrol" className="absolute inset-0" paused={!on} props={{ tone: "section", labels: ["Warehouse A", "Warehouse B", "Gate", "Loading bay"] }} />
+      <SceneMount scene="patrol" className="absolute inset-0" poster="/scenes/patrol.webp" paused={!on} props={{ tone: "section", labels: ["Warehouse A", "Warehouse B", "Gate", "Loading bay"] }} />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f3f7f5] to-transparent" aria-hidden="true" />
       <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-4 text-[0.72rem] text-[#4a5868]">
         <span className="inline-flex items-center gap-2">
@@ -232,6 +232,11 @@ function PhysicalShowcase() {
 
         <Reveal delay={100} className="lg:col-span-5 lg:flex lg:justify-end">
           <div role="tablist" aria-label={physical.eyebrow} className="relative grid w-full grid-cols-2 rounded-2xl bg-white p-1.5 shadow-[0_18px_40px_-28px_rgba(20,48,79,0.6)] ring-1 ring-[#14304f]/10 lg:w-auto">
+            <span
+              className="absolute inset-y-1.5 left-1.5 w-[calc(50%-0.375rem)] rounded-xl bg-[#0b6e50] shadow-[0_10px_22px_-10px_rgba(11,110,80,0.9)] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)]"
+              style={{ transform: `translateX(${active * 100}%)` }}
+              aria-hidden="true"
+            />
             {modes.map((m, i) => {
               const on = i === active;
               const Icon = m.icon;
@@ -248,14 +253,6 @@ function PhysicalShowcase() {
                     on ? "text-white" : "text-[#14304f]/60 hover:text-[#14304f]"
                   }`}
                 >
-                  {on && (
-                    <motion.span
-                      layoutId="pai-tab-pill"
-                      className="absolute inset-0 -z-10 rounded-xl bg-[#0b6e50] shadow-[0_10px_22px_-10px_rgba(11,110,80,0.9)]"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                      aria-hidden="true"
-                    />
-                  )}
                   <Icon size={17} aria-hidden="true" />
                   <span className="text-left sm:whitespace-nowrap">{m.item.title}</span>
                 </button>
@@ -275,17 +272,18 @@ function PhysicalShowcase() {
                 const on = i === active;
                 const View = m.View;
                 return (
-                  <motion.div
+                  <div
                     key={m.item.title}
-                    className="absolute inset-0"
-                    initial={false}
-                    animate={{ opacity: on ? 1 : 0, rotateY: on ? 0 : i < active ? -14 : 14, scale: on ? 1 : 0.92, z: on ? 0 : -80 }}
-                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                    style={{ pointerEvents: on ? "auto" : "none" }}
+                    className="absolute inset-0 transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none"
+                    style={{
+                      opacity: on ? 1 : 0,
+                      transform: on ? "none" : `translateZ(-80px) rotateY(${i < active ? -14 : 14}deg) scale(0.92)`,
+                      pointerEvents: on ? "auto" : "none",
+                    }}
                     aria-hidden={!on}
                   >
                     <View on={on} />
-                  </motion.div>
+                  </div>
                 );
               })}
               {/* Viewfinder corners */}
@@ -298,7 +296,7 @@ function PhysicalShowcase() {
 
             {/* Details */}
             <div id="pai-panel" role="tabpanel" aria-labelledby={`pai-tab-${active}`} className="relative flex flex-col overflow-hidden rounded-[28px] bg-white p-7 ring-1 ring-[#14304f]/[0.06] sm:p-8">
-              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#0b6e50]/[0.08] blur-2xl" aria-hidden="true" />
+              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#0b6e50]/[0.08] glow-soft" aria-hidden="true" />
               {/* Radar sweep */}
               <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72" aria-hidden="true">
                 {[0, 1, 2].map((k) => (
@@ -306,13 +304,7 @@ function PhysicalShowcase() {
                 ))}
                 <span className="absolute inset-0 animate-spin rounded-full bg-[conic-gradient(from_0deg,rgba(11,110,80,0.22),transparent_25%)] [animation-duration:6s] motion-reduce:animate-none" />
               </div>
-              <motion.div
-                key={active}
-                initial={motionOk ? { opacity: 0, y: 14 } : false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="relative flex flex-1 flex-col"
-              >
+              <div key={active} className="enter-up relative flex flex-1 flex-col">
                 <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#0b6e50] text-white shadow-[0_14px_28px_-12px_rgba(11,110,80,0.9)]" aria-hidden="true">
                   <CurrentIcon size={24} />
                 </span>
@@ -326,7 +318,7 @@ function PhysicalShowcase() {
                     <ArrowRight size={18} className="shrink-0 transition-transform duration-300 group-hover/l:translate-x-1" aria-hidden="true" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Auto-advance progress */}
               <div className="relative mt-6 flex items-center gap-3" aria-hidden="true">
@@ -354,7 +346,7 @@ export function Pillars() {
   const picked = twin.layers[layer];
 
   return (
-    <section id="robotics" className="relative isolate overflow-hidden text-white">
+    <section id="robotics" className="cv-auto [contain-intrinsic-size:auto_4166px] lg:[contain-intrinsic-size:auto_2557px] relative isolate overflow-hidden text-white">
       {/* ===================== Light band: Digital Twin ===================== */}
       <div id="digital-twin" data-header-light className="relative scroll-mt-[4.5rem] bg-white pb-20 pt-24 text-[#14304f] sm:pb-24 sm:pt-32">
         <div className="absolute inset-0 bg-blueprint-light [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" aria-hidden="true" />
@@ -430,17 +422,9 @@ export function Pillars() {
                         onMouseEnter={() => setLayer(i)}
                         aria-pressed={on}
                         className={`relative isolate flex w-full items-center gap-4 overflow-hidden rounded-2xl border px-4 py-3.5 text-left transition-colors duration-300 ${
-                          on ? "border-[#14304f]" : "border-[#14304f]/10 bg-[#f6f8fb] hover:border-[#14304f]/30"
+                          on ? "border-[#14304f] bg-[#14304f]" : "border-[#14304f]/10 bg-[#f6f8fb] hover:border-[#14304f]/30"
                         }`}
                       >
-                        {on && (
-                          <motion.span
-                            layoutId="layer-active"
-                            className="absolute inset-0 -z-10 bg-[#14304f]"
-                            transition={{ type: "spring", stiffness: 380, damping: 34 }}
-                            aria-hidden="true"
-                          />
-                        )}
                         <span className={`w-14 shrink-0 text-[0.76rem] font-medium ${on ? "text-white/70" : "text-[#4a5868]"}`}>
                           Layer {l.n}
                         </span>
@@ -478,16 +462,17 @@ export function Pillars() {
                     You picked layer {picked.n}: {picked.name}
                   </p>
                   {picked.detail && (
-                    <motion.div key={picked.n} className="mt-3" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
+                    <div key={picked.n} className="enter-up mt-3">
                       <p className="font-display text-[1.5rem] font-bold leading-snug text-white [font-stretch:105%]">{picked.detail.quote}</p>
                       <p className="mt-4 border-t border-white/10 pt-3 text-[0.82rem] font-semibold text-[#5fd4a0]">{twin.detailLabel}</p>
                       <p className="mt-2 max-w-[52ch] text-[0.95rem] leading-relaxed text-white/85">{picked.detail.text}</p>
-                    </motion.div>
+                    </div>
                   )}
                 </div>
 
                 <SceneMount
                   scene="layers"
+                  poster="/scenes/layers.webp"
                   props={{ selected: 4 - layer, onSelect: (s: number) => setLayer(4 - s) }}
                   className="absolute inset-x-0 bottom-44 top-56 sm:bottom-36 sm:top-24"
                 />
@@ -512,7 +497,7 @@ export function Pillars() {
       {/* ===================== Physical AI ===================== */}
       <div data-header-light className="relative overflow-hidden border-t border-[#14304f]/[0.06] bg-[#f7f9fb] py-24 text-[#14304f] sm:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(rgba(20,48,79,0.08)_1px,transparent_1.3px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" aria-hidden="true" />
-        <div className="absolute -right-40 top-10 h-[28rem] w-[28rem] rounded-full bg-[#0b6e50]/[0.07] blur-[110px]" aria-hidden="true" />
+        <div className="absolute -right-40 top-10 h-[28rem] w-[28rem] rounded-full bg-[#0b6e50]/[0.07] glow-soft" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <PhysicalShowcase />

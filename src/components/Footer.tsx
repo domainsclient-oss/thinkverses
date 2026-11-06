@@ -37,7 +37,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden bg-[#0b1a2b] text-white">
+    <footer className="cv-auto [contain-intrinsic-size:auto_1031px] lg:[contain-intrinsic-size:auto_478px] relative isolate overflow-hidden bg-[#0b1a2b] text-white">
       <div className="relative mx-auto max-w-[90rem] px-4 pb-10 pt-20 sm:px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">

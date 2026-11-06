@@ -139,8 +139,8 @@ export function Locations() {
   return (
     <section id="locations" className="relative isolate overflow-hidden surface-deep py-24 text-white sm:py-32">
       <div className="absolute inset-0 -z-10 bg-tech-grid opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true" />
-      <div className="absolute -right-40 -top-20 -z-10 h-[32rem] w-[32rem] rounded-full bg-volt/20 blur-[140px]" aria-hidden="true" />
-      <div className="absolute -bottom-40 -left-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-cyan/10 blur-[140px]" aria-hidden="true" />
+      <div className="absolute -right-40 -top-20 -z-10 h-[32rem] w-[32rem] rounded-full bg-volt/20 glow-soft" aria-hidden="true" />
+      <div className="absolute -bottom-40 -left-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-cyan/10 glow-soft" aria-hidden="true" />
 
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
