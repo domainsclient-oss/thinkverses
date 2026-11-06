@@ -44,7 +44,7 @@ export function Header() {
         <nav aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {nav.map((item) => (
-              <li key={item.href}>
+              <li key={item.label}>
                 <Link
                   href={item.href}
                   className="group relative block rounded-full px-3 py-2 text-[0.92rem] font-medium text-[#14304f] transition-colors hover:text-[#0b6e50]"
@@ -81,7 +81,7 @@ export function Header() {
         <nav aria-label="Mobile" className="mx-auto max-w-[90rem] px-4 pb-10 pt-4 sm:px-6">
           <ul>
             {nav.map((item) => (
-              <li key={item.href} className="border-b border-[#14304f]/10">
+              <li key={item.label} className="border-b border-[#14304f]/10">
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}

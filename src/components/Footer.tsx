@@ -1,29 +1,28 @@
 import Link from "next/link";
 import { FooterLogo } from "./Logo";
 import { SocialLinks } from "./SocialIcons";
-import { solutionPath } from "@/lib/locations";
 
 const footerMenu = [
   {
     title: "Solutions",
     links: [
-      { label: "Digital Twin", href: solutionPath("digital-twin", "uae") },
-      { label: "Physical AI", href: solutionPath("robotic-process-automation", "uae") },
-      { label: "Use cases", href: "/#industries" },
+      { label: "Digital Twin", href: "#" },
+      { label: "Physical AI", href: "#" },
+      { label: "Use cases", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About and team", href: "/#about" },
-      { label: "Case studies", href: solutionPath("digital-twin", "uae") },
-      { label: "Security and data handling", href: "/#faq" },
+      { label: "Case studies", href: "#" },
+      { label: "Security and data handling", href: "#" },
     ],
   },
   {
     title: "More",
     links: [
-      { label: "Insights", href: "/#insights" },
+      { label: "Insights", href: "#" },
       { label: "Contact", href: "/#contact" },
     ],
   },
@@ -31,7 +30,7 @@ const footerMenu = [
 
 const legalLinks = [
   { label: "Terms of Service", href: "/terms-of-service" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Privacy Policy", href: "#" },
   { label: "Cookie Policy", href: "/cookie-policy" },
 ];
 

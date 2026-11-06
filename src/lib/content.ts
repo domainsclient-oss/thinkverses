@@ -15,9 +15,9 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "Digital Twin Solutions", href: "/#digital-twin" },
   { label: "Robotics Solutions", href: "/#robotics" },
-  { label: "Our Industries", href: "/#industries" },
+  { label: "Our Industries", href: "#" },
   { label: "About Us", href: "/#about" },
-  { label: "Articles & Insights", href: "/#insights" },
+  { label: "Articles & Insights", href: "#" },
   { label: "Contact", href: "/#contact" },
 ];
 
