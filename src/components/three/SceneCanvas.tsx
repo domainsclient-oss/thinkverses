@@ -12,6 +12,9 @@ export type SceneProps = {
   still: boolean;
   /** hero: skip full-scene shader warmup so the first frame can render immediately */
   immediate?: boolean;
+  /** must be playing when scrolled into view: no calm wait after shader compile, and a frame is
+      pre-rendered while hidden so the poster never hands over to an empty canvas */
+  eager?: boolean;
 };
 
 export function useIsSmall() {
@@ -30,7 +33,7 @@ export function useIsSmall() {
 
 /* Precompile background scenes before showing them. The hero skips this full-scene gate so its
    visible frame is not delayed; its shaders are compiled as the first frame is rendered. */
-function Warmup({ onReady, immediate }: { onReady: () => void; immediate?: boolean }) {
+function Warmup({ onReady, immediate, eager }: { onReady: () => void; immediate?: boolean; eager?: boolean }) {
   const { gl, scene, camera } = useThree();
   useEffect(() => {
     if (immediate) {
@@ -43,14 +46,14 @@ function Warmup({ onReady, immediate }: { onReady: () => void; immediate?: boole
       gl.compileAsync(scene, camera)
         .catch(() => undefined)
         // The first frame also builds the environment map synchronously: keep it out of a scroll.
-        .then(() => waitForCalm())
+        .then(() => (eager ? undefined : waitForCalm()))
         .then(() => alive && onReady());
     });
     return () => {
       alive = false;
       cancelAnimationFrame(id);
     };
-  }, [gl, scene, camera, onReady, immediate]);
+  }, [gl, scene, camera, onReady, immediate, eager]);
   return null;
 }
 
@@ -97,19 +100,32 @@ function ScrollQuietEvents() {
   return null;
 }
 
-function Kick({ ready }: { ready: boolean }) {
+function Kick({ ready, eager }: { ready: boolean; eager?: boolean }) {
   // Draw the first frame as soon as shaders are ready (needed for the reduced-motion "demand" loop),
   // then tell the surrounding SceneMount it can hide its poster.
   const invalidate = useThree((st) => st.invalidate);
   const gl = useThree((st) => st.gl);
+  const announced = useRef(false);
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || eager) return;
     invalidate();
     let id = requestAnimationFrame(() => {
       id = requestAnimationFrame(() => gl.domElement.dispatchEvent(new Event("scene-ready", { bubbles: true })));
     });
     return () => cancelAnimationFrame(id);
-  }, [ready, invalidate, gl]);
+  }, [ready, eager, invalidate, gl]);
+  // Eager scenes announce only after a frame has really been drawn, so the poster never fades to a blank canvas.
+  // Keyed on the applied frameloop: invalidating while it is still "never" would be dropped, leaving the
+  // expensive first frame (shader link, environment map) to happen only once the section is on screen.
+  const frameloop = useThree((st) => st.frameloop);
+  useEffect(() => {
+    if (ready && eager && frameloop !== "never") invalidate();
+  }, [ready, eager, frameloop, invalidate]);
+  useFrame(() => {
+    if (!eager || !ready || announced.current) return;
+    announced.current = true;
+    requestAnimationFrame(() => gl.domElement.dispatchEvent(new Event("scene-ready", { bubbles: true })));
+  });
   return null;
 }
 
@@ -117,6 +133,7 @@ export function SceneCanvas({
   active,
   still,
   immediate = false,
+  eager = false,
   children,
   camera,
   shadows = true,
@@ -130,7 +147,8 @@ export function SceneCanvas({
       // Capped pixel ratio: big fill-rate saving on hi-DPI screens, keeps frames smooth while scrolling
       dpr={small ? [1, 1.25] : [1, 1.5]}
       shadows={shadows && !small ? "percentage" : false}
-      frameloop={!ready ? "never" : still ? "demand" : active ? "always" : "never"}
+      // Eager scenes idle in "demand" rather than "never" while hidden, so their first frame is pre-drawn
+      frameloop={!ready ? "never" : still ? "demand" : active ? "always" : eager ? "demand" : "never"}
       camera={camera}
       // offsetSize ignores CSS transforms, so canvases inside scaled/rotated wrappers keep their true size
       resize={{ offsetSize: true }}
@@ -144,9 +162,9 @@ export function SceneCanvas({
     >
       <Suspense fallback={null}>
         {children}
-        <Warmup onReady={markReady} immediate={immediate} />
+        <Warmup onReady={markReady} immediate={immediate} eager={eager} />
       </Suspense>
-      <Kick ready={ready} />
+      <Kick ready={ready} eager={eager} />
       <ShadowThrottle />
       <ScrollQuietEvents />
     </Canvas>

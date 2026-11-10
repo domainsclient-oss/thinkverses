@@ -242,12 +242,13 @@ function Content({ small, pal, tag: label }: { small: boolean; pal: Palette; tag
 export default function InspectionScene({
   active,
   still,
+  eager,
   tone = "default",
   tag,
 }: SceneProps & { tone?: "default" | "section"; tag?: { text: string; className: string } }) {
   const small = useIsSmall();
   return (
-    <SceneCanvas active={active} still={still} camera={{ position: [3.9, 3, 4.4], fov: 42 }}>
+    <SceneCanvas active={active} still={still} eager={eager} camera={{ position: [3.9, 3, 4.4], fov: 42 }}>
       <Content small={small} pal={PALETTES[tone]} tag={tag} />
     </SceneCanvas>
   );

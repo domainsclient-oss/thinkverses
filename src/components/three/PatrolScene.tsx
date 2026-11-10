@@ -298,10 +298,10 @@ function Content({ small, pal, labels }: { small: boolean; pal: Palette; labels?
   );
 }
 
-export default function PatrolScene({ active, still, tone = "default", labels }: SceneProps & { tone?: "default" | "section"; labels?: string[] }) {
+export default function PatrolScene({ active, still, eager, tone = "default", labels }: SceneProps & { tone?: "default" | "section"; labels?: string[] }) {
   const small = useIsSmall();
   return (
-    <SceneCanvas active={active} still={still} camera={{ position: [11, 11.5, 11.5], fov: 40 }}>
+    <SceneCanvas active={active} still={still} eager={eager} camera={{ position: [11, 11.5, 11.5], fov: 40 }}>
       <Content small={small} pal={PALETTES[tone]} labels={labels} />
     </SceneCanvas>
   );

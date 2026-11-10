@@ -145,6 +145,7 @@ function InspectionView({ on = true }: { on?: boolean }) {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:32px_32px]" aria-hidden="true" />
       <SceneMount
         scene="inspection"
+        eager
         className="absolute inset-0"
         poster="/scenes/inspection.webp"
         paused={!on}
@@ -174,7 +175,7 @@ function InspectionView({ on = true }: { on?: boolean }) {
 function PatrolMap({ on = true }: { on?: boolean }) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#f3f7f5]">
-      <SceneMount scene="patrol" className="absolute inset-0" poster="/scenes/patrol.webp" paused={!on} props={{ tone: "section", labels: ["Warehouse A", "Warehouse B", "Gate", "Loading bay"] }} />
+      <SceneMount scene="patrol" eager className="absolute inset-0" poster="/scenes/patrol.webp" paused={!on} props={{ tone: "section", labels: ["Warehouse A", "Warehouse B", "Gate", "Loading bay"] }} />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f3f7f5] to-transparent" aria-hidden="true" />
       <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-4 text-[0.72rem] text-[#4a5868]">
         <span className="inline-flex items-center gap-2">
