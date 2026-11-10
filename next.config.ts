@@ -5,11 +5,14 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   experimental: {
-    // Tailwind output is compact (~24 KB gzipped): inlining removes the render-blocking stylesheet request
-    inlineCss: true,
+    // Off: inlining put the full stylesheet (~126 KB) in a <style> tag AND twice more in the RSC payload,
+    // so every page shipped ~380 KB of CSS in its HTML. An external, cached stylesheet is far lighter.
+    inlineCss: false,
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    // 60 for large photographic heroes (Lighthouse flags q75 as under-compressed); 75 stays the default
+    qualities: [60, 75],
   },
   async redirects() {
     return [

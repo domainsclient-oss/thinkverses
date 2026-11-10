@@ -10,12 +10,14 @@ export type SceneProps = {
   active: boolean;
   /** visitors who prefer reduced motion get a single still frame */
   still: boolean;
-  /** hero: draw the first frame as soon as shaders compile, without waiting for idle time */
+  /** hero: skip full-scene shader warmup so the first frame can render immediately */
   immediate?: boolean;
 };
 
 export function useIsSmall() {
-  const [small, setSmall] = useState(false);
+  // Read the breakpoint on first client render: starting at `false` and flipping on phones would
+  // toggle shadows right after the first frame and recompile every material (a visible stall).
+  const [small, setSmall] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
     const sync = () => setSmall(mq.matches);
@@ -26,19 +28,22 @@ export function useIsSmall() {
   return small;
 }
 
-/* Compiles every material in the scene before the first frame. compileAsync uses the
-   KHR_parallel_shader_compile extension where available, so the GPU driver builds the shaders
-   in the background instead of blocking the main thread (which would freeze page animations). */
+/* Precompile background scenes before showing them. The hero skips this full-scene gate so its
+   visible frame is not delayed; its shaders are compiled as the first frame is rendered. */
 function Warmup({ onReady, immediate }: { onReady: () => void; immediate?: boolean }) {
   const { gl, scene, camera } = useThree();
   useEffect(() => {
+    if (immediate) {
+      onReady();
+      return;
+    }
+
     let alive = true;
     const id = requestAnimationFrame(() => {
       gl.compileAsync(scene, camera)
         .catch(() => undefined)
-        // The first frame also builds the environment map synchronously: keep it out of a scroll
-        // (the hero skips this wait so it plays the moment the page opens)
-        .then(() => (immediate ? undefined : waitForCalm()))
+        // The first frame also builds the environment map synchronously: keep it out of a scroll.
+        .then(() => waitForCalm())
         .then(() => alive && onReady());
     });
     return () => {

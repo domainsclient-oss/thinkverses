@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useSyncExternalStore } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { Float, Sparkles } from "@react-three/drei";
@@ -113,8 +113,14 @@ function TwinContent({ selected = HOT_PUMP, onSelect, small }: { selected?: numb
   );
 }
 
+const noopSubscribe = () => () => {};
+
 export default function StationScene({ active, still, immediate, mode = "hero", light = false, selected, onSelect }: Props) {
   const small = useIsSmall();
+  // The hero imports this module during SSR (so its chunk is preloaded in the HTML), but WebGL is
+  // client-only: render nothing on the server and during hydration, then mount the canvas.
+  const isClient = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  if (!isClient) return null;
   return (
     <SceneCanvas active={active} still={still} immediate={immediate} camera={{ position: [-10.4, 5.8, 9.6], fov: 38, near: 0.1, far: 80 }}>
       {mode === "hero" ? <HeroContent small={small} light={light} /> : <TwinContent selected={selected} onSelect={onSelect} small={small} />}

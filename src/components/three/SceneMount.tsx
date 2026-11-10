@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState, useSyncExternalStore, type ComponentType } from "react";
+import { Suspense, useEffect, useRef, useState, useSyncExternalStore, type ComponentType } from "react";
 import { CALM_MS, hookScroll, quietFor } from "./calm";
 
 type AnyScene = ComponentType<Record<string, unknown> & { active: boolean; still: boolean; immediate?: boolean }>;
@@ -21,6 +21,12 @@ const scenes = {
   patrol: dynamic(() => import("./PatrolScene"), { ssr: false }),
   journey: dynamic(() => import("./JourneyScene"), { ssr: false }),
 } as unknown as Record<string, AnyScene>;
+// Hero copy of the station scene, server-rendered as an empty shell so Next emits a <link rel="preload">
+// for its chunk in the HTML. three.js then downloads in parallel with the page bundles instead of
+// starting only after hydration, which is what delayed the hero animation on load.
+const heroScenes = {
+  station: dynamic(() => import("./StationScene")),
+} as unknown as Partial<Record<string, AnyScene>>;
 
 export type SceneName = "station" | "layers" | "inspection" | "patrol" | "journey";
 
@@ -109,28 +115,15 @@ export function SceneMount({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(autoStart);
   const [still, setStill] = useState(false);
   const [live, setLive] = useState(false);
   // Latches true once created; afterwards the scene pauses off-screen instead of being torn down
   // and recompiled on every pass.
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(autoStart);
   const isEngaged = useSyncExternalStore(subscribeEngaged, getEngaged, () => false);
   // Poster shows on every breakpoint once the scene is on its way
   const started = isEngaged || autoStart;
-
-  // Hero: fetch the scene code right after hydration and mount the moment it arrives,
-  // skipping the engagement gate and the calm/idle scheduler
-  useEffect(() => {
-    if (!autoStart || mounted) return;
-    let cancelled = false;
-    loaders[scene]()
-      .catch(() => undefined)
-      .then(() => !cancelled && setMounted(true));
-    return () => {
-      cancelled = true;
-    };
-  }, [autoStart, mounted, scene]);
 
   useEffect(() => {
     const el = ref.current;
@@ -165,7 +158,7 @@ export function SceneMount({
     return () => el.removeEventListener("scene-ready", onReady);
   }, [mounted]);
 
-  const Scene = scenes[scene];
+  const Scene = (autoStart && heroScenes[scene]) || scenes[scene];
   return (
     <div ref={ref} data-scene={scene} className={className} role={label ? "img" : undefined} aria-label={label} aria-hidden={label ? undefined : true}>
       {poster && (
@@ -181,7 +174,10 @@ export function SceneMount({
       )}
       {mounted && (
         <div className="scene-fade absolute inset-0">
-          <Scene active={active && !paused} still={still} immediate={autoStart} {...props} />
+          {/* Own boundary: while the chunk is still downloading, only this subtree waits to hydrate */}
+          <Suspense fallback={null}>
+            <Scene active={active && !paused} still={still} immediate={autoStart} {...props} />
+          </Suspense>
         </div>
       )}
     </div>

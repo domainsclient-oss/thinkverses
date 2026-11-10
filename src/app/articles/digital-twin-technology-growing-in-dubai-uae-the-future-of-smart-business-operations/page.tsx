@@ -58,7 +58,7 @@ export default function ArticlePage() {
       <div className="bg-white">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <div className="relative -mt-2 aspect-[21/9] overflow-hidden rounded-b-[28px] sm:rounded-[28px] lg:-mt-10">
-            <Image src={articleImg} alt={article.alt} fill preload placeholder="blur" sizes="100vw" className="object-cover" />
+            <Image src={articleImg} alt={article.alt} fill preload placeholder="blur" quality={60} sizes="100vw" className="object-cover" />
           </div>
 
           <div className="grid gap-12 py-16 lg:grid-cols-12 lg:py-20">
