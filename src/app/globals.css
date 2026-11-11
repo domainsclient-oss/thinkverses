@@ -1491,3 +1491,50 @@ body {
     opacity: 0;
   }
 }
+
+/* Digital twin page */
+.dt-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+svg .dt-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes dt-blob {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-30px, 24px, 0) scale(1.08); }
+}
+@keyframes dt-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dt-draw {
+    stroke-dashoffset: 1;
+    animation: draw 1.8s var(--ease-out-soft) 0.4s forwards;
+  }
+  .dt-draw-late { animation-delay: 0.7s; }
+  .dt-ping { animation: pulse-ring 1.8s ease-out infinite; }
+  .dt-blob { animation: dt-blob 18s ease-in-out infinite; }
+  .dt-blob-b { animation-duration: 24s; animation-direction: reverse; }
+  .dt-float { animation: dt-float 6s ease-in-out infinite; }
+  .dt-flow { animation: flow 1.6s linear infinite; }
+  .dt-rise { animation: rise-solid 0.9s var(--ease-out-soft) both; }
+  .dt-rise-late { animation: rise 1s var(--ease-out-soft) 0.15s both; }
+}
+
+/* Physical AI page */
+@keyframes pa-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(420%); }
+}
+@keyframes pa-box {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.pa-scan { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .pa-scan { opacity: 1; animation: pa-scan 3.6s linear infinite; }
+  .pa-box { animation: pa-box 2.4s ease-in-out infinite; }
+}

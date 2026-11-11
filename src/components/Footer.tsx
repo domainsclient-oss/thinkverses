@@ -14,7 +14,7 @@ const footerMenu = [
   {
     title: "Company",
     links: [
-      { label: "About and team", href: "/#about" },
+      { label: "About and team", href: "/about" },
       { label: "Case studies", href: "#" },
       { label: "Security and data handling", href: "#" },
     ],

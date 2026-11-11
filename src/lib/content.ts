@@ -13,11 +13,11 @@ export const site = {
 
 export const nav = [
   { label: "Digital Twin", href: "/#digital-twin" },
-  { label: "Robotics Solutions", href: "/#robotics" },
-  { label: "Use cases", href: "#" },
-  { label: "Industries", href: "#" },
-  { label: "Case studies", href: "#" },
-  { label: "About", href: "/#about" },
+  { label: "Robotics Solutions", href: "/robotics-solutions" },
+  { label: "Use cases", href: "/use-cases" },
+  { label: "Industries", href: "/industries" },
+  { label: "Case studies", href: "/case-studies" },
+  { label: "About", href: "/about" },
 ];
 
 export const consultationHref = "/?topic=consultation#contact";
