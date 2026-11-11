@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, Droplets, Factory, PhoneCall, Sprout, Thermometer } from "lucide-react";
+import { ArrowRight, Droplets, Factory, PhoneCall, Sprout } from "lucide-react";
+import { AgricultureVisual, ManufacturingVisual, UtilitiesVisual } from "@/components/industries/IndustryVisuals";
 import { consultationHref, site } from "@/lib/content";
 
 const path = "/industries";
@@ -15,104 +16,6 @@ export const metadata: Metadata = {
 };
 
 const caseStudyHref = "/case-studies/controlled-environment-agriculture";
-
-/* ---------- Illustrations (labels from the page copy; shapes are illustrative) ---------- */
-
-function ManufacturingVisual() {
-  return (
-    <div className="relative h-full">
-      <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="ind-mfg" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#f5a03a" stopOpacity="0.35" />
-            <stop offset="1" stopColor="#f5a03a" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {[50, 100, 150].map((y) => (
-          <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="rgba(255,255,255,0.06)" />
-        ))}
-        <rect x="0" y="110" width="400" height="40" fill="#34c996" fillOpacity="0.1" />
-        <path d="M0 132 C40 126 70 138 110 130 S170 128 200 132 S250 126 280 118 S340 92 400 60" fill="none" stroke="#34c996" strokeWidth="2.5" pathLength={1} className="dt-draw" />
-        <path d="M280 118 S340 92 400 60 L400 220 L280 220 Z" fill="url(#ind-mfg)" />
-        <path d="M280 118 S340 92 400 60" fill="none" stroke="#f5a03a" strokeWidth="3" />
-        <circle cx="352" cy="88" r="6" fill="#f5a03a" />
-        <circle cx="352" cy="88" r="6" fill="#f5a03a" className="dt-ping" />
-        {/* conveyor */}
-        <rect x="20" y="186" width="360" height="8" rx="4" fill="rgba(255,255,255,0.12)" />
-        {[40, 110, 180, 250, 320].map((x) => (
-          <rect key={x} x={x} y="166" width="34" height="20" rx="4" fill="rgba(201,212,229,0.35)" />
-        ))}
-      </svg>
-      <span className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-[#f5a03a] px-3 py-1.5 text-xs font-bold text-[#0b1a2e] shadow-lg">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#0b1a2e]" /> Line 2: energy drift
-      </span>
-    </div>
-  );
-}
-
-function UtilitiesVisual() {
-  const pumps = [
-    { id: "P1", x: 60 },
-    { id: "P2", x: 140 },
-    { id: "P3", x: 220, alert: true },
-    { id: "P4", x: 300 },
-  ];
-  return (
-    <div className="relative h-full">
-      <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <path d="M60 150 H360" stroke="rgba(255,255,255,0.15)" strokeWidth="10" strokeLinecap="round" />
-        <path d="M60 150 H360" stroke="#34c996" strokeWidth="2" strokeDasharray="6 8" className="dt-flow" />
-        <path d="M352 140 L370 150 L352 160" fill="none" stroke="#34c996" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        {pumps.map((p) => (
-          <g key={p.id}>
-            <line x1={p.x} x2={p.x} y1="110" y2="150" stroke="rgba(255,255,255,0.2)" strokeWidth="3" />
-            {p.alert && <circle cx={p.x} cy="86" r="30" fill="#f5a03a" fillOpacity="0.15" />}
-            <circle cx={p.x} cy="86" r="24" fill={p.alert ? "#f5a03a" : "#0e2038"} stroke={p.alert ? "#f5a03a" : "#34c996"} strokeWidth="2" />
-            {p.alert && <circle cx={p.x} cy="86" r="24" fill="none" stroke="#f5a03a" strokeWidth="2" className="dt-ping" />}
-          </g>
-        ))}
-      </svg>
-      {pumps.map((p) => (
-        <span
-          key={p.id}
-          className={`absolute -translate-x-1/2 -translate-y-1/2 text-xs font-bold ${p.alert ? "text-[#0b1a2e]" : "text-white"}`}
-          style={{ left: `${(p.x / 400) * 100}%`, top: `${(86 / 220) * 100}%` }}
-        >
-          {p.id}
-        </span>
-      ))}
-      <span className="absolute bottom-3 right-3 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-[#c9d4e5] ring-1 ring-white/15">
-        To network
-      </span>
-    </div>
-  );
-}
-
-function AgricultureVisual() {
-  return (
-    <div className="relative h-full">
-      <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <path d="M40 200 V100 L200 30 L360 100 V200 Z" fill="rgba(52,201,150,0.06)" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
-        <path d="M200 30 V200 M120 65 V200 M280 65 V200" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-        {[0, 1, 2].map((r) =>
-          [70, 110, 150, 230, 270, 310].map((x) => (
-            <g key={`${r}-${x}`}>
-              <path
-                d={`M${x} ${190 - r * 34} q-8 -12 0 -20 q8 8 0 20`}
-                fill="#34c996"
-                fillOpacity={0.5 + r * 0.15}
-              />
-            </g>
-          )),
-        )}
-        <circle cx="300" cy="96" r="22" fill="#34c996" fillOpacity="0.15" className="dt-ping" />
-      </svg>
-      <span className="absolute right-[18%] top-[30%] inline-flex items-center gap-1.5 rounded-full bg-[#0b1a2e]/85 px-3 py-1.5 text-xs font-semibold text-white ring-1 ring-[#34c996]/50 backdrop-blur">
-        <Thermometer size={13} className="text-[#34c996]" aria-hidden="true" /> Climate sensor
-      </span>
-    </div>
-  );
-}
 
 /* ---------- Data ---------- */
 
@@ -243,10 +146,8 @@ export default function IndustriesPage() {
               className="group scroll-mt-28 overflow-hidden rounded-[32px] border border-[#14304f]/10 bg-white shadow-[0_30px_60px_-45px_rgba(20,48,79,0.5)] transition duration-300 hover:border-[#0b6e50]/25 hover:shadow-[0_30px_60px_-30px_rgba(11,110,80,0.4)]"
             >
               <div className={`grid lg:grid-cols-2 ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                <div className="relative m-2 min-h-64 overflow-hidden rounded-[26px] bg-[#0b1a2e] p-5 sm:min-h-72 lg:min-h-80">
-                  <div aria-hidden="true" className="absolute inset-0 bg-blueprint opacity-20" />
-                  <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#34c996]/20 blur-3xl transition-transform duration-700 group-hover:scale-125" />
-                  <div className="relative h-full min-h-56 sm:min-h-64 lg:min-h-72">{visual}</div>
+                <div className="relative m-2 min-h-72 overflow-hidden rounded-[26px] bg-[#0b1a2e] sm:min-h-80 lg:min-h-[26rem]">
+                  <div className="absolute inset-0 transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]">{visual}</div>
                 </div>
 
                 <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Activity,
-  AlertTriangle,
   ArrowRight,
   Code2,
   Play,
@@ -36,6 +35,7 @@ import {
 } from "lucide-react";
 import { site } from "@/lib/content";
 import { MaturityCheck } from "@/components/digital-twin/MaturityCheck";
+import { TwinHeroPanel } from "@/components/digital-twin/TwinHeroPanel";
 import { AssessmentForm } from "@/components/digital-twin/AssessmentForm";
 
 const path = "/digital-twin";
@@ -75,12 +75,6 @@ const deliverables = [
   { text: "A staged roadmap with owners", icon: ListChecks },
 ];
 
-const kpis = [
-  { label: "OEE", value: "78%", tone: "text-white" },
-  { label: "Energy / unit", value: "+6%", tone: "text-[#f5a03a]" },
-  { label: "Assets to watch", value: "3", tone: "text-white" },
-];
-
 // No recorded walkthrough is published yet; swap in the video URL when it exists.
 const walkthroughHref = "#";
 
@@ -105,104 +99,6 @@ const facts = [
   { text: "Connects SCADA, PLC, DCS, MES, ERP, QMS and IoT data", icon: Cable },
   { text: "Runs on your servers or in the cloud", icon: Server },
 ];
-
-// Illustrative trend lines for the dummy twin panel (viewBox 0 0 400 140).
-const oee = "M0,92 C30,88 50,84 80,86 S130,88 160,78 S210,80 240,72 S290,70 320,62 S370,66 400,64";
-const energy = "M0,104 C30,102 50,100 80,103 S130,98 160,96 S210,94 240,86 S290,80 320,64 S370,40 400,26";
-
-function TwinPanel() {
-  return (
-    <div className="relative">
-      {/* glow */}
-      <div
-        aria-hidden="true"
-        className="absolute -inset-6 -z-10 rounded-[40px] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(52,201,150,0.35),transparent_70%),radial-gradient(50%_50%_at_20%_90%,rgba(245,160,58,0.22),transparent_70%)] blur-2xl"
-      />
-      <figure
-        aria-label="Plant overview, live twin (dummy data)"
-        className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0b1a2e] p-5 text-white shadow-[0_40px_80px_-30px_rgba(11,26,46,0.65)] sm:p-7"
-      >
-        <div aria-hidden="true" className="absolute inset-0 bg-blueprint opacity-40 [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_75%)]" />
-        <div className="relative">
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2.5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="dt-ping absolute inset-0 rounded-full bg-[#34c996]" />
-                <span className="relative h-2.5 w-2.5 rounded-full bg-[#34c996]" />
-              </span>
-              <figcaption className="text-[0.95rem] font-semibold">Plant overview, live twin</figcaption>
-            </div>
-            <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[0.7rem] font-medium uppercase tracking-wider text-[#9fb0cc]">
-              Dummy data
-            </span>
-          </div>
-
-          <dl className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
-            {kpis.map((k) => (
-              <div
-                key={k.label}
-                className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.03] px-3 py-3 sm:px-4"
-              >
-                <dt className="text-[0.7rem] text-[#9fb0cc] sm:text-xs">{k.label}</dt>
-                <dd className={`display mt-1 text-2xl sm:text-[1.75rem] ${k.tone}`}>{k.value}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="mt-5 rounded-2xl border border-white/10 bg-[#081426] p-3 sm:p-4">
-            <div className="mb-2 flex items-center gap-4 text-[0.7rem] text-[#9fb0cc]">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-1.5 w-4 rounded-full bg-[#34c996]" /> OEE
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-1.5 w-4 rounded-full bg-[#f5a03a]" /> Energy / unit
-              </span>
-              <span className="ml-auto">Last 7 shifts</span>
-            </div>
-            <svg viewBox="0 0 400 140" className="h-auto w-full" role="img" aria-label="OEE holding steady while energy per unit rises">
-              <defs>
-                <linearGradient id="dt-g-oee" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stopColor="#34c996" stopOpacity="0.35" />
-                  <stop offset="1" stopColor="#34c996" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient id="dt-g-en" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stopColor="#f5a03a" stopOpacity="0.3" />
-                  <stop offset="1" stopColor="#f5a03a" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              {[28, 56, 84, 112].map((y) => (
-                <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="rgba(255,255,255,0.06)" />
-              ))}
-              <path d={`${oee} L400,140 L0,140 Z`} fill="url(#dt-g-oee)" />
-              <path d={`${energy} L400,140 L0,140 Z`} fill="url(#dt-g-en)" />
-              <path d={oee} pathLength={1} className="dt-draw" fill="none" stroke="#34c996" strokeWidth="2.5" strokeLinecap="round" />
-              <path d={energy} pathLength={1} className="dt-draw dt-draw-late" fill="none" stroke="#f5a03a" strokeWidth="2.5" strokeLinecap="round" />
-              <circle cx="400" cy="26" r="4" fill="#f5a03a" />
-              <circle cx="400" cy="26" r="4" fill="#f5a03a" className="dt-ping" />
-            </svg>
-          </div>
-
-          <div className="mt-4 flex items-start gap-3 rounded-2xl bg-white px-4 py-3 text-[#14304f] shadow-lg">
-            <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#fff1df] text-[#d9821f]">
-              <AlertTriangle size={15} aria-hidden="true" />
-            </span>
-            <p className="text-sm font-medium leading-snug">
-              Chiller 2 energy use is above its normal pattern on night shifts.
-            </p>
-          </div>
-        </div>
-      </figure>
-
-      {/* floating chip */}
-      <div
-        aria-hidden="true"
-        className="dt-float absolute -left-4 bottom-24 hidden items-center gap-2 rounded-2xl border border-[#14304f]/10 bg-white/90 px-3.5 py-2.5 text-xs font-semibold text-[#14304f] shadow-xl backdrop-blur sm:flex lg:-left-10"
-      >
-        <Sparkles size={14} className="text-[#0b6e50]" /> 40,000+ sensors streaming
-      </div>
-    </div>
-  );
-}
 
 const industriesHref = "/industries";
 
@@ -315,7 +211,7 @@ export default function DigitalTwinPage() {
             </div>
 
             <div className="dt-rise dt-rise-late">
-              <TwinPanel />
+              <TwinHeroPanel />
             </div>
           </div>
         </div>
