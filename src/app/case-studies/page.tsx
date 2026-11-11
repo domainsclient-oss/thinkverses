@@ -20,7 +20,7 @@ import { consultationHref } from "@/lib/content";
 import { CountUp } from "@/components/motion/CountUp";
 import { PdfRequestForm } from "@/components/case-studies/PdfRequestForm";
 
-const path = "/case-studies/controlled-environment-agriculture";
+const path = "/case-studies";
 
 export const metadata: Metadata = {
   title: "Case Study: Automatic Reports Across Six Plants",

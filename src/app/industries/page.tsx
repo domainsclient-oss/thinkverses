@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: { url: path, title: "Industries | Thinkverses Solutions" },
 };
 
-const caseStudyHref = "/case-studies/controlled-environment-agriculture";
+const caseStudyHref = "/case-studies";
 
 /* ---------- Data ---------- */
 

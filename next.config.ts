@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
       { source: "/about-us", destination: "/#about", permanent: true },
       { source: "/contact", destination: "/#contact", permanent: true },
       { source: "/faq", destination: "/#faq", permanent: true },
+      { source: "/case-studies/controlled-environment-agriculture", destination: "/case-studies", permanent: true },
     ];
   },
   turbopack: {
