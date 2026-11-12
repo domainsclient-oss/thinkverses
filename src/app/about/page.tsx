@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Award,
   Blocks,
   EyeOff,
   FileSignature,
@@ -37,7 +38,7 @@ const founderLinkedIn = "https://www.linkedin.com/in/vignesh-t-482000b0/";
 const founder = {
   name: "Vignesh T",
   role: "Founder",
-  bio: "Vignesh started Thinkverses after seeing how much data industrial plants collect and how long the people running them still wait for answers. Today Vignesh leads every engagement from the first call, scoping digital twin and Physical AI projects so they start small, build on the systems you already have, and prove their value early.",
+  bio: "[Two lines on background and why he started Thinkverses.]",
   photo: "/about/vignesh.webp",
   linkedin: founderLinkedIn,
 };
@@ -54,6 +55,7 @@ const rules = [
   { title: "Written permission only", text: "We name a client only with their written approval.", icon: FileSignature },
 ];
 
+const recognition = ["[Dubai AI Seal]", "[ICV certificate]", "[Group companies]"];
 const tools = [
   { name: "ROS", logo: rosLogo },
   { name: "TensorFlow", logo: tensorflowLogo },
@@ -272,7 +274,21 @@ export default function AboutPage() {
       <section aria-labelledby="ab-rec" className="py-20 sm:py-28">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <h2 id="ab-rec" className="display text-[clamp(1.8rem,1.2rem+2vw,3rem)]">Recognition and partners</h2>
-          <h3 className="mt-10 text-sm font-semibold uppercase tracking-wider text-[#4b5a74]">Technology we build with</h3>
+          <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
+            {recognition.map((label) => (
+              <li
+                key={label}
+                className="grid h-28 place-items-center rounded-2xl border-2 border-dashed border-[#0b6e50]/25 bg-[#f3f8f6] px-3 text-center text-sm font-semibold text-[#0b6e50] transition hover:border-[#0b6e50]/40"
+              >
+                <span className="flex flex-col items-center gap-2">
+                  <Award size={18} aria-hidden="true" />
+                  {label}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-14 text-sm font-semibold uppercase tracking-wider text-[#4b5a74]">Technology we build with</h3>
           <ul className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {tools.map((t) => (
               <li

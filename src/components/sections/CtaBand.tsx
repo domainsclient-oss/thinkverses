@@ -12,7 +12,7 @@ import energyImg from "../../../public/images/energy.jpg";
 const stats = [
   { figure: "40,000+", label: "sensors connected", count: true, icon: Radio },
   { figure: "6 plants", label: "across two countries", count: true, icon: Factory },
-  { figure: "0", label: "reports built by hand each week", count: false, icon: Target },
+  { figure: "[Result]", label: "one measured result, to add", count: false, icon: Target },
 ];
 
 /* ---------- Before: a weekly report assembled by hand (animated, decorative) ----------
