@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Award,
   Blocks,
-  Camera,
   EyeOff,
   FileSignature,
   Handshake,
@@ -16,6 +15,12 @@ import {
   Sprout,
 } from "lucide-react";
 import { consultationHref, site } from "@/lib/content";
+import heroTeam from "../../../public/about/about-Hero.webp";
+import rosLogo from "../../../public/Tools/1.webp";
+import tensorflowLogo from "../../../public/Tools/2.webp";
+import pythonLogo from "../../../public/Tools/3.webp";
+import awsLogo from "../../../public/Tools/4.webp";
+import isaacLogo from "../../../public/Tools/5.webp";
 
 const path = "/about";
 
@@ -27,15 +32,15 @@ export const metadata: Metadata = {
   openGraph: { url: path, title: "About | Thinkverses Solutions" },
 };
 
-// Profile URL not provided yet.
-const founderLinkedIn = "#";
+const founderLinkedIn = "https://www.linkedin.com/in/vignesh-t-482000b0/";
 
-const team = [
-  { name: "Vignesh T", role: "Founder", bio: "[Two lines on background and why he started Thinkverses.]", linkedin: founderLinkedIn },
-  { name: "[Name]", role: "Solution architect", bio: "[Two lines on experience with industrial data.]" },
-  { name: "[Name]", role: "Data engineer", bio: "[Two lines on systems connected and scale handled.]" },
-  { name: "[Name]", role: "Vision AI and robotics lead", bio: "[Two lines on inspection and patrol work.]" },
-];
+const founder = {
+  name: "Vignesh T",
+  role: "Founder",
+  bio: "Vignesh started Thinkverses after seeing how much data industrial plants collect and how long the people running them still wait for answers. Today Vignesh leads every engagement from the first call, scoping digital twin and Physical AI projects so they start small, build on the systems you already have, and prove their value early.",
+  photo: "/about/vignesh.webp",
+  linkedin: founderLinkedIn,
+};
 
 const principles = [
   { title: "We start small", text: "One line, one route or one use case first, with a measure of success agreed before we begin.", icon: Sprout },
@@ -49,17 +54,13 @@ const rules = [
   { title: "Written permission only", text: "We name a client only with their written approval.", icon: FileSignature },
 ];
 
-const recognition = ["[Dubai AI Seal]", "[ICV certificate]", "[Group companies]"];
-const partners = ["[Partner logo]", "[Partner logo]", "[Partner logo]"];
-
-const initials = (name: string) =>
-  name.startsWith("[")
-    ? "?"
-    : name
-        .split(" ")
-        .map((p) => p[0])
-        .join("")
-        .slice(0, 2);
+const tools = [
+  { name: "ROS", logo: rosLogo },
+  { name: "TensorFlow", logo: tensorflowLogo },
+  { name: "Python", logo: pythonLogo },
+  { name: "AWS", logo: awsLogo },
+  { name: "NVIDIA Isaac", logo: isaacLogo },
+];
 
 export default function AboutPage() {
   const jsonLd = {
@@ -72,7 +73,7 @@ export default function AboutPage() {
       url: site.url,
       email: site.email,
       telephone: site.phone,
-      founder: { "@type": "Person", name: "Vignesh T" },
+      founder: { "@type": "Person", name: "Vignesh T", sameAs: [founderLinkedIn] },
       address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
     },
   };
@@ -117,18 +118,24 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Photo placeholder */}
             <div className="dt-rise dt-rise-late relative">
               <div aria-hidden="true" className="absolute -inset-5 -z-10 rounded-[40px] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(52,201,150,0.35),transparent_70%)] blur-2xl" />
-              <figure className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-[28px] border-2 border-dashed border-[#0b6e50]/30 bg-gradient-to-br from-[#0b1a2e] to-[#14304f] p-8 text-center text-white">
-                <div aria-hidden="true" className="absolute inset-0 bg-blueprint opacity-25" />
-                <div className="relative">
-                  <span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-[#34c996] ring-1 ring-white/15">
-                    <Camera size={24} aria-hidden="true" />
-                  </span>
-                  <figcaption className="mt-4 text-[#c9d4e5]">[Team photo at a client site or the Dubai office]</figcaption>
-                </div>
-              </figure>
+              <div
+                aria-hidden="true"
+                className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-[28px] bg-gradient-to-br from-[#0b6e50] to-[#34c996]"
+              />
+              <div className="relative aspect-[1680/936] overflow-hidden rounded-[28px] shadow-[0_40px_80px_-30px_rgba(11,26,46,0.6)]">
+                <Image
+                  src={heroTeam}
+                  alt="A team of professionals standing together on a waterfront terrace in front of a city skyline"
+                  fill
+                  priority
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover"
+                />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1a2e]/40 via-transparent to-transparent" />
+              </div>
             </div>
           </div>
         </div>
@@ -137,48 +144,52 @@ export default function AboutPage() {
       {/* TEAM */}
       <section aria-labelledby="ab-team" className="pb-20 sm:pb-28">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
-          <div className="max-w-3xl">
-            <h2 id="ab-team" className="display text-[clamp(1.8rem,1.2rem+2vw,3rem)]">
-              The people you will{" "}
-              <span className="bg-gradient-to-r from-[#0b6e50] to-[#34c996] bg-clip-text text-transparent">work with</span>
-            </h2>
-            <p className="mt-4 text-[1.05rem] text-[#4b5a74]">
-              The same people who scope your project are the ones who build it. You will meet them in the first call.
-            </p>
-          </div>
+          <div className="grid items-center gap-12 md:grid-cols-[minmax(0,20rem)_1fr] lg:grid-cols-[minmax(0,25rem)_1fr] lg:gap-20">
+            {/* Portrait: shown whole at its native square ratio, never cropped */}
+            <div className="relative isolate mx-auto w-full max-w-[25rem] md:mx-0">
+              <div
+                aria-hidden="true"
+                className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-[30px] bg-gradient-to-br from-[#0b6e50] to-[#34c996]"
+              />
+              <Image
+                src={founder.photo}
+                alt={`${founder.name}, ${founder.role} of Thinkverses`}
+                width={400}
+                height={400}
+                sizes="(min-width: 1024px) 25rem, (min-width: 768px) 20rem, 100vw"
+                className="h-auto w-full rounded-[30px] shadow-[0_40px_80px_-40px_rgba(11,26,46,0.6)]"
+              />
+            </div>
 
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((m, i) => (
-              <li
-                key={`${m.role}`}
-                className="group relative flex flex-col overflow-hidden rounded-[26px] border border-[#14304f]/10 bg-white p-6 shadow-[0_30px_60px_-45px_rgba(20,48,79,0.5)] transition duration-300 hover:-translate-y-1 hover:border-[#0b6e50]/30 hover:shadow-[0_30px_60px_-30px_rgba(11,110,80,0.45)]"
+            <div>
+              <h2 id="ab-team" className="display text-[clamp(1.8rem,1.2rem+2vw,3rem)]">
+                The people you will{" "}
+                <span className="bg-gradient-to-r from-[#0b6e50] to-[#34c996] bg-clip-text text-transparent">work with</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-[1.05rem] text-[#4b5a74]">
+                The same people who scope your project are the ones who build it. You will meet them in the first call.
+              </p>
+
+              <div className="mt-10 border-l-4 border-[#34c996] pl-6">
+                <h3 className="display text-[clamp(1.5rem,1.2rem+1.2vw,2.2rem)] text-[#14304f]">{founder.name}</h3>
+                <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-[#0b6e50]">{founder.role}</p>
+                <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-[#4b5a74]">{founder.bio}</p>
+              </div>
+
+              <a
+                href={founder.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${founder.name} on LinkedIn (opens in a new tab)`}
+                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-[#14304f]/15 px-5 py-2.5 text-sm font-semibold text-[#14304f] transition hover:border-[#0b6e50] hover:text-[#0b6e50]"
               >
-                <div
-                  className={`relative grid aspect-square w-24 place-items-center rounded-3xl text-2xl font-bold ${
-                    i === 0
-                      ? "bg-gradient-to-br from-[#0b6e50] to-[#34c996] text-white shadow-[0_18px_30px_-12px_rgba(11,110,80,0.7)]"
-                      : "bg-[#eef2f8] text-[#14304f]/40"
-                  }`}
-                >
-                  <span className="display">{initials(m.name)}</span>
-                </div>
-                <h3 className="mt-6 text-xl font-semibold text-[#14304f]">{m.name}</h3>
-                <p className="text-sm font-semibold uppercase tracking-wider text-[#0b6e50]">{m.role}</p>
-                <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-[#4b5a74]">{m.bio}</p>
-                {m.linkedin && (
-                  <a
-                    href={m.linkedin}
-                    className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-[#14304f]/15 px-4 py-2 text-sm font-semibold text-[#14304f] transition hover:border-[#0b6e50] hover:text-[#0b6e50]"
-                  >
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
-                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
-                    </svg>
-                    LinkedIn profile
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                </svg>
+                LinkedIn profile
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -261,20 +272,14 @@ export default function AboutPage() {
       <section aria-labelledby="ab-rec" className="py-20 sm:py-28">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <h2 id="ab-rec" className="display text-[clamp(1.8rem,1.2rem+2vw,3rem)]">Recognition and partners</h2>
-          <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {[...recognition, ...partners].map((label, i) => (
+          <h3 className="mt-10 text-sm font-semibold uppercase tracking-wider text-[#4b5a74]">Technology we build with</h3>
+          <ul className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {tools.map((t) => (
               <li
-                key={`${label}-${i}`}
-                className={`grid h-28 place-items-center rounded-2xl border-2 border-dashed px-3 text-center text-sm font-semibold transition hover:border-[#0b6e50]/40 ${
-                  i < recognition.length
-                    ? "border-[#0b6e50]/25 bg-[#f3f8f6] text-[#0b6e50]"
-                    : "border-[#14304f]/15 bg-[#f7f9fc] text-[#4b5a74]"
-                }`}
+                key={t.name}
+                className="grid h-36 place-items-center rounded-2xl border border-[#14304f]/10 bg-white px-5 shadow-[0_20px_40px_-35px_rgba(20,48,79,0.5)] transition hover:-translate-y-0.5 hover:border-[#0b6e50]/30 sm:h-40"
               >
-                <span className="flex flex-col items-center gap-2">
-                  {i < recognition.length && <Award size={18} aria-hidden="true" />}
-                  {label}
-                </span>
+                <Image src={t.logo} alt={`${t.name} logo`} sizes="170px" className="h-auto w-full max-w-[170px]" />
               </li>
             ))}
           </ul>

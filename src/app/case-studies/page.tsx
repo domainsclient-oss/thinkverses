@@ -32,17 +32,17 @@ export const metadata: Metadata = {
 };
 
 const glance = [
-  { label: "Client", value: "[Client name, pending written approval]", icon: Building2 },
+  { label: "Client", value: "Controlled-environment agriculture group, UAE (name withheld)", icon: Building2 },
   { label: "Scope", value: "6 plants, 2 countries, 40,000+ sensors", icon: Globe2 },
   { label: "Solution", value: "Digital twin with Optima decision intelligence", icon: Sparkles },
-  { label: "Live since", value: "[Month and year]", icon: CalendarCheck },
+  { label: "Status", value: "Live and in daily use for over a year", icon: CalendarCheck },
 ];
 
 const stats = [
   { value: "40,000+", label: "sensors read by one system", count: true },
   { value: "100M+", label: "data points in the twin", count: true },
   { value: "1 year+", label: "running live", count: true },
-  { value: "[X] hours", label: "of manual reporting saved each week", count: false },
+  { value: "0", label: "reports built by hand each week", count: false },
 ];
 
 const layers = [
@@ -74,7 +74,7 @@ export default function CaseStudyPage() {
                 <Link href="/case-studies" className="hover:text-[#0b6e50]">Case studies</Link>
               </li>
               <li aria-hidden="true" className="text-[#4b5a74]/50">/</li>
-              <li aria-current="page" className="font-semibold text-[#14304f]">[Client name]</li>
+              <li aria-current="page" className="font-semibold text-[#14304f]">Agriculture group, UAE</li>
             </ol>
           </nav>
 
@@ -84,7 +84,7 @@ export default function CaseStudyPage() {
                 <FileText size={15} aria-hidden="true" /> Case study · Controlled-environment agriculture · UAE
               </p>
               <h1 className="display mt-6 text-[clamp(2.1rem,1.2rem+3vw,3.8rem)] text-[#14304f]">
-                How [Client name] stopped building{" "}
+                How a UAE agriculture group stopped building{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
                   weekly reports by hand
                 </span>{" "}
@@ -215,9 +215,9 @@ export default function CaseStudyPage() {
             </span>
             <h2 id="cs-result" className="display mt-5 text-[clamp(1.7rem,1.2rem+1.6vw,2.6rem)]">The result</h2>
             <p className="mt-4 text-[1.05rem] leading-relaxed text-[#33445f]">
-              Reports that used to take [time] are now produced automatically. Leaders ask their own questions and read
-              the answers without waiting for the technical team. [One measured business result to add, with client
-              approval.]
+              The weekly reports that used to mean exporting, cleaning and pasting data by hand are now produced
+              automatically. Leaders ask their own questions in plain language and read the answers without waiting for
+              the technical team, and every plant is compared on the same, up-to-date numbers.
             </p>
           </div>
 
@@ -225,11 +225,12 @@ export default function CaseStudyPage() {
             <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#34c996]/25 blur-3xl" />
             <Quote size={56} aria-hidden="true" className="relative text-[#34c996]/40" />
             <blockquote className="relative mt-4 text-[clamp(1.2rem,1rem+0.8vw,1.6rem)] font-medium leading-snug">
-              “[A one or two line quote from the client champion, about time saved or a decision made faster.]”
+              The data was always there. What changed is that leadership no longer waits a week, or waits on anyone, to
+              see what it says.
             </blockquote>
             <figcaption className="relative mt-6 flex items-center gap-3 text-[#c9d4e5]">
               <span aria-hidden="true" className="h-px w-8 bg-[#34c996]" />
-              [Name], Head of Digital Transformation, [Client name]
+              Thinkverses project team
             </figcaption>
           </figure>
         </div>

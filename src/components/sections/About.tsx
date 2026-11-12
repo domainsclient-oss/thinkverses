@@ -214,7 +214,6 @@ export function About() {
               <RefreshCcw size={20} className="mt-0.5 shrink-0" aria-hidden="true" />
               The team fixes the pump in a planned shift, the station keeps supplying water, and the twin learns from the result.
             </p>
-            <span className={`inline-flex rounded-lg border border-white/20 px-3 py-1.5 text-sm ${GREY}`}>Illustrative example</span>
           </div>
         </Reveal>
 

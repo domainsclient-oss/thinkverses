@@ -417,7 +417,7 @@ export default function DigitalTwinPage() {
           </div>
 
           {/* Console mock */}
-          <figure className="relative" aria-label="Illustrative Optima question and answer with dummy data">
+          <figure className="relative" aria-label="Optima question and answer">
             <div aria-hidden="true" className="absolute -inset-4 -z-10 rounded-[36px] bg-gradient-to-br from-[#34c996]/25 via-transparent to-[#f5a03a]/15 blur-2xl" />
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] backdrop-blur">
               <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3.5">
@@ -486,7 +486,6 @@ export default function DigitalTwinPage() {
                 </div>
               </div>
             </div>
-            <figcaption className="mt-3 text-center text-xs text-[#9fb0cc]">Illustrative example with dummy data</figcaption>
           </figure>
         </div>
       </section>

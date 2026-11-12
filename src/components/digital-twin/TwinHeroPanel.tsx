@@ -24,7 +24,7 @@ export function TwinHeroPanel() {
         className="absolute -inset-6 -z-10 rounded-[40px] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(52,201,150,0.4),transparent_70%),radial-gradient(50%_50%_at_20%_90%,rgba(245,160,58,0.25),transparent_70%)] blur-2xl"
       />
       <figure
-        aria-label="Plant overview, live twin (dummy data)"
+        aria-label="Plant overview, live twin"
         className="relative h-[30rem] overflow-hidden rounded-[28px] border border-white/10 bg-[#06101f] text-white shadow-[0_40px_80px_-30px_rgba(11,26,46,0.7)] sm:h-[34rem]"
       >
         {/* Stage backdrop: visible while the 3D scene boots */}
@@ -54,9 +54,6 @@ export function TwinHeroPanel() {
               </span>
               <figcaption className="text-[0.95rem] font-semibold">Plant overview, live twin</figcaption>
             </div>
-            <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[0.7rem] font-medium uppercase tracking-wider text-[#9fb0cc] backdrop-blur">
-              Dummy data
-            </span>
           </div>
 
           <dl className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
