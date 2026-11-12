@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Bot, MapPin, Network, Radio, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Bot, Network, Radio, type LucideIcon } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { countries, emirates, serviceRegions, services, solutionPath, type ServiceKey } from "@/lib/locations";
 
@@ -145,10 +145,6 @@ export function Locations() {
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-sm font-medium text-cyan">
-              <MapPin size={14} aria-hidden="true" />
-              Headquartered in Dubai · Serving the GCC
-            </p>
             <h2 className="display h-section max-w-4xl">
               Our Digital Twin, Robotics &amp; IoT Solutions{" "}
               <span className="text-brand-gradient-light">across the Globe!</span>

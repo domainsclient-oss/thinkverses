@@ -28,16 +28,8 @@ export function Hero() {
 
         <div className="mx-auto flex min-h-[100svh] max-w-[90rem] flex-col px-4 pb-12 pt-28 sm:px-6 lg:px-10 lg:pt-36">
           <div className="relative z-10 max-w-[44rem]">
-            <p className="hero-rise inline-flex items-center gap-2.5 rounded-md bg-[#e8f5ef] py-1.5 pl-2.5 pr-3.5 text-[0.82rem] font-semibold text-[#0b6e50]" style={d(40)}>
-              <span className="relative flex h-2 w-2" aria-hidden="true">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0b6e50]/50" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0b6e50]" />
-              </span>
-              Digital twin live with a UAE operator for over a year
-            </p>
-
-            <h1 className="hero-rise-solid display mt-8 max-w-[15ch] text-[clamp(2.4rem,1.2rem+3.3vw,4.5rem)] leading-[1.02] text-[#14304f]">
-              We help industrial teams in the UAE <span className="text-[#0b6e50]">catch problems early.</span>
+            <h1 className="hero-rise-solid display max-w-[15ch] text-[clamp(2.4rem,1.2rem+3.3vw,4.5rem)] leading-[1.02] text-[#14304f]">
+              We help industrial teams <span className="text-[#0b6e50]">catch problems early.</span>
             </h1>
             <p className="hero-rise lede mt-7 max-w-[46ch] text-[#4a5868]" style={d(220)}>
               We do it in two ways: digital twins built on your own plant data, and AI robots that inspect your line and

@@ -231,10 +231,6 @@ export function Testimonials() {
         {/* Sticky intro */}
         <div className="lg:col-span-4">
           <Reveal className="lg:sticky lg:top-28">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-sm font-medium text-cyan">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" />
-              Testimonials
-            </p>
             <h2 id="testimonials-title" className="display h-section">
               What Our{" "}
               <span className="text-brand-gradient-light">Learners</span> Say

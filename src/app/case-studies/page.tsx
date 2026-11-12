@@ -80,10 +80,7 @@ export default function CaseStudyPage() {
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div className="dt-rise">
-              <p className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[#0b6e50]/20 bg-[#e6f4ee] px-3.5 py-1.5 text-sm font-semibold text-[#0b6e50]">
-                <FileText size={15} aria-hidden="true" /> Case study · Controlled-environment agriculture · UAE
-              </p>
-              <h1 className="display mt-6 text-[clamp(2.1rem,1.2rem+3vw,3.8rem)] text-[#14304f]">
+              <h1 className="display text-[clamp(2.1rem,1.2rem+3vw,3.8rem)] text-[#14304f]">
                 How [Client name] stopped building{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
                   weekly reports by hand

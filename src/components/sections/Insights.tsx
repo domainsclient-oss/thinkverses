@@ -37,10 +37,6 @@ export function Insights() {
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/10 px-3.5 py-1.5 text-sm font-medium text-cyan">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan" aria-hidden="true" />
-              Articles &amp; Insights from the Thinkverses Team
-            </p>
             <h2 className="display h-section max-w-4xl">
               Insights to Help Your Team Move{" "}
               <span className="text-brand-gradient-light">

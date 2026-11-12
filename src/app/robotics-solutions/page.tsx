@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { site } from "@/lib/content";
 import { TaskForm } from "@/components/physical-ai/TaskForm";
-import lineImg from "../../../public/home/RoboticAI.webp";
+import heroImg from "../../../public/robotics-solutions/RoboticAi.webp";
 
 const path = "/robotics-solutions";
 
@@ -113,8 +113,8 @@ function CameraPanel() {
       <figure className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0b1a2e] p-2.5 shadow-[0_40px_80px_-30px_rgba(11,26,46,0.65)]">
         <div className="relative aspect-[16/9] overflow-hidden rounded-[20px]">
           <Image
-            src={lineImg}
-            alt="Inspection camera scanning parts on a conveyor while a humanoid robot with a tablet checks the line and another robot patrols the floor"
+            src={heroImg}
+            alt="Wheeled inspection robot in a factory, its mast-mounted camera scanning an engine on the conveyor and flagging a machine for a closer check"
             fill
             priority
             sizes="(min-width: 1024px) 45vw, 100vw"
@@ -136,13 +136,13 @@ function CameraPanel() {
               <span className="dt-ping absolute inset-0 rounded-full bg-[#ff5a4f]" />
               <span className="relative h-2 w-2 rounded-full bg-[#ff5a4f]" />
             </span>
-            <Camera size={13} aria-hidden="true" /> Camera 02, line 1
+            <Camera size={13} aria-hidden="true" /> Inspection robot 01 · live vision
           </figcaption>
 
-          {/* defect box */}
-          <div className="pa-box absolute left-[9.5%] top-[55%] h-[21%] w-[14.5%] rounded-md border-2 border-[#f5a03a] shadow-[0_0_0_4px_rgba(245,160,58,0.2),0_0_30px_rgba(245,160,58,0.5)]">
-            <span className="absolute -top-7 left-0 rounded-md bg-[#f5a03a] px-2 py-0.5 text-xs font-bold text-[#0b1a2e]">
-              Defect
+          {/* Tag for the item the robot's vision flagged (the image draws the amber box) */}
+          <div aria-hidden="true" className="absolute left-[80%] top-[33%] h-[24%] w-[14%]">
+            <span className="pa-box absolute -top-7 right-0 whitespace-nowrap rounded-md bg-[#f5a03a] px-2 py-0.5 text-xs font-bold text-[#0b1a2e] shadow-[0_0_20px_rgba(245,160,58,0.5)]">
+              Flagged for check
             </span>
           </div>
         </div>

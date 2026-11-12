@@ -366,10 +366,7 @@ export default function DigitalTwinPage() {
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-dots [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]" />
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm font-semibold text-[#0b6e50] shadow-sm ring-1 ring-[#0b6e50]/15">
-              <Timer size={15} aria-hidden="true" /> The two-minute check
-            </p>
-            <h2 id="dt-check" className="display mt-5 text-[clamp(1.8rem,1.2rem+2vw,3rem)] text-[#14304f]">
+            <h2 id="dt-check" className="display text-[clamp(1.8rem,1.2rem+2vw,3rem)] text-[#14304f]">
               Where is your plant on the{" "}
               <span className="bg-gradient-to-r from-[#0b6e50] to-[#34c996] bg-clip-text text-transparent">data journey</span>{" "}
               today?
@@ -392,10 +389,7 @@ export default function DigitalTwinPage() {
 
         <div className="mx-auto grid max-w-[90rem] items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-10">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-[#34c996]/30 bg-[#34c996]/10 px-3.5 py-1.5 text-sm font-semibold text-[#34c996]">
-              <Sparkles size={15} aria-hidden="true" /> Optima, our decision intelligence layer
-            </p>
-            <h2 id="dt-optima" className="display mt-6 text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
+            <h2 id="dt-optima" className="display text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
               Ask a question in plain English, and see{" "}
               <span className="bg-gradient-to-r from-[#34c996] to-[#9be8c9] bg-clip-text text-transparent">
                 exactly where the answer came from.

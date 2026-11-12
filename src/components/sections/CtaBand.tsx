@@ -209,14 +209,7 @@ export function CtaBand() {
         {/* Header + case file */}
         <Reveal className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="inline-flex items-center gap-2.5 rounded-full bg-white py-1.5 pl-2 pr-4 text-sm font-semibold text-[#0b6e50] shadow-[0_10px_24px_-18px_rgba(20,48,79,0.6)] ring-1 ring-[#14304f]/10">
-              <span className="relative grid h-5 w-5 place-items-center rounded-full bg-[#e8f5ef]" aria-hidden="true">
-                <span className="h-2 w-2 rounded-full bg-[#0b6e50]" />
-                <span className="absolute inset-0 animate-ping rounded-full bg-[#0b6e50]/25 motion-reduce:animate-none" />
-              </span>
-              Proof
-            </p>
-            <h2 id="cta-title" className="display mt-6 max-w-[24ch] text-[clamp(2.1rem,1.4rem+2.4vw,3.5rem)] leading-[1.06] tracking-tight">
+            <h2 id="cta-title" className="display max-w-[24ch] text-[clamp(2.1rem,1.4rem+2.4vw,3.5rem)] leading-[1.06] tracking-tight">
               What changed for a UAE operator that has run our digital twin for over a year.
             </h2>
           </div>

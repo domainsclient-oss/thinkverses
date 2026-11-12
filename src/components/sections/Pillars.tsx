@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BrainCircuit, Coins, Database, Leaf, ScanEye, Shield, ShieldCheck, Target, TrendingUp, Wrench } from "lucide-react";
+import { ArrowRight, Coins, Leaf, ScanEye, Shield, ShieldCheck, TrendingUp, Wrench } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { SceneMount } from "../three/SceneMount";
 import brainImg from "../../../public/images/twin-brain.jpg";
@@ -138,35 +138,58 @@ function SourceFlow() {
 
 /* ---------- Physical AI diagrams ---------- */
 
-/* Live 3D vision cell: units ride the belt under the camera; defects get boxed and tagged */
+/* Robotic vision clip: a camera on a robot arm scans parts and boxes what it detects.
+   Plays only while this mode is shown and on screen; holds the poster for reduced-motion visitors. */
+function VisionVideo({ on }: { on: boolean }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    io.observe(video);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (on && visible && !reduce) video.play().catch(() => {});
+    else video.pause();
+  }, [on, visible]);
+
+  return (
+    <video
+      ref={ref}
+      className="absolute inset-0 h-full w-full object-cover"
+      poster="/videos/robotic-vision-poster.jpg"
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      tabIndex={-1}
+    >
+      <source src="/videos/robotic-vision.mp4" type="video/mp4" />
+    </video>
+  );
+}
+
 function InspectionView({ on = true }: { on?: boolean }) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#0f1a2b]">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:32px_32px]" aria-hidden="true" />
-      <SceneMount
-        scene="inspection"
-        eager
-        className="absolute inset-0"
-        poster="/scenes/inspection.webp"
-        paused={!on}
-        props={{
-          tone: "section",
-          tag: {
-            text: "Defect",
-            className: "rounded bg-[#f5a524] px-2 py-0.5 text-[0.7rem] font-semibold text-[#1a1408] shadow-[0_6px_16px_-6px_rgba(245,165,36,0.8)]",
-          },
-        }}
-      />
+      <VisionVideo on={on} />
       {/* Camera HUD */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(15,26,43,0.65))]" aria-hidden="true" />
       <div className="absolute inset-x-4 top-3.5 flex items-center justify-between text-[0.75rem]">
-        <span className="rounded-md bg-[#0f1a2b]/85 px-2 py-1 text-[#c9d2e0]">Camera 02, line 1</span>
+        <span className="rounded-md bg-[#0f1a2b]/85 px-2 py-1 text-[#c9d2e0]">Robot vision · scanning</span>
         <span className="inline-flex items-center gap-1.5 rounded-md bg-[#0f1a2b]/85 px-2 py-1 font-semibold text-[#5fd4a0]">
           <span className="blink h-1.5 w-1.5 rounded-full bg-[#5fd4a0]" aria-hidden="true" />
           Live
         </span>
       </div>
-      <p className="absolute inset-x-4 bottom-3 text-[0.72rem] text-[#8b9ab0]">Placeholder: swap for real footage of the vision system</p>
     </div>
   );
 }
@@ -222,13 +245,7 @@ function PhysicalShowcase() {
       {/* Header row: headline left, mode switch right */}
       <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
         <Reveal className="lg:col-span-7">
-          <p className="inline-flex items-center gap-2.5 rounded-full bg-white py-1.5 pl-2 pr-4 text-sm font-semibold text-[#0b6e50] shadow-[0_10px_24px_-18px_rgba(20,48,79,0.6)] ring-1 ring-[#14304f]/10">
-            <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0b6e50] text-white" aria-hidden="true">
-              <ScanEye size={11} />
-            </span>
-            {physical.eyebrow}
-          </p>
-          <h3 className="display mt-6 max-w-[26ch] text-[clamp(1.95rem,1.4rem+1.9vw,3.1rem)] leading-[1.08] tracking-tight text-[#14304f]">{physical.title}</h3>
+          <h3 className="display max-w-[26ch] text-[clamp(1.95rem,1.4rem+1.9vw,3.1rem)] leading-[1.08] tracking-tight text-[#14304f]">{physical.title}</h3>
         </Reveal>
 
         <Reveal delay={100} className="lg:col-span-5 lg:flex lg:justify-end">
@@ -355,28 +372,13 @@ export function Pillars() {
           {/* Intro */}
           <Reveal className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
             <div className="lg:col-span-7">
-              <p className="inline-flex items-center gap-2 rounded-full bg-[#e8f5ef] px-3.5 py-1.5 text-sm font-semibold text-[#0b6e50]">
-                <BrainCircuit size={16} aria-hidden="true" /> {twin.eyebrow}
-              </p>
-              <h3 className="display mt-6 max-w-[22ch] text-[clamp(1.9rem,1.4rem+1.8vw,3rem)] leading-[1.08] text-[#14304f]">{twin.title}</h3>
+              <h3 className="display max-w-[22ch] text-[clamp(1.9rem,1.4rem+1.8vw,3rem)] leading-[1.08] text-[#14304f]">{twin.title}</h3>
             </div>
 
-            {/* Outcome first, data second: the approach as a small flow */}
+            {/* Approach: outcome first, data second */}
             <div className="group relative overflow-hidden rounded-[22px] border border-[#14304f]/10 bg-gradient-to-br from-white to-[#f3faf6] p-6 shadow-[0_24px_50px_-38px_rgba(20,48,79,0.5)] sm:p-7 lg:col-span-5">
               <span className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#0b6e50] to-[#2e9c74]" aria-hidden="true" />
-              <div className="flex items-center gap-3" aria-hidden="true">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0b6e50] text-white shadow-[0_8px_18px_-8px_rgba(11,110,80,0.8)]">
-                  <Target size={18} />
-                </span>
-                <svg viewBox="0 0 120 12" className="h-3 flex-1" preserveAspectRatio="none">
-                  <line x1="0" y1="6" x2="120" y2="6" stroke="#0b6e50" strokeOpacity="0.2" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-                  <line x1="0" y1="6" x2="120" y2="6" stroke="#0b6e50" strokeWidth="2" strokeDasharray="4 8" className="twin-flow" vectorEffect="non-scaling-stroke" />
-                </svg>
-                <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#14304f]/15 bg-white text-[#14304f] transition-colors duration-500 group-hover:border-[#0b6e50]/40 group-hover:text-[#0b6e50]">
-                  <Database size={18} />
-                </span>
-              </div>
-              <p className="mt-5 text-[1.12rem] leading-relaxed text-[#4a5868]">{twin.text}</p>
+              <p className="text-[1.12rem] leading-relaxed text-[#4a5868]">{twin.text}</p>
             </div>
           </Reveal>
 

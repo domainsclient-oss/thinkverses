@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { Grid, Line, RoundedBox, Sparkles } from "@react-three/drei";
@@ -64,6 +64,30 @@ const ROUTE: THREE.Vector3Tuple[] = [
   [-6.8, 0, 3.8],
   [-7.4, 0, -1.2],
 ];
+
+// The robot always starts its patrol here: the blind spot beside the "Gate" building, then drives on along the loop.
+const START_AT = new THREE.Vector3(-1.2, 0, 2.6);
+const SPEED = 0.022; // fraction of the loop per second
+const HOLD = 2.5; // seconds parked at the start point
+const LAP = HOLD + 1 / SPEED;
+const patrolU = (t: number, u0: number) => {
+  const tt = t % LAP;
+  return (u0 + (tt < HOLD ? 0 : (tt - HOLD) * SPEED)) % 1;
+};
+
+// Position along the loop (0..1) closest to START_AT.
+const startU = (curve: THREE.CatmullRomCurve3) => {
+  let best = 0;
+  let bestD = Infinity;
+  for (let i = 0; i < 1000; i++) {
+    const d = curve.getPointAt(i / 1000).distanceToSquared(START_AT);
+    if (d < bestD) {
+      bestD = d;
+      best = i / 1000;
+    }
+  }
+  return best;
+};
 
 const BLIND_SPOTS: THREE.Vector3Tuple[] = [
   [3.6, 0, -6.6],
@@ -145,7 +169,7 @@ function Site({ mats, pal, labels }: { mats: Mats; pal: Palette; labels?: string
   );
 }
 
-function Robot({ curve, pal }: { curve: THREE.CatmullRomCurve3; pal: Palette }) {
+function Robot({ curve, pal, time, u0 }: { curve: THREE.CatmullRomCurve3; pal: Palette; time: { current: number }; u0: number }) {
   const ref = useRef<THREE.Group>(null);
   const lidar = useRef<THREE.Group>(null);
   const sweep = useRef<THREE.Mesh>(null);
@@ -154,8 +178,8 @@ function Robot({ curve, pal }: { curve: THREE.CatmullRomCurve3; pal: Palette }) 
   const target = useMemo(() => new THREE.Object3D(), []);
   const up = useMemo(() => new THREE.Vector3(0, 1, 0), []);
 
-  useFrame(({ clock }, dt) => {
-    const u = (clock.elapsedTime * 0.022) % 1;
+  useFrame((_, dt) => {
+    const u = patrolU(time.current, u0);
     const p = curve.getPointAt(u);
     const tan = curve.getTangentAt(u);
     if (ref.current) {
@@ -224,12 +248,12 @@ function Robot({ curve, pal }: { curve: THREE.CatmullRomCurve3; pal: Palette }) 
   );
 }
 
-function BlindSpot({ at, curve, pal }: { at: THREE.Vector3Tuple; curve: THREE.CatmullRomCurve3; pal: Palette }) {
+function BlindSpot({ at, curve, pal, time, u0 }: { at: THREE.Vector3Tuple; curve: THREE.CatmullRomCurve3; pal: Palette; time: { current: number }; u0: number }) {
   const disc = useRef<THREE.MeshBasicMaterial>(null);
   const covered = useRef(0);
   const here = useMemo(() => new THREE.Vector3(...at), [at]);
-  useFrame(({ clock }, dt) => {
-    const u = (clock.elapsedTime * 0.022) % 1;
+  useFrame((_, dt) => {
+    const u = patrolU(time.current, u0);
     const d = curve.getPointAt(u).distanceTo(here);
     covered.current = d < 2.6 ? 1 : Math.max(0, covered.current - dt * 0.15);
     if (disc.current) disc.current.color.lerpColors(new THREE.Color(pal.blind), new THREE.Color(pal.covered), covered.current);
@@ -249,7 +273,16 @@ function BlindSpot({ at, curve, pal }: { at: THREE.Vector3Tuple; curve: THREE.Ca
   );
 }
 
-function Content({ small, pal, labels }: { small: boolean; pal: Palette; labels?: string[] }) {
+function Content({ small, pal, labels, active }: { small: boolean; pal: Palette; labels?: string[]; active: boolean }) {
+  // Patrol clock: restarts each time the scene comes into view, so the robot is always seen setting off from the gate.
+  const time = useRef(0);
+  useEffect(() => {
+    if (active) time.current = 0;
+  }, [active]);
+  useFrame((_, dt) => {
+    time.current += Math.min(dt, 0.5); // cap only guards against a huge first step after a long pause
+  });
+
   const mats = useMemo(() => {
     const m = createMats();
     if (pal.light) {
@@ -263,6 +296,7 @@ function Content({ small, pal, labels }: { small: boolean; pal: Palette; labels?
     return m;
   }, [pal]);
   const curve = useMemo(() => new THREE.CatmullRomCurve3(ROUTE.map((p) => new THREE.Vector3(...p)), true, "catmullrom", 0.4), []);
+  const u0 = useMemo(() => startU(curve), [curve]);
   const routePts = useMemo(() => curve.getPoints(160).map((p) => [p.x, 0.03, p.z] as THREE.Vector3Tuple), [curve]);
   const dash = useRef<{ material: { dashOffset: number } } | null>(null);
   useFrame((_, dt) => {
@@ -281,7 +315,7 @@ function Content({ small, pal, labels }: { small: boolean; pal: Palette; labels?
       <Line points={routePts} color={pal.accent} lineWidth={pal.light ? 5 : 1} transparent opacity={pal.light ? 0.15 : 0.25} />
       <Line ref={dash as never} points={routePts} color={pal.accent} lineWidth={2.2} dashed dashSize={0.35} gapSize={0.35} />
       {BLIND_SPOTS.map((b) => (
-        <BlindSpot key={b.join()} at={b} curve={curve} pal={pal} />
+        <BlindSpot key={b.join()} at={b} curve={curve} pal={pal} time={time} u0={u0} />
       ))}
       {/* Thermal signature */}
       {!pal.light && (
@@ -291,7 +325,7 @@ function Content({ small, pal, labels }: { small: boolean; pal: Palette; labels?
       </group>
       )}
       {!pal.light && <PulseRing color="#ff6a2a" radius={1.4} period={2} position={[HEAT_AT[0], 0.03, HEAT_AT[2]]} />}
-      <Robot curve={curve} pal={pal} />
+      <Robot curve={curve} pal={pal} time={time} u0={u0} />
       {!pal.light && <Sparkles count={small ? 30 : 60} scale={[18, 4, 18]} position={[0, 2, 0]} size={2} speed={0.2} opacity={0.35} color="#9fe9ff" />}
       <CameraRig position={small ? (pal.light ? [16, 17, 16] : [13, 14, 13]) : [11, 11.5, 11.5]} target={[0, 0, 0]} sway={0.8} parallax={1} />
     </>
@@ -302,7 +336,7 @@ export default function PatrolScene({ active, still, eager, tone = "default", la
   const small = useIsSmall();
   return (
     <SceneCanvas active={active} still={still} eager={eager} camera={{ position: [11, 11.5, 11.5], fov: 40 }}>
-      <Content small={small} pal={PALETTES[tone]} labels={labels} />
+      <Content small={small} pal={PALETTES[tone]} labels={labels} active={active} />
     </SceneCanvas>
   );
 }

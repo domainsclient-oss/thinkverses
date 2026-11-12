@@ -206,8 +206,7 @@ export function About() {
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className={`text-[0.9rem] font-semibold ${GREEN}`}>How it works</p>
-            <h2 className="display h-section mt-4 max-w-[22ch] text-white">Let&apos;s say, for example, one pump at a water pumping station starts running hot.</h2>
+            <h2 className="display h-section max-w-[22ch] text-white">Let&apos;s say, for example, one pump at a water pumping station starts running hot.</h2>
           </div>
           <div className="flex flex-col items-start gap-5 lg:col-span-4 lg:items-end">
             <p className={`flex items-start gap-3 text-[1.02rem] leading-relaxed lg:text-right ${GREEN}`}>

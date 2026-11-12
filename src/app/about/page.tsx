@@ -8,7 +8,6 @@ import {
   EyeOff,
   FileSignature,
   Handshake,
-  Lock,
   MapPin,
   PhoneCall,
   Server,
@@ -235,10 +234,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end lg:gap-16">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#34c996]/30 bg-[#34c996]/10 px-3.5 py-1.5 text-sm font-semibold text-[#34c996]">
-                <Lock size={15} aria-hidden="true" /> Security and data handling
-              </p>
-              <h2 id="ab-sec" className="display mt-6 text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
+              <h2 id="ab-sec" className="display text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
                 Your plant data stays yours, and it{" "}
                 <span className="bg-gradient-to-r from-[#34c996] to-[#9be8c9] bg-clip-text text-transparent">stays private.</span>
               </h2>

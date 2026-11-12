@@ -164,11 +164,7 @@ export function Training() {
 
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="inline-flex items-center gap-2.5 rounded-full border border-[#5fd4a0]/25 bg-[#5fd4a0]/[0.06] px-4 py-1.5 text-sm font-semibold text-[#5fd4a0]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#5fd4a0] shadow-[0_0_8px_2px_rgba(95,212,160,0.7)]" aria-hidden="true" />
-            Better together
-          </p>
-          <h2 className="display mt-6 text-[clamp(2.1rem,1.4rem+2.4vw,3.4rem)] leading-[1.08] tracking-tight">
+          <h2 className="display text-[clamp(2.1rem,1.4rem+2.4vw,3.4rem)] leading-[1.08] tracking-tight">
             What the robots see feeds the twin, so you get one view of your site.
           </h2>
         </Reveal>
