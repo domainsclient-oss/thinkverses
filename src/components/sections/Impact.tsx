@@ -4,8 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { impact } from "@/lib/content";
 
-const topics = ["oil-gas", "smart-buildings", "manufacturing"];
-
 export function Impact() {
   return (
     <section id="impact" className="relative bg-white py-24 sm:py-32">
@@ -54,7 +52,7 @@ export function Impact() {
                       </dd>
                     </div>
                   </dl>
-                  <Link href={`/?topic=${topics[i]}#contact`} className="mt-8 inline-flex items-center gap-2 font-semibold text-volt">
+                  <Link href="/#contact" className="mt-8 inline-flex items-center gap-2 font-semibold text-volt">
                     <span className="link-draw">Explore more</span>
                     <ArrowRight size={17} aria-hidden="true" />
                     <span className="sr-only">about {c.title}</span>

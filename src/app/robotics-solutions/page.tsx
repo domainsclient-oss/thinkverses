@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   openGraph: { url: path, title: "Robotics Solutions | Thinkverses Solutions", images: [{ url: "/home/RoboticAI.webp" }] },
 };
 
-const inspectionHref = "/?topic=robotics#contact";
-const siteAssessmentHref = "/?topic=security#contact";
-const pilotHref = "/?topic=robotics#contact";
+const inspectionHref = "/#contact";
+const siteAssessmentHref = "/#contact";
+const pilotHref = "/#contact";
 
 const intents = [
   { label: "I need inspection", href: "#inspection", icon: ScanLine },

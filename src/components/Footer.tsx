@@ -6,23 +6,24 @@ const footerMenu = [
   {
     title: "Solutions",
     links: [
-      { label: "Digital Twin", href: "#" },
-      { label: "Robotic Solutions", href: "#" },
-      { label: "Use cases", href: "#" },
+      { label: "Digital Twin", href: "/digital-twin" },
+      { label: "Robotic Solutions", href: "/robotics-solutions" },
+      { label: "Use cases", href: "/use-cases" },
+      { label: "Industries", href: "/industries" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About and team", href: "/about" },
-      { label: "Case studies", href: "#" },
-      { label: "Security and data handling", href: "#" },
+      { label: "Case studies", href: "/case-studies" },
+      { label: "Security and data handling", href: "/about#ab-sec" },
     ],
   },
   {
     title: "More",
     links: [
-      { label: "Insights", href: "#" },
+      { label: "Insights", href: "/#insights" },
       { label: "Contact", href: "/#contact" },
     ],
   },

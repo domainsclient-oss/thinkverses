@@ -28,7 +28,7 @@ const solutionHighlights = [
     title: "Digital Twin",
     role: "Think",
     icon: BrainCircuit,
-    href: "/?topic=digital-twin#contact",
+    href: "/#contact",
     cta: "Book a maturity assessment call",
     text: "A digital twin is worth it only if it changes what happens on your plant floor. So we start with the outcome you want, and then work back to the data you need for it.",
     highlights: [
@@ -47,7 +47,7 @@ const solutionHighlights = [
     icon: Bot,
     image: roboticsImg,
     alt: "Humanoid robot with a tablet inspecting parts on a production line while another robot patrols the floor",
-    href: "/?topic=robotics#contact",
+    href: "/#contact",
     cta: "Tell us your task",
     text: "Our robots inspect the line and patrol the site, and they report what they find as it happens.",
     highlights: [

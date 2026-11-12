@@ -73,7 +73,7 @@ const twin = {
   sources: ["DCS", "SCADA", "PLC", "MES", "ERP", "QMS", "IoT sensors", "Spreadsheets"],
   detailLabel: "Where we start with you",
   alt: "Person standing before a wall of flowing blue data visualization",
-  href: "/?topic=digital-twin#contact",
+  href: "/#contact",
   cta: "Book a maturity assessment call",
 };
 
@@ -86,19 +86,19 @@ const physical = {
     title: "Visual inspection",
     text: "For quality, production and plant heads. The camera checks every unit on the line, draws a box around each defect it finds, and flags it before the unit moves on.",
     cta: "Book an inspection feasibility call",
-    href: "/?topic=robotics#contact",
+    href: "/#contact",
   },
   patrol: {
     title: "Security patrol",
     text: "For security heads and facility managers. We walk the site with you, map the routes and blind spots, and the robot patrols them through the night alongside your existing security systems.",
     cta: "Book a site assessment call",
-    href: "/?topic=security#contact",
+    href: "/#contact",
   },
   other: {
     title: "Have a different task, such as lifting or packing?",
     text: "Tell us the task, the site and how often it runs. Our team checks the fit and gives you an honest answer.",
     cta: "Tell us your task",
-    href: "/?topic=robotics#contact",
+    href: "/#contact",
   },
 };
 

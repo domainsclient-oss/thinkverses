@@ -15,7 +15,7 @@ import {
   Sprout,
 } from "lucide-react";
 import { consultationHref, site } from "@/lib/content";
-import heroTeam from "../../../public/about/about-Hero.webp";
+import heroImage from "../../../public/about/AboutHero.jpeg";
 import rosLogo from "../../../public/Tools/1.webp";
 import tensorflowLogo from "../../../public/Tools/2.webp";
 import pythonLogo from "../../../public/Tools/3.webp";
@@ -124,10 +124,10 @@ export default function AboutPage() {
                 aria-hidden="true"
                 className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-[28px] bg-gradient-to-br from-[#0b6e50] to-[#34c996]"
               />
-              <div className="relative aspect-[1680/936] overflow-hidden rounded-[28px] shadow-[0_40px_80px_-30px_rgba(11,26,46,0.6)]">
+              <div className="relative aspect-[6/5] overflow-hidden rounded-[28px] shadow-[0_40px_80px_-30px_rgba(11,26,46,0.6)]">
                 <Image
-                  src={heroTeam}
-                  alt="A team of professionals standing together on a waterfront terrace in front of a city skyline"
+                  src={heroImage}
+                  alt="Engineer in a hard hat holding a tablet beside a robotic arm and a digital twin display on a factory floor"
                   fill
                   priority
                   placeholder="blur"

@@ -20,7 +20,7 @@ export const nav = [
   { label: "About", href: "/about" },
 ];
 
-export const consultationHref = "/?topic=consultation#contact";
+export const consultationHref = "/#contact";
 
 // Profile URLs on the current site point to each network's home page.
 // Replace with the company's own profile URLs before launch.

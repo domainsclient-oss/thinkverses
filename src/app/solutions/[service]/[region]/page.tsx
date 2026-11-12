@@ -70,7 +70,7 @@ export default async function SolutionPage({ params }: PageProps<"/solutions/[se
           </h1>
           <p className="lede mt-7 text-white/75">{service.summary}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href={`/?topic=${service.key === "iot" ? "iot" : service.key === "digital-twin" ? "digital-twin" : "robotics"}#contact`} className="btn btn-primary">
+            <Link href="/#contact" className="btn btn-primary">
               Talk to our team <ArrowRight size={18} aria-hidden="true" />
             </Link>
             <Link href="/#industries" className="btn btn-ghost">See industries we serve</Link>
@@ -118,7 +118,7 @@ export default async function SolutionPage({ params }: PageProps<"/solutions/[se
             <ul className="mt-4 space-y-2 text-slate">
               {industries.map((ind) => (
                 <li key={ind.slug}>
-                  <Link href={`/?topic=${ind.slug}#contact`} className="link-draw hover:text-ink">{ind.name}</Link>
+                  <Link href="/#contact" className="link-draw hover:text-ink">{ind.name}</Link>
                 </li>
               ))}
             </ul>

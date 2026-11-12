@@ -389,7 +389,7 @@ export function CtaBand() {
               <p className="mt-3 max-w-[52ch] text-[1rem] leading-relaxed text-white/85">
                 A fixed-scope pilot on one line, route or asset keeps your risk small and shows you the result before you commit to more.
               </p>
-              <Link href="/?topic=digital-twin#contact" className="btn group mt-7 bg-white text-[#0b6e50] hover:bg-[#e8f5ef]">
+              <Link href="/#contact" className="btn group mt-7 bg-white text-[#0b6e50] hover:bg-[#e8f5ef]">
                 Ask about a pilot <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>

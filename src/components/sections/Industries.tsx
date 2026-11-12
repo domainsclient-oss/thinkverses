@@ -34,7 +34,7 @@ export function Industries() {
           {industries.map((ind, i) => (
             <Reveal as="li" key={ind.slug} delay={(i % 3) * 90} className={layout[i]}>
               <Link
-                href={`/?topic=${ind.slug}#contact`}
+                href="/#contact"
                 className="group relative isolate flex h-full flex-col justify-end overflow-hidden rounded-[24px] border border-white/[0.08] p-6 text-white transition-[border-color,box-shadow] duration-500 hover:border-cyan/50 hover:shadow-[0_0_0_1px_rgba(62,224,255,0.25),0_40px_80px_-40px_rgba(47,107,255,0.6)] sm:p-7"
               >
                 <Image
