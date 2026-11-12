@@ -23,26 +23,26 @@ const layers = [
   {
     n: 2,
     name: "Ingest and store",
-    title: "You are at the ingest and store stage.",
-    text: "You know where your data lives. The next step is bringing it into one place your teams trust.",
+    title: "Your next step is one source of truth.",
+    text: "You know your systems. Now we connect the key ones so every team works from the same numbers.",
   },
   {
     n: 3,
     name: "Model and analyse",
-    title: "You are at the model and analyse stage.",
-    text: "Your data is in one place. The next step is learning each asset's normal pattern so you get warnings early.",
+    title: "Your next step is foresight.",
+    text: "Your data is in one place. A pilot on predictive maintenance, quality, energy or OEE turns it into early warnings.",
   },
   {
     n: 4,
     name: "Serve and decide",
-    title: "You are at the serve and decide stage.",
-    text: "You see problems coming. The next step is putting answers in front of leaders without waiting for an analyst.",
+    title: "Your next step is faster answers.",
+    text: "You already predict problems. Role-based alerts and plain-language questions get answers to leaders in time.",
   },
   {
     n: 5,
     name: "Business value",
-    title: "You are at the business value stage.",
-    text: "Your data already drives decisions. A maturity assessment shows where the twin can add the most value next.",
+    title: "You are ready to scale the value.",
+    text: "You have the building blocks. We help you tie them to output, cost and risk across more plants.",
   },
 ];
 
