@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Coins, Leaf, ScanEye, Shield, ShieldCheck, TrendingUp, Wrench } from "lucide-react";
+import { ArrowRight, Coins, Database, Leaf, ScanEye, Shield, ShieldCheck, Target, TrendingUp, Wrench } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { SceneMount } from "../three/SceneMount";
 import brainImg from "../../../public/images/twin-brain.jpg";
@@ -378,7 +378,31 @@ export function Pillars() {
             {/* Approach: outcome first, data second */}
             <div className="group relative overflow-hidden rounded-[22px] border border-[#14304f]/10 bg-gradient-to-br from-white to-[#f3faf6] p-6 shadow-[0_24px_50px_-38px_rgba(20,48,79,0.5)] sm:p-7 lg:col-span-5">
               <span className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#0b6e50] to-[#2e9c74]" aria-hidden="true" />
-              <p className="text-[1.12rem] leading-relaxed text-[#4a5868]">{twin.text}</p>
+              {/* Outcome → work back → data, mirroring the sentence below */}
+              <div className="flex items-start gap-3" aria-hidden="true">
+                <span className="flex w-20 shrink-0 flex-col items-center gap-1.5 text-center">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0b6e50] text-white shadow-[0_8px_18px_-8px_rgba(11,110,80,0.8)]">
+                    <Target size={18} />
+                  </span>
+                  <span className="text-[0.72rem] font-semibold leading-tight text-[#0b6e50]">Your outcome</span>
+                </span>
+                <span className="relative mt-[13px] flex flex-1 flex-col items-center">
+                  <svg viewBox="0 0 120 12" className="h-3 w-full" preserveAspectRatio="none">
+                    <line x1="0" y1="6" x2="120" y2="6" stroke="#0b6e50" strokeOpacity="0.2" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                    <line x1="0" y1="6" x2="120" y2="6" stroke="#0b6e50" strokeWidth="2" strokeDasharray="4 8" className="twin-flow" vectorEffect="non-scaling-stroke" />
+                  </svg>
+                  <span className="mt-1.5 rounded-full bg-[#e8f5ef] px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-[#0b6e50]">
+                    Work back →
+                  </span>
+                </span>
+                <span className="flex w-20 shrink-0 flex-col items-center gap-1.5 text-center">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#14304f]/15 bg-white text-[#14304f] transition-colors duration-500 group-hover:border-[#0b6e50]/40 group-hover:text-[#0b6e50]">
+                    <Database size={18} />
+                  </span>
+                  <span className="text-[0.72rem] font-semibold leading-tight text-[#14304f]">The data you need</span>
+                </span>
+              </div>
+              <p className="mt-5 text-[1.12rem] leading-relaxed text-[#4a5868]">{twin.text}</p>
             </div>
           </Reveal>
 
