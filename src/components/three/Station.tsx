@@ -67,6 +67,12 @@ export function CameraRig({
   const look = useMemo(() => new THREE.Vector3(...target), [target]);
   const tmp = useMemo(() => new THREE.Vector3(), []);
   useFrame(({ clock, pointer }, dt) => {
+    // Static rig: lock the camera in place (no sway, no pointer parallax, no ease-in)
+    if (sway === 0 && parallax === 0) {
+      camera.position.copy(base);
+      camera.lookAt(look);
+      return;
+    }
     const t = clock.elapsedTime;
     tmp.set(
       base.x + Math.sin(t * 0.11) * sway + pointer.x * parallax,

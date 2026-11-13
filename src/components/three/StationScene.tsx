@@ -91,7 +91,7 @@ function HeroContent({ small, light = false }: { small: boolean; light?: boolean
       <HudPanel position={[3.4, 5, 2.2]} width={1.6} height={1} seed={5} warn bg={panel.bg} accent={panel.accent} />
       <HudPanel position={[2.8, 2.9, 4.2]} width={1.3} height={0.8} seed={8} bars={5} bg={panel.bg} accent={panel.accent} />
       {!light && <Sparkles count={small ? 40 : 90} scale={[16, 7, 14]} position={[0, 3.2, 0]} size={2.2} speed={0.25} opacity={0.5} color="#9fe9ff" />}
-      <CameraRig position={small ? [-12, 6.8, 11] : [-10.4, 5.8, 9.6]} target={[0.2, 2.3, -0.4]} sway={0.7} parallax={0.9} />
+      <CameraRig position={small ? [-12, 6.8, 11] : [-10.4, 5.8, 9.6]} target={[0.2, 2.3, -0.4]} sway={0} parallax={0} />
     </>
   );
 }
