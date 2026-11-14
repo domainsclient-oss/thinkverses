@@ -172,7 +172,7 @@ export default function AboutPage() {
 
               <div className="mt-10 border-l-4 border-[#34c996] pl-6">
                 <h3 className="display text-[clamp(1.5rem,1.2rem+1.2vw,2.2rem)] text-[#14304f]">{founder.name}</h3>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-[#0b6e50]">{founder.role}</p>
+                <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-[#0b6e50]">{founder.role}</p>
               </div>
 
               <a
