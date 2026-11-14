@@ -10,7 +10,7 @@ const path = "/industries";
 export const metadata: Metadata = {
   title: "Industries: Manufacturing, Utilities and Controlled-Environment Agriculture",
   description:
-    "Digital twins and Physical AI for businesses that run heavy physical operations: manufacturing, water and power utilities, and controlled-environment agriculture.",
+    "Digital Twin and Physical AI for businesses that run heavy physical operations: manufacturing, water and power utilities, and controlled-environment agriculture.",
   alternates: { canonical: path },
   openGraph: { url: path, title: "Industries | Thinkverses Solutions" },
 };
@@ -102,7 +102,7 @@ export default function IndustriesPage() {
           <div className="mt-8 grid items-end gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div className="dt-rise">
               <h1 className="display text-[clamp(2.3rem,1.3rem+3.2vw,4.1rem)] text-[#14304f]">
-                Digital twins and Physical AI for businesses that run{" "}
+                Digital Twin and Physical AI for businesses that run{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
                   heavy physical operations
                 </span>

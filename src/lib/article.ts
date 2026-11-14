@@ -15,7 +15,7 @@ export const articleSections: ArticleSection[] = [
         p: "Dubai and the wider UAE have become regional hubs for digital transformation, smart infrastructure and advanced technology. Businesses across the country are adopting AI, IoT, automation, cloud platforms and real-time analytics to run more efficiently and compete globally.",
       },
       {
-        p: "Among these technologies, Digital Twins stand out because they connect the physical and digital worlds directly. They give organizations a way to see, test and improve their operations without disrupting them.",
+        p: "Among these technologies, Digital Twin stands out because it connects the physical and digital worlds directly. It gives organizations a way to see, test and improve their operations without disrupting them.",
       },
     ],
   },
@@ -33,7 +33,7 @@ export const articleSections: ArticleSection[] = [
   },
   {
     id: "key-technologies",
-    title: "Key technologies behind Digital Twins",
+    title: "Key technologies behind Digital Twin",
     blocks: [
       {
         ul: [
@@ -61,7 +61,7 @@ export const articleSections: ArticleSection[] = [
     blocks: [
       { h3: "Growing focus on smart cities" },
       {
-        p: "Large-scale smart city and infrastructure programs need a way to plan, monitor and operate complex, connected environments. Digital Twins provide a shared, living view of those environments.",
+        p: "Large-scale smart city and infrastructure programs need a way to plan, monitor and operate complex, connected environments. Digital Twin provides a shared, living view of those environments.",
       },
       { h3: "Demand for data-driven operations" },
       {
@@ -174,7 +174,7 @@ export const articleSections: ArticleSection[] = [
     title: "The future of Digital Twin technology in Dubai & UAE",
     blocks: [
       {
-        p: "As connectivity, AI and robotics mature, Digital Twins will increasingly close the loop: deciding in the virtual world and acting in the physical one, then learning from the result. For businesses in the UAE this means operations that are more predictable, efficient and resilient.",
+        p: "As connectivity, AI and robotics mature, Digital Twin will increasingly close the loop: deciding in the virtual world and acting in the physical one, then learning from the result. For businesses in the UAE this means operations that are more predictable, efficient and resilient.",
       },
     ],
   },

@@ -12,7 +12,7 @@ import energyImg from "../../../public/images/energy.jpg";
 const stats = [
   { figure: "40,000+", label: "sensors connected", count: true, icon: Radio },
   { figure: "6 plants", label: "across two countries", count: true, icon: Factory },
-  { figure: "[Result]", label: "one measured result, to add", count: false, icon: Target },
+  { figure: "Minutes", label: "Decision Making reduced from weeks to minutes", count: false, icon: Target },
 ];
 
 /* ---------- Before: a weekly report assembled by hand (animated, decorative) ----------
@@ -226,9 +226,8 @@ export function CtaBand() {
                     <span className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-[#5fd4a0] ring-2 ring-white" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[0.85rem] text-[#4a5868]">[Client name, pending approval]</p>
-                    <Link href={solutionPath("digital-twin", "uae")} className="mt-0.5 inline-flex items-center gap-1.5 font-semibold text-[#0b6e50] after:absolute after:inset-0 after:content-['']">
-                      Read the case study <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                    <Link href={solutionPath("digital-twin", "uae")} className="inline-flex items-center gap-1.5 font-semibold text-[#0b6e50] after:absolute after:inset-0 after:content-['']">
+                      Read the Case Study <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -255,18 +254,14 @@ export function CtaBand() {
                 return (
                   <li key={s.figure} className="group relative flex items-center gap-5 px-6 py-7 sm:px-8 sm:py-9">
                     <span
-                      className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ring-1 transition-colors duration-500 ${
-                        s.count ? "bg-[#0b6e50]/30 text-[#5fd4a0] ring-[#5fd4a0]/30 group-hover:ring-[#5fd4a0]/70" : "bg-white/[0.05] text-white/45 ring-white/10"
-                      }`}
+                      className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl ring-1 transition-colors duration-500 bg-[#0b6e50]/30 text-[#5fd4a0] ring-[#5fd4a0]/30 group-hover:ring-[#5fd4a0]/70"
                       aria-hidden="true"
                     >
                       <Icon size={24} />
                     </span>
                     <div className="min-w-0">
                       <p
-                        className={`font-display text-[clamp(2.2rem,1.7rem+1.6vw,3.2rem)] font-bold leading-none tracking-tight tabular-nums [font-stretch:112%] ${
-                          s.count ? "text-white" : "text-white/45"
-                        }`}
+                        className="font-display text-[clamp(2.2rem,1.7rem+1.6vw,3.2rem)] font-bold leading-none tracking-tight tabular-nums [font-stretch:112%] text-white"
                       >
                         {s.count ? <CountUp value={s.figure} duration={2.2} /> : s.figure}
                       </p>

@@ -42,7 +42,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <FooterLogo />
             <p className="mt-5 max-w-sm text-white/65">
-              Digital twins and Robotic Solutions for industrial teams in the UAE.
+              Digital Twin and Robotic Solutions for industrial teams in the UAE.
             </p>
             <div className="mt-7">
               <SocialLinks />

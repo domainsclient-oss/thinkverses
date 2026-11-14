@@ -7,9 +7,9 @@ import { UseCaseGrid } from "@/components/use-cases/UseCaseGrid";
 const path = "/use-cases";
 
 export const metadata: Metadata = {
-  title: "Use Cases for Industrial Digital Twins and Physical AI",
+  title: "Use Cases for Industrial Digital Twin and Physical AI",
   description:
-    "Use cases for industrial digital twins and Physical AI: predictive maintenance, batch traceability, energy monitoring, OEE, visual inspection, security patrol and asset inspection rounds.",
+    "Use cases for industrial Digital Twin and Physical AI: predictive maintenance, batch traceability, energy monitoring, OEE, visual inspection, security patrol and asset inspection rounds.",
   alternates: { canonical: path },
   openGraph: { url: path, title: "Use Cases | Thinkverses Solutions" },
 };
@@ -20,7 +20,7 @@ export default function UseCasesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Use cases for industrial digital twins and Physical AI",
+    name: "Use cases for industrial Digital Twin and Physical AI",
     url: `${site.url}${path}`,
     publisher: { "@type": "Organization", name: site.legalName, url: site.url },
   };
@@ -54,7 +54,7 @@ export default function UseCasesPage() {
               <h1 className="display text-[clamp(2.3rem,1.3rem+3.2vw,4.1rem)] text-[#14304f]">
                 Use cases for industrial{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
-                  digital twins
+                  Digital Twin
                 </span>{" "}
                 and{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">

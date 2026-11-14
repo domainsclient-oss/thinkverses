@@ -222,7 +222,7 @@ export const faqs = [
   {
     group: "Digital Twin Technology",
     q: "What is a Digital Twin, and how does Thinkverses use it?",
-    a: "A Digital Twin is a real-time virtual replica of a physical asset, process, or system. Thinkverses creates AI-powered Operational Digital Twins that help organizations monitor performance, analyze operations, predict issues, and optimize assets across industries.",
+    a: "A Digital Twin is a real-time virtual replica of a physical asset, process, or system. Thinkverses creates an AI-powered Operational Digital Twin that helps organizations monitor performance, analyze operations, predict issues, and optimize assets across industries.",
   },
   {
     group: "Industries",

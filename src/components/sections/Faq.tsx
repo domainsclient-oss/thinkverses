@@ -19,7 +19,7 @@ export function Faq() {
           <div className="lg:sticky lg:top-28">
             <h2 className="display h-section text-ink">Questions, answered</h2>
             <p className="mt-5 text-slate prose-measure">
-              Digital Twins, robotics, IoT, AI, implementation and what it means for your business. If your question is
+              Digital Twin, robotics, IoT, AI, implementation and what it means for your business. If your question is
               not here, ask us directly.
             </p>
             <Link href="/#contact" className="btn btn-outline mt-8">

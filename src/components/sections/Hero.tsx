@@ -32,7 +32,7 @@ export function Hero() {
               We help industrial teams <span className="text-[#0b6e50]">catch problems early.</span>
             </h1>
             <p className="hero-rise lede mt-7 max-w-[46ch] text-[#4a5868]" style={d(220)}>
-              We do it in two ways: digital twins built on your own plant data, and AI robots that inspect your line and
+              We do it in two ways: a Digital Twin built on your own plant data, and AI robots that inspect your line and
               patrol your site. You can start with either one, and they work better together.
             </p>
             <div className="hero-rise mt-9 flex flex-wrap gap-3" style={d(300)}>

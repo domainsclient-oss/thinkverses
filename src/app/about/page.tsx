@@ -25,9 +25,9 @@ import isaacLogo from "../../../public/Tools/5.webp";
 const path = "/about";
 
 export const metadata: Metadata = {
-  title: "About Thinkverses: Dubai Team for Digital Twins and Physical AI",
+  title: "About Thinkverses: Dubai Team for Digital Twin and Physical AI",
   description:
-    "Thinkverses Solutions is a Dubai team that builds digital twins and Physical AI for industrial operators, turning plant data and what robots see into decisions your team can act on.",
+    "Thinkverses Solutions is a Dubai team that builds Digital Twin and Physical AI for industrial operators, turning plant data and what robots see into decisions your team can act on.",
   alternates: { canonical: path },
   openGraph: { url: path, title: "About | Thinkverses Solutions" },
 };
@@ -37,7 +37,6 @@ const founderLinkedIn = "https://www.linkedin.com/in/vignesh-t-482000b0/";
 const founder = {
   name: "Vignesh T",
   role: "Founder",
-  bio: "[Two lines on background and why he started Thinkverses.]",
   photo: "/about/vignesh.webp",
   linkedin: founderLinkedIn,
 };
@@ -106,9 +105,9 @@ export default function AboutPage() {
           <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div className="dt-rise">
               <h1 className="display text-[clamp(2.2rem,1.3rem+3vw,3.9rem)] text-[#14304f]">
-                We are a Dubai team that builds{" "}
+                We build{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
-                  digital twins and Physical AI
+                  Digital Twin and Physical AI
                 </span>{" "}
                 for industrial operators
               </h1>
@@ -174,7 +173,6 @@ export default function AboutPage() {
               <div className="mt-10 border-l-4 border-[#34c996] pl-6">
                 <h3 className="display text-[clamp(1.5rem,1.2rem+1.2vw,2.2rem)] text-[#14304f]">{founder.name}</h3>
                 <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-[#0b6e50]">{founder.role}</p>
-                <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-[#4b5a74]">{founder.bio}</p>
               </div>
 
               <a
@@ -232,17 +230,11 @@ export default function AboutPage() {
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-blueprint opacity-25 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <div aria-hidden="true" className="absolute -left-40 top-1/3 -z-10 h-[28rem] w-[28rem] rounded-full bg-[#34c996]/15 blur-3xl" />
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end lg:gap-16">
-            <div>
-              <h2 id="ab-sec" className="display text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
-                Your plant data stays yours, and it{" "}
-                <span className="bg-gradient-to-r from-[#34c996] to-[#9be8c9] bg-clip-text text-transparent">stays private.</span>
-              </h2>
-            </div>
-            <p className="text-[1.05rem] leading-relaxed text-[#c9d4e5]">
-              The UAE market is small, and we know that what happens in one plant should never reach another. That is
-              why we built strict rules into how we work.
-            </p>
+          <div>
+            <h2 id="ab-sec" className="display text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)]">
+              Your plant data stays yours, and it{" "}
+              <span className="bg-gradient-to-r from-[#34c996] to-[#9be8c9] bg-clip-text text-transparent">stays private.</span>
+            </h2>
           </div>
 
           <ul className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -255,12 +247,12 @@ export default function AboutPage() {
                 <p className="mt-2 text-[#c9d4e5]">{text}</p>
               </li>
             ))}
-            <li className="rounded-[24px] border-2 border-dashed border-white/20 p-6">
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/[0.06] text-[#9fb0cc]">
+            <li className="rounded-[24px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition hover:border-[#34c996]/40">
+              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#34c996]/15 text-[#34c996] ring-1 ring-[#34c996]/30">
                 <ShieldCheck size={22} aria-hidden="true" />
               </span>
-              <h3 className="mt-6 text-lg font-semibold">[Certifications]</h3>
-              <p className="mt-2 text-[#9fb0cc]">[ISO or other standards, once confirmed.]</p>
+              <h3 className="mt-6 text-lg font-semibold">Certifications</h3>
+              <p className="mt-2 text-[#c9d4e5]">Approved by UAE Federal Govt.</p>
             </li>
           </ul>
         </div>

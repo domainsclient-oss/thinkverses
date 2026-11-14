@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   AlertTriangle,
   ArrowRight,
-  Building2,
   CalendarCheck,
   Database,
   FileText,
@@ -32,10 +31,9 @@ export const metadata: Metadata = {
 };
 
 const glance = [
-  { label: "Client", value: "[Client name, pending written approval]", icon: Building2 },
   { label: "Scope", value: "6 plants, 2 countries, 40,000+ sensors", icon: Globe2 },
   { label: "Solution", value: "Digital twin with Optima decision intelligence", icon: Sparkles },
-  { label: "Live since", value: "[Month and year]", icon: CalendarCheck },
+  { label: "Live since", value: "18 months", icon: CalendarCheck },
 ];
 
 const stats = [
@@ -70,18 +68,14 @@ export default function CaseStudyPage() {
                 <Link href="/" className="hover:text-[#0b6e50]">Home</Link>
               </li>
               <li aria-hidden="true" className="text-[#4b5a74]/50">/</li>
-              <li>
-                <Link href="/case-studies" className="hover:text-[#0b6e50]">Case studies</Link>
-              </li>
-              <li aria-hidden="true" className="text-[#4b5a74]/50">/</li>
-              <li aria-current="page" className="font-semibold text-[#14304f]">[Client name]</li>
+              <li aria-current="page" className="font-semibold text-[#14304f]">Case studies</li>
             </ol>
           </nav>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div className="dt-rise">
               <h1 className="display text-[clamp(2.1rem,1.2rem+3vw,3.8rem)] text-[#14304f]">
-                How [Client name] stopped building{" "}
+                How an agriculture group stopped building{" "}
                 <span className="bg-gradient-to-r from-[#0b6e50] via-[#14946a] to-[#34c996] bg-clip-text text-transparent">
                   weekly reports by hand
                 </span>{" "}
@@ -222,11 +216,11 @@ export default function CaseStudyPage() {
             <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#34c996]/25 blur-3xl" />
             <Quote size={56} aria-hidden="true" className="relative text-[#34c996]/40" />
             <blockquote className="relative mt-4 text-[clamp(1.2rem,1rem+0.8vw,1.6rem)] font-medium leading-snug">
-              “[A one or two line quote from the client champion, about time saved or a decision made faster.]”
+              “Optima reduced operational reporting and decision-making from weeks to minutes.”
             </blockquote>
             <figcaption className="relative mt-6 flex items-center gap-3 text-[#c9d4e5]">
               <span aria-hidden="true" className="h-px w-8 bg-[#34c996]" />
-              [Name], Head of Digital Transformation, [Client name]
+              Head of Digital Transformation
             </figcaption>
           </figure>
         </div>

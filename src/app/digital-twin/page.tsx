@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   Activity,
   ArrowRight,
-  Code2,
   Play,
   Gauge,
   ScanSearch,
@@ -16,7 +15,6 @@ import {
   Cable,
   MapPin,
   Server,
-  Sparkles,
   Timer,
   BadgeCheck,
   Building2,
@@ -37,6 +35,7 @@ import { site } from "@/lib/content";
 import { MaturityCheck } from "@/components/digital-twin/MaturityCheck";
 import { TwinHeroPanel } from "@/components/digital-twin/TwinHeroPanel";
 import { AssessmentForm } from "@/components/digital-twin/AssessmentForm";
+import { OptimaChat } from "@/components/digital-twin/OptimaChat";
 
 const path = "/digital-twin";
 
@@ -172,12 +171,14 @@ export default function DigitalTwinPage() {
 
           <div className="mt-8 grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
             <div className="dt-rise">
-              <span className="inline-flex items-center gap-2.5 rounded-full border border-[#0b6e50]/20 bg-[#e6f4ee] py-1.5 pl-2 pr-4 text-sm font-semibold text-[#0b6e50]">
-                <span className="relative flex h-5 w-5 items-center justify-center rounded-full bg-white">
-                  <span className="dt-ping absolute h-2 w-2 rounded-full bg-[#0b6e50]" />
-                  <span className="relative h-2 w-2 rounded-full bg-[#0b6e50]" />
+              <span className="inline-flex items-center gap-3 rounded-2xl border border-[#0b6e50]/25 bg-[#e6f4ee] py-2 pl-2.5 pr-5 text-[0.95rem] font-medium leading-snug text-[#0b6e50] shadow-[0_10px_30px_-18px_rgba(11,110,80,0.6)] sm:rounded-full sm:text-base">
+                <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-[#0b6e50]/15">
+                  <span className="dt-ping absolute h-2.5 w-2.5 rounded-full bg-[#0b6e50]" />
+                  <span className="relative h-2.5 w-2.5 rounded-full bg-[#0b6e50]" />
                 </span>
-                Live with a UAE operator: 40,000+ sensors, 6 plants
+                <span>
+                  <strong className="font-bold text-[#14304f]">Live in KSA &amp; UAE</strong> across 6 factories running for 18 months
+                </span>
               </span>
 
               <h1 className="display mt-6 text-[clamp(2.3rem,1.3rem+3.2vw,4.1rem)] text-[#14304f]">
@@ -411,75 +412,9 @@ export default function DigitalTwinPage() {
           </div>
 
           {/* Console mock */}
-          <figure className="relative" aria-label="Optima question and answer">
+          <figure className="relative" aria-label="Optima answering questions in plain English">
             <div aria-hidden="true" className="absolute -inset-4 -z-10 rounded-[36px] bg-gradient-to-br from-[#34c996]/25 via-transparent to-[#f5a03a]/15 blur-2xl" />
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] backdrop-blur">
-              <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                <span className="ml-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#9fb0cc]">
-                  <Sparkles size={12} className="text-[#34c996]" aria-hidden="true" /> Optima
-                </span>
-              </div>
-
-              <div className="space-y-5 p-5 sm:p-7">
-                {/* question */}
-                <div className="flex justify-end">
-                  <p className="max-w-[90%] rounded-2xl rounded-br-md bg-[#34c996] px-4 py-3 text-[0.95rem] font-medium text-[#0b1a2e]">
-                    Show the correlation between energy use and output at Plant 3 this quarter.
-                  </p>
-                </div>
-
-                {/* answer */}
-                <div className="flex gap-3">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#0b6e50] to-[#34c996]">
-                    <Sparkles size={14} aria-hidden="true" />
-                  </span>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-white/10 bg-[#0e2038] p-4 sm:p-5">
-                    <p className="text-[0.95rem] leading-relaxed text-white">
-                      Energy per unit rose <strong className="text-[#f5a03a]">11%</strong> on night shifts while output
-                      stayed flat. Most of it came from Line B.
-                    </p>
-
-                    <div aria-hidden="true" className="mt-4 grid grid-cols-2 gap-3">
-                      {[
-                        { label: "Energy / unit", day: 62, night: 73, color: "bg-[#f5a03a]" },
-                        { label: "Output", day: 70, night: 70, color: "bg-[#34c996]" },
-                      ].map((m) => (
-                        <div key={m.label} className="rounded-xl bg-white/[0.04] p-3">
-                          <p className="text-[0.7rem] text-[#9fb0cc]">{m.label}</p>
-                          <div className="mt-2 flex h-16 items-end gap-2">
-                            <div className="flex flex-1 flex-col items-center gap-1">
-                              <div className={`w-full rounded-md ${m.color} opacity-40`} style={{ height: `${m.day}%` }} />
-                              <span className="text-[0.65rem] text-[#9fb0cc]">Day</span>
-                            </div>
-                            <div className="flex flex-1 flex-col items-center gap-1">
-                              <div className={`w-full rounded-md ${m.color}`} style={{ height: `${m.night}%` }} />
-                              <span className="text-[0.65rem] text-[#9fb0cc]">Night</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-4 overflow-hidden rounded-xl border border-[#34c996]/20 bg-[#06111f]">
-                      <div className="flex items-center gap-2 border-b border-white/5 px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wider text-[#34c996]">
-                        <Code2 size={13} aria-hidden="true" /> Query behind this answer
-                      </div>
-                      <pre className="overflow-x-auto px-3 py-3 font-mono text-[0.78rem] leading-relaxed text-[#c9d4e5]">
-                        <code>
-                          <span className="text-[#34c996]">SELECT</span> shift,{" "}
-                          <span className="text-[#f5a03a]">SUM</span>(kwh)/<span className="text-[#f5a03a]">SUM</span>(units){" "}
-                          <span className="text-[#34c996]">FROM</span> plant3{" "}
-                          <span className="text-[#34c996]">GROUP BY</span> shift
-                        </code>
-                      </pre>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <OptimaChat />
           </figure>
         </div>
       </section>
@@ -618,7 +553,7 @@ export default function DigitalTwinPage() {
             </span>
             <h2 id="dt-faq" className="display mt-6 text-[clamp(1.9rem,1.2rem+2.2vw,3.2rem)] text-[#14304f]">
               Questions about{" "}
-              <span className="bg-gradient-to-r from-[#0b6e50] to-[#34c996] bg-clip-text text-transparent">digital twins</span>
+              <span className="bg-gradient-to-r from-[#0b6e50] to-[#34c996] bg-clip-text text-transparent">Digital Twin</span>
             </h2>
           </div>
 

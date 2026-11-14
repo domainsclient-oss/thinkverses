@@ -178,7 +178,7 @@ export function DigitalTwin() {
       <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <h2 className="display h-section lg:col-span-8">
-            Digital Twins <span className="text-brand-gradient-light">+</span> Robotics AI
+            Digital Twin <span className="text-brand-gradient-light">+</span> Robotics AI
           </h2>
           <p className="lede text-white/65 lg:col-span-4">
             One system, two strengths: the Digital Twin works out what should happen, and Robotics AI makes it happen.

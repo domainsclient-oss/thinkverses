@@ -41,7 +41,7 @@ const tools: Tool[] = [
   {
     name: "AWS",
     category: "Cloud infrastructure",
-    text: "Scalable cloud for data ingestion, storage and hosting live twins.",
+    text: "Scalable cloud for data ingestion, storage and hosting the live Digital Twin.",
     logo: awsLogo,
     span: "sm:col-span-2",
   },
